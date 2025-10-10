@@ -22,7 +22,31 @@
     .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
     .nav{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
     .logo{display:flex;justify-content:center;align-items:center;font-weight:800;letter-spacing:.02em;font-size:18px}
-    .logo img{height:28px;margin-right:6px}
+    
+  /* ===== RIESIGES LOGO (PC & Handy) ===== */
+.logo {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:60px 0 40px; /* mehr Platz oben und unten */
+}
+
+.logo img {
+  height:400px !important;   /* erzwingt große Größe */
+  width:auto;
+  max-width:100%;
+  object-fit:contain;
+  display:block;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15)); /* schöner leichter Schatten */
+}
+
+@media (max-width:1024px){
+  .logo img {height:280px !important;}
+}
+
+@media (max-width:768px){
+  .logo img {height:180px !important;}
+}
     .cta{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:2px}
     .btn{display:inline-block;padding:10px 16px;border-radius:12px;text-decoration:none;font-weight:600;cursor:pointer;text-align:center}
     .btn-primary{background:linear-gradient(90deg,var(--brand),var(--brand2));color:#fff}
