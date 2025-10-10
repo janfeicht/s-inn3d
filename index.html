@@ -67,6 +67,20 @@
       .card{padding:16px;}
       input,textarea{font-size:16px;}
     }
+/* ===== Abstand zwischen Header und Hero (Mobile-Optimierung) ===== */
+@media (max-width:768px){
+  header{
+    padding-bottom:0;   /* kein extra Abstand unter Header */
+  }
+  .nav{
+    margin-bottom:0;    /* Navi näher an den Hero */
+  }
+  .hero{
+    padding-top:32px;   /* kleinerer Abstand oben */
+  }
+  .hero .wrap{
+    margin-top:-10px;   /* feine Justierung */
+  }
 
     /* ===== Header & Navi Verbesserungen ===== */
     @media (max-width:768px){
