@@ -58,13 +58,40 @@
       .hero{padding:56px 0 20px;text-align:left}
       .hero h1{font-size:clamp(22px,8vw,32px);line-height:1.2;margin-bottom:12px;}
       .hero p{font-size:16px;margin-bottom:16px;}
-      .cta .btn{flex:1 1 100%;text-align:center;padding:12px 14px;font-size:16px}
       .promo-section{margin:20px 0;padding:20px 16px;border-radius:14px;}
       .headline-span{display:block;padding:10px 14px;border-radius:10px;font-size:clamp(18px,6vw,24px);line-height:1.25;}
       .grid-3,.grid-2{grid-template-columns:1fr;}
       .card{padding:16px;}
       input,textarea{font-size:16px;}
     }
+    /* ===== Mobile-Fixes v2 ===== */
+    main{padding-top:72px;}
+    @media (max-width:768px){main{padding-top:96px;}}
+    .nav .cta{gap:8px;}
+    .nav .cta .btn{
+      flex:0 0 auto;
+      padding:8px 12px;
+      font-size:15px;
+      border-radius:12px;
+    }
+    @media (max-width:768px){
+      .hero{padding:56px 0 20px;}
+      .hero h1{font-size:clamp(22px,7vw,32px);line-height:1.18;margin-bottom:12px;}
+      .hero p{font-size:16px;margin-bottom:16px;}
+    }
+    @media (max-width:768px){
+      .cta:not(.nav .cta) .btn{
+        flex:1 1 100%;
+        text-align:center;
+        padding:12px 14px;
+        font-size:16px;
+      }
+    }
+    @media (max-width:768px){
+      .promo-section{margin:20px 0;padding:18px 14px;border-radius:14px;}
+      .headline-span{padding:10px 12px;font-size:clamp(18px,6vw,22px);line-height:1.25;}
+    }
+    section{scroll-margin-top:100px;}
   </style>
 </head>
 <body>
