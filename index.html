@@ -68,7 +68,66 @@
       .hero{padding-top:4px !important;}
       .hero h1{font-size:clamp(22px,6vw,30px)}
       .promo-section .wrap{max-width:560px}
-    }
+    /* ========== LOGO GRÖSSER & PRÄSENTER ========== */
+.logo img{height:44px}                /* Desktop */
+.logo span{font-size:20px;font-weight:800;letter-spacing:.02em}
+@media (max-width:768px){
+  .logo img{height:36px}              /* Handy */
+  .logo span{font-size:18px}
+}
+
+/* ========== KONTAKTFORMULAR – SAUBERES LAYOUT ========== */
+/* Grid-Layout: 2 Spalten auf Desktop, 1 Spalte auf Handy */
+#kontakt .card form{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:14px;
+}
+
+/* Labels als Spalten-Container: Text oben, Feld darunter */
+#kontakt .card form label{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  font-weight:600;
+}
+
+/* Eingabefelder: volle Breite, runde Ecken, ruhiger Schatten */
+#kontakt .card form input,
+#kontakt .card form textarea{
+  width:100%;
+  padding:12px 14px;
+  border:1px solid #d1d5db;
+  border-radius:12px;
+  background:#fff;
+  box-shadow:0 1px 0 rgba(0,0,0,.02);
+  font:inherit;
+}
+
+/* Fokus: Brand-Farbkante + weicher Ring */
+#kontakt .card form input:focus,
+#kontakt .card form textarea:focus{
+  outline:none;
+  border-color:var(--brand2);
+  box-shadow:0 0 0 4px rgba(20,184,166,.15);
+}
+
+/* Textarea über die volle Breite */
+#kontakt .card form textarea{grid-column:1 / -1; min-height:140px}
+
+/* Submit-Button über volle Breite, aber nicht „erschlagend“ */
+#kontakt .card form button{
+  grid-column:1 / -1;
+  justify-self:start;
+  padding:12px 18px;
+  border-radius:12px;
+}
+
+/* Handy: einspaltig und Button 100% Breite */
+@media (max-width:768px){
+  #kontakt .card form{grid-template-columns:1fr}
+  #kontakt .card form button{justify-self:stretch}
+}
   </style>
 </head>
 <body>
