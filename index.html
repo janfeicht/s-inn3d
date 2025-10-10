@@ -67,20 +67,31 @@
       .card{padding:16px;}
       input,textarea{font-size:16px;}
     }
-/* ===== Abstand zwischen Header und Hero (Mobile-Optimierung) ===== */
+/* HERO – kompakter für mobile Ansicht */
+.hero{
+  padding:40px 0 20px;         /* vorher 80px 0 40px */
+  text-align:left;
+}
+.hero h1{
+  font-size:clamp(26px,5.8vw,40px);
+  line-height:1.15;
+  margin:0 0 12px;
+}
+.hero p{
+  max-width:720px;
+  color:var(--muted);
+  margin:0 0 16px;
+}
+
+/* Mobile Feineinstellung */
 @media (max-width:768px){
-  header{
-    padding-bottom:0;   /* kein extra Abstand unter Header */
+  .hero{
+    padding-top:16px;          /* noch enger zum Header */
   }
   .nav{
-    margin-bottom:0;    /* Navi näher an den Hero */
+    margin-bottom:-4px;        /* Navi leicht anheben */
   }
-  .hero{
-    padding-top:32px;   /* kleinerer Abstand oben */
-  }
-  .hero .wrap{
-    margin-top:-10px;   /* feine Justierung */
-  }
+}
 
     /* ===== Header & Navi Verbesserungen ===== */
     @media (max-width:768px){
