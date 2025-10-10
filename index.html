@@ -128,6 +128,25 @@
   #kontakt .card form{grid-template-columns:1fr}
   #kontakt .card form button{justify-self:stretch}
 }
+      /* ===== HERO-LOGO – GROSS UND MITTIG ===== */
+.logo {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px 0 30px; /* Abstand nach oben/unten */
+}
+
+.logo img {
+  height:400px;          /* Hauptgröße Logo – 5x größer */
+  max-width:80vw;        /* verhindert, dass es über den Rand geht */
+  object-fit:contain;
+}
+
+@media (max-width:768px){
+  .logo img {
+    height:220px;        /* Handy-Version */
+  }
+}
   </style>
 </head>
 <body>
