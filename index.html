@@ -8,9 +8,7 @@
   <style>
     :root{
       --bg:#f7faf9; --card:#ffffff; --text:#111827; --muted:#6b7280;
-      --brand:#16a34a; /* grün */
-      --brand2:#14b8a6; /* türkis */
-      --accent:#facc15; /* gelb für Icons */
+      --brand:#16a34a; --brand2:#14b8a6; --accent:#facc15;
     }
     *{box-sizing:border-box}
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
@@ -47,7 +45,8 @@
     input,textarea{width:100%;padding:12px 14px;border:1px solid #d1d5db;border-radius:12px;background:#fff}
     label{font-weight:600}
     .legal-section{background:#fff;border-top:2px solid #e5e7eb;padding:40px 20px}
-    .legal-section h2{margin-top:0;color:var(--brand)}
+    .toggle-title{cursor:pointer;font-weight:700;color:var(--brand);margin-top:20px}
+    .toggle-content{display:none;margin-top:10px;color:var(--text)}
   </style>
 </head>
 <body>
@@ -79,7 +78,6 @@
     </div>
   </section>
 
-  <!-- Rabatt-Headline Abschnitt -->
   <section class="promo-section">
     <div class="wrap">
       <h2>
@@ -87,40 +85,6 @@
           20&nbsp;% Rabatt für die ersten 5 Unternehmen auf alle Erst-Schulungen – nur bis 10. November 2025!
         </span>
       </h2>
-    </div>
-  </section>
-  <!-- /Rabatt-Headline Abschnitt -->
-
-  <section id="3d-schulungen-services">
-    <div class="wrap">
-      <h2>3D-Druck Schulungen & Dienstleistungen</h2>
-      <div class="grid grid-2">
-        <div class="card">
-          <h3>Individuelle 3D-Druck Schulungen <span class="badge">Neu</span></h3>
-          <p class="muted">
-            Von den Grundlagen bis zum Profi-Workflow: Wir machen Sie und Ihr Team fit für den 3D-Druck – praxisnah, herstellerunabhängig und auf Ihren Bedarf zugeschnitten. Vor Ort oder online!
-          </p>
-          <ul>
-            <li>Basis- & Fortgeschrittenen-Kurse</li>
-            <li>Material- und Drucktechnik</li>
-            <li>Tipps für Fehlerbehebung & Wartung</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>3D-Dienstleistungen für Unternehmen</h3>
-          <p class="muted">
-            Nutzen Sie unser Know-how – von der Modellierung bis zum fertigen Print. Wir unterstützen Sie flexibel bei kleinen und großen Projekten.
-          </p>
-          <ul>
-            <li>3D-Modellierung & CAD-Service</li>
-            <li>Prototypen & Kleinserien-Fertigung</li>
-            <li>Beratung & Optimierung für Ihren 3D-Druck</li>
-          </ul>
-        </div>
-      </div>
-      <div class="cta" style="margin-top:20px;">
-        <a class="btn btn-primary" href="#kontakt">Jetzt unverbindlich anfragen</a>
-      </div>
     </div>
   </section>
 
@@ -144,46 +108,11 @@
     </div>
   </section>
 
-  <section>
-    <div class="wrap grid grid-2">
-      <div class="card">
-        <h2>Warum S’INN3D?</h2>
-        <p class="muted">Beratung statt Bauchladen. Wir kombinieren technisches Know-how mit nachhaltigem Denken und regionaler Zusammenarbeit.</p>
-        <div class="cta">
-          <span class="badge">Nachhaltig</span>
-          <span class="badge">Regional</span>
-          <span class="badge">Praxisnah</span>
-        </div>
-      </div>
-      <div class="card">
-        <h2>Ablauf</h2>
-        <ol class="process">
-          <li><b>1. Kurzbriefing:</b> Ziele, Use-Case, Budgetrahmen.</li>
-          <li><b>2. Entwurf/Proof:</b> Skizzen, Low-Fi-Modelle, Materialempfehlung.</li>
-          <li><b>3. Feinschliff:</b> Konstruktion, Datenübergabe, Schulung.</li>
-          <li><b>4. Optional:</b> Vor-Ort-Einschulung & Support.</li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
-  <section id="referenzen">
-    <div class="wrap">
-      <h2>Referenzen</h2>
-      <div class="grid grid-3">
-        <div class="card"><h3>Projekt A</h3><p class="muted">Kurzbeschreibung – Platzhalterbild austauschen.</p></div>
-        <div class="card"><h3>Projekt B</h3><p class="muted">Kurzbeschreibung – Platzhalterbild austauschen.</p></div>
-        <div class="card"><h3>Projekt C</h3><p class="muted">Kurzbeschreibung – Platzhalterbild austauschen.</p></div>
-      </div>
-    </div>
-  </section>
-
   <section id="kontakt">
     <div class="wrap grid grid-2">
       <div class="card">
         <h2>Kontakt</h2>
         <p class="muted">Schnellster Weg: Formular ausfüllen – wir melden uns innerhalb von 24 h.</p>
-        <!-- Netlify Forms -->
         <form name="kontakt" method="POST" data-netlify="true">
           <input type="hidden" name="form-name" value="kontakt">
           <label>Firma<input name="firma" required></label>
@@ -198,7 +127,6 @@
         <p><b>E-Mail:</b> <a href="mailto:office@sinn-3d.at">office@sinn-3d.at</a><br>
            <b>WhatsApp:</b> <a href="https://wa.me/436765890068" target="_blank" rel="noopener">+43 676 5890068</a><br>
            <b>Standort:</b> Innviertel, OÖ</p>
-        <p class="muted">Impressum & Datenschutz folgen nach Domain-Live-Schaltung.</p>
       </div>
     </div>
   </section>
@@ -208,57 +136,39 @@
   <div class="wrap grid grid-2">
     <div>© <span id="y"></span> S’INN3D – Beratung & 3D-Design</div>
     <div style="text-align:right">
-      <a href="#impressum" class="muted">Impressum</a> ·
-      <a href="#datenschutz" class="muted">Datenschutz</a>
+      <a href="#rechtliches" class="muted">Impressum / Datenschutz</a>
     </div>
   </div>
 </footer>
-  
-  <!-- Impressum -->
+
+<!-- Aufklappbarer Rechtsteil -->
 <section id="rechtliches" class="legal-section">
   <div class="wrap">
-    <h2 style="cursor:pointer" onclick="toggleRechtliches('impressum')">📄 Impressum anzeigen</h2>
-    <div id="impressum" style="display:none">
-    <h2>Impressum</h2>
-    <p><strong>S’INN3D</strong><br>
-    Jan Feichtenschlager<br>
-    Edt 4, 4782 St. Florian am Inn<br>
-    Österreich</p>
+    <h2 class="toggle-title" onclick="toggleRechtliches('impressum')">📄 Impressum anzeigen</h2>
+    <div id="impressum" class="toggle-content">
+      <p><strong>S’INN3D</strong><br>Jan Feichtenschlager<br>Edt 4, 4782 St. Florian am Inn<br>Österreich</p>
+      <p><b>Kontakt:</b> <a href="mailto:office@sinn-3d.at">office@sinn-3d.at</a></p>
+      <p><b>Unternehmensform:</b> Einzelunternehmen / in Gründung<br>Aufsichtsbehörde: Bezirkshauptmannschaft Schärding<br>Mitglied der Wirtschaftskammer Oberösterreich</p>
+      <p><b>Haftungsausschluss:</b> Alle Inhalte dieser Website wurden sorgfältig geprüft und nach bestem Wissen erstellt. Für Richtigkeit und Vollständigkeit wird keine Haftung übernommen.</p>
+    </div>
 
-    <p><strong>Kontakt:</strong><br>
-    E-Mail: <a href="mailto:office@sinn-3d.at">office@sinn-3d.at</a><br>
-    Website: <a href="https://www.sinn-3d.at">www.sinn-3d.at</a></p>
-
-    <p><strong>Unternehmensform:</strong> Einzelunternehmen / in Gründung<br>
-    Aufsichtsbehörde: Bezirkshauptmannschaft Schärding<br>
-    Mitglied der Wirtschaftskammer Oberösterreich</p>
-
-    <p><strong>Haftungsausschluss:</strong><br>
-    Alle Inhalte dieser Website wurden sorgfältig geprüft und nach bestem Wissen erstellt. Für die Aktualität, Vollständigkeit und Richtigkeit wird keine Haftung übernommen. Links zu externen Websites liegen außerhalb unseres Verantwortungsbereichs.</p>
-
-    <p><strong>Urheberrecht:</strong><br>
-    Texte, Bilder und Designs sind urheberrechtlich geschützt. Verwendung nur mit ausdrücklicher Zustimmung.</p>
+    <h2 class="toggle-title" onclick="toggleRechtliches('datenschutz')">🔐 Datenschutz anzeigen</h2>
+    <div id="datenschutz" class="toggle-content">
+      <p>Der Schutz Ihrer persönlichen Daten ist uns ein Anliegen. Wir verarbeiten Ihre Daten gemäß DSGVO & TKG 2003.</p>
+      <p><b>Kontaktformular:</b> Daten werden nur zur Bearbeitung Ihrer Anfrage gespeichert, nicht weitergegeben.</p>
+      <p><b>Ihre Rechte:</b> Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit & Widerspruch.</p>
+      <p>Datenschutzbehörde Österreich – <a href="https://www.dsb.gv.at" target="_blank" rel="noopener">www.dsb.gv.at</a></p>
+    </div>
   </div>
 </section>
 
-<!-- Datenschutz -->
-<section id="datenschutz" class="legal-section" style="background:#f9fafb">
-  <div class="wrap">
-    <h2>Datenschutzerklärung</h2>
-    <p>Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre Daten ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2003). Nachfolgend informieren wir Sie über die wichtigsten Aspekte der Datenverarbeitung auf unserer Website.</p>
-
-    <h3>Kontaktformular</h3>
-    <p>Wenn Sie das Formular auf unserer Website ausfüllen, werden Ihre Angaben zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
-
-    <h3>Ihre Rechte</h3>
-    <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerruf und Widerspruch. Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt, können Sie sich bei der Datenschutzbehörde beschweren.</p>
-
-    <p>Datenschutzbehörde Österreich<br>
-    Barichgasse 40-42, 1030 Wien<br>
-    <a href="https://www.dsb.gv.at" target="_blank" rel="noopener">www.dsb.gv.at</a></p>
-  </div>
-</section>
-
-<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+<script>
+function toggleRechtliches(id){
+  const el = document.getElementById(id);
+  el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+}
+document.getElementById('y').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
+
