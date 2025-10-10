@@ -52,7 +52,10 @@
     .legal-section{background:#fff;border-top:2px solid #e5e7eb;padding:40px 20px}
     .toggle-title{cursor:pointer;font-weight:700;color:var(--brand);margin-top:20px}
     .toggle-content{display:none;margin-top:10px;color:var(--text)}
-    /* Mobile Optimierung */
+
+    /* ===== Mobile Optimierung ===== */
+    main{padding-top:72px;}
+    @media (max-width:768px){main{padding-top:96px;}}
     @media (max-width:768px){
       .wrap{padding:0 16px;}
       .hero{padding:56px 0 20px;text-align:left}
@@ -64,33 +67,61 @@
       .card{padding:16px;}
       input,textarea{font-size:16px;}
     }
-    /* ===== Mobile-Fixes v2 ===== */
-    main{padding-top:72px;}
-    @media (max-width:768px){main{padding-top:96px;}}
-    .nav .cta{gap:8px;}
-    .nav .cta .btn{
-      flex:0 0 auto;
-      padding:8px 12px;
-      font-size:15px;
-      border-radius:12px;
-    }
+
+    /* ===== Header & Navi Verbesserungen ===== */
     @media (max-width:768px){
-      .hero{padding:56px 0 20px;}
-      .hero h1{font-size:clamp(22px,7vw,32px);line-height:1.18;margin-bottom:12px;}
-      .hero p{font-size:16px;margin-bottom:16px;}
-    }
-    @media (max-width:768px){
-      .cta:not(.nav .cta) .btn{
-        flex:1 1 100%;
+      /* Brand mittig & kräftiger */
+      .logo{
+        width:100%;
+        justify-content:center;
+        font-weight:800;
+        letter-spacing:.03em;
+        font-size:18px;
+        padding:6px 0;
+      }
+      .logo img{height:28px;margin-right:6px}
+
+      /* Navi mittig und kompakt */
+      .nav{justify-content:center;height:auto;padding-bottom:6px}
+      .nav .cta{
+        width:100%;
+        display:flex;
+        justify-content:center;
+        gap:12px;
+        margin-top:6px;
+      }
+
+      /* Buttons gleich breit */
+      .nav .cta .btn{
+        flex:0 0 46%;
         text-align:center;
-        padding:12px 14px;
+        padding:10px 12px;
+        border-radius:14px;
         font-size:16px;
       }
     }
-    @media (max-width:768px){
-      .promo-section{margin:20px 0;padding:18px 14px;border-radius:14px;}
-      .headline-span{padding:10px 12px;font-size:clamp(18px,6vw,22px);line-height:1.25;}
+
+    /* Wenn sehr schmal, Buttons untereinander */
+    @media (max-width:360px){
+      .nav .cta .btn{flex:1 1 100%}
     }
+
+    /* Hero-Buttons weiterhin breit */
+    @media (max-width:768px){
+      .cta:not(.nav .cta){
+        justify-content:center;
+      }
+      .cta:not(.nav .cta) .btn{
+        flex:1 1 100%;
+        max-width:520px;
+      }
+    }
+
+    /* Promo-Box zentrierter */
+    @media (max-width:768px){
+      .promo-section .wrap{max-width:560px}
+    }
+
     section{scroll-margin-top:100px;}
   </style>
 </head>
@@ -236,4 +267,5 @@ document.getElementById('y').textContent=new Date().getFullYear();
 </script>
 </body>
 </html>
+
 
