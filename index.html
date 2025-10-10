@@ -12,15 +12,15 @@
     }
     *{box-sizing:border-box}
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-    header{position:sticky;top:0;background:rgba(255,255,255,.8);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid #e5e7eb;z-index:10}
+    header{position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid #e5e7eb;z-index:10}
     .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
-    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px;flex-wrap:wrap}
     .logo{display:flex;gap:10px;align-items:center;font-weight:700}
     .logo img{height:32px}
-    .btn{display:inline-block;padding:10px 16px;border-radius:12px;text-decoration:none;font-weight:600}
+    .btn{display:inline-block;padding:10px 16px;border-radius:12px;text-decoration:none;font-weight:600;cursor:pointer}
     .btn-primary{background:linear-gradient(90deg,var(--brand),var(--brand2));color:#fff}
     .btn-ghost{border:1px solid #d1d5db;color:var(--text);background:#fff}
-    .hero{padding:80px 0 40px}
+    .hero{padding:80px 0 40px;text-align:left}
     .hero h1{font-size:clamp(28px,6vw,44px);line-height:1.15;margin:0 0 16px}
     .hero p{max-width:720px;color:var(--muted);margin:0 0 24px}
     .promo-section{background:#fffbe8;border:2px solid #ffe066;border-radius:18px;padding:32px 20px;margin:32px 0;}
@@ -31,7 +31,7 @@
     .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
     .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
     @media (max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
-    section{padding:48px 0}
+    section{padding:48px 0;scroll-margin-top:80px;}
     .card{background:var(--card);border:1px solid #e5e7eb;border-radius:16px;padding:20px}
     h2{font-size:28px;margin:0 0 16px}
     h3{margin:0 0 8px}
@@ -44,9 +44,27 @@
     form{display:grid;gap:12px}
     input,textarea{width:100%;padding:12px 14px;border:1px solid #d1d5db;border-radius:12px;background:#fff}
     label{font-weight:600}
+    /* Referenzen */
+    .ref-img{width:100%;height:auto;border-radius:12px;margin-bottom:10px;object-fit:cover;transition:transform .2s ease,box-shadow .2s ease}
+    .ref-img:hover{transform:scale(1.02);box-shadow:0 6px 20px rgba(0,0,0,0.08)}
+    .gallery .card{padding:0;overflow:hidden;border:none}
+    /* Rechtliches */
     .legal-section{background:#fff;border-top:2px solid #e5e7eb;padding:40px 20px}
     .toggle-title{cursor:pointer;font-weight:700;color:var(--brand);margin-top:20px}
     .toggle-content{display:none;margin-top:10px;color:var(--text)}
+    /* Mobile Optimierung */
+    @media (max-width:768px){
+      .wrap{padding:0 16px;}
+      .hero{padding:56px 0 20px;text-align:left}
+      .hero h1{font-size:clamp(22px,8vw,32px);line-height:1.2;margin-bottom:12px;}
+      .hero p{font-size:16px;margin-bottom:16px;}
+      .cta .btn{flex:1 1 100%;text-align:center;padding:12px 14px;font-size:16px}
+      .promo-section{margin:20px 0;padding:20px 16px;border-radius:14px;}
+      .headline-span{display:block;padding:10px 14px;border-radius:10px;font-size:clamp(18px,6vw,24px);line-height:1.25;}
+      .grid-3,.grid-2{grid-template-columns:1fr;}
+      .card{padding:16px;}
+      input,textarea{font-size:16px;}
+    }
   </style>
 </head>
 <body>
@@ -68,9 +86,8 @@
   <section class="hero">
     <div class="wrap">
       <span class="kicker">Beratung für Unternehmen</span>
-      <h1>Greifbares 3D-Design. <br>Effiziente Prozesse. Nachhaltige Lösungen.</h1>
-      <p>Viele Betriebe wissen, dass 3D-Druck Geld spart – aber keiner weiß, wie man richtig startet.<br>
-      Oft steht der Drucker ungenutzt herum oder Projekte kosten mehr als nötig, weil oft das Know-how fehlt.</p>
+      <h1>Greifbares 3D-Design.<br>Effiziente Prozesse.<br>Nachhaltige Lösungen.</h1>
+      <p>Viele Betriebe wissen, dass 3D-Druck Geld spart – aber keiner weiß, wie man richtig startet. Oft steht der Drucker ungenutzt herum oder Projekte kosten mehr als nötig, weil das Know-how fehlt.</p>
       <div class="cta">
         <a class="btn btn-primary" href="#kontakt">Termin anfragen</a>
         <a class="btn btn-ghost" href="https://wa.me/436765890068" target="_blank" rel="noopener">WhatsApp</a>
@@ -80,11 +97,7 @@
 
   <section class="promo-section">
     <div class="wrap">
-      <h2>
-        <span class="headline-span">
-          20&nbsp;% Rabatt für die ersten 5 Unternehmen auf alle Erst-Schulungen – nur bis 10. November 2025!
-        </span>
-      </h2>
+      <h2><span class="headline-span">20 % Rabatt für die ersten 5 Unternehmen auf alle Erst-Schulungen – nur bis 10. November 2025!</span></h2>
     </div>
   </section>
 
@@ -94,7 +107,7 @@
       <div class="grid grid-3">
         <div class="card">
           <h3>3D-Druck Beratung</h3>
-          <p class="muted">Unabhängige Beratung rund um Additive Fertigung, Materialwahl, Druckverfahren und Prozessoptimierung – für Einsteiger und Unternehmen.</p>
+          <p class="muted">Unabhängige Beratung rund um additive Fertigung, Materialwahl, Druckverfahren und Prozessoptimierung – für Einsteiger und Unternehmen.</p>
         </div>
         <div class="card">
           <h3>CAD-Basis Schulung</h3>
@@ -102,7 +115,31 @@
         </div>
         <div class="card">
           <h3>3D-Druck-Service für Kleinserien</h3>
-          <p class="muted">Fertigung von Prototypen und Kleinserien – schnell, flexibel und maßgeschneidert. Beratung zu Bauteiloptimierung inklusive.</p>
+          <p class="muted">Fertigung von Prototypen und Kleinserien – schnell, flexibel und maßgeschneidert. Beratung zur Bauteiloptimierung inklusive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="referenzen">
+    <div class="wrap">
+      <h2>Referenzen</h2>
+      <p class="muted">Ein Einblick in aktuelle Projekte, Schulungen und Designs:</p>
+      <div class="grid grid-3 gallery">
+        <div class="card">
+          <img src="assets/referenz1.jpg" alt="3D-Schulung in Andorf" class="ref-img">
+          <h3>Schulung & Beratung</h3>
+          <p class="muted">Praxisnahe Einschulung im Umgang mit FDM-3D-Druckern für KMUs in Oberösterreich.</p>
+        </div>
+        <div class="card">
+          <img src="assets/referenz2.jpg" alt="3D-Logo Design" class="ref-img">
+          <h3>3D-Logo Design</h3>
+          <p class="muted">Gestaltung eines nachhaltigen, haptischen Firmenlogos aus Recycling-Filament.</p>
+        </div>
+        <div class="card">
+          <img src="assets/referenz3.jpg" alt="Kleinserienfertigung" class="ref-img">
+          <h3>Kleinserien-Fertigung</h3>
+          <p class="muted">Fertigung von 3D-gedruckten Bauteilen als kosteneffiziente Lösung für regionale Betriebe.</p>
         </div>
       </div>
     </div>
@@ -141,7 +178,6 @@
   </div>
 </footer>
 
-<!-- Aufklappbarer Rechtsteil -->
 <section id="rechtliches" class="legal-section">
   <div class="wrap">
     <h2 class="toggle-title" onclick="toggleRechtliches('impressum')">📄 Impressum anzeigen</h2>
@@ -149,8 +185,8 @@
       <p><strong>S’INN3D</strong><br>Jan Feichtenschlager<br>Edt 4, 4782 St. Florian am Inn<br>Österreich</p>
       <p><b>Kontakt:</b> <a href="mailto:office@sinn-3d.at">office@sinn-3d.at</a></p>
       <p><b>Unternehmensform:</b> Einzelunternehmen (nicht im Firmenbuch eingetragen)<br>
-Aufsichtsbehörde: Bezirkshauptmannschaft Schärding<br>
-Mitglied der Wirtschaftskammer Oberösterreich</p>
+         Aufsichtsbehörde: Bezirkshauptmannschaft Schärding<br>
+         Mitglied der Wirtschaftskammer Oberösterreich</p>
       <p><b>Haftungsausschluss:</b> Alle Inhalte dieser Website wurden sorgfältig geprüft und nach bestem Wissen erstellt. Für Richtigkeit und Vollständigkeit wird keine Haftung übernommen.</p>
     </div>
 
@@ -166,11 +202,10 @@ Mitglied der Wirtschaftskammer Oberösterreich</p>
 
 <script>
 function toggleRechtliches(id){
-  const el = document.getElementById(id);
-  el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+  const el=document.getElementById(id);
+  el.style.display=(el.style.display==='none'||el.style.display==='')?'block':'none';
 }
-document.getElementById('y').textContent = new Date().getFullYear();
+document.getElementById('y').textContent=new Date().getFullYear();
 </script>
 </body>
 </html>
-
