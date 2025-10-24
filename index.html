@@ -77,77 +77,82 @@
     .ref-img{width:100%;height:auto;border-radius:12px;margin-bottom:10px;object-fit:cover;transition:transform .2s ease,box-shadow .2s ease}
     .ref-img:hover{transform:scale(1.02);box-shadow:0 6px 20px rgba(0,0,0,0.08)}
 
-   /* ===== Kontaktformular – modernes, ruhiges Layout ===== */
-#kontakt .card form{
-  display:grid;
-  grid-template-columns: 1fr;          /* mobil: 1 Spalte */
-  gap:16px;
-  align-items:start;
+ /* ===== Kontaktformular – modernes, ruhiges Layout ===== */
+.kontakt-form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;  /* mobile: 1 Spalte */
+  gap: 16px;
+  align-items: start;
 }
 
-#kontakt .card form .form-field{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
+.kontakt-form label {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text);
 }
 
-#kontakt .card form .label{
-  font-weight:700;
-  font-size:14px;
-  color:var(--text);
+.kontakt-form input,
+.kontakt-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  background: #fff;
+  font: inherit;
+  line-height: 1.45;
+  box-shadow: 0 1px 0 rgba(0,0,0,.02);
+  transition: border-color .15s ease, box-shadow .15s ease;
+  box-sizing: border-box;
 }
 
-#kontakt .card form input,
-#kontakt .card form textarea{
-  width:100%;
-  padding:12px 14px;
-  border:1px solid #d1d5db;
-  border-radius:12px;
-  background:#fff;
-  font:inherit;
-  line-height:1.45;
-  box-shadow:0 1px 0 rgba(0,0,0,.02);
-  transition:border-color .15s ease, box-shadow .15s ease;
+.kontakt-form input::placeholder,
+.kontakt-form textarea::placeholder {
+  color: #9ca3af;
 }
 
-#kontakt .card form input::placeholder,
-#kontakt .card form textarea::placeholder{
-  color:#9ca3af; /* dezente Platzhalter */
+.kontakt-form input:focus,
+.kontakt-form textarea:focus {
+  outline: none;
+  border-color: var(--brand2);
+  box-shadow: 0 0 0 4px rgba(20,184,166,.15);
 }
 
-#kontakt .card form input:focus,
-#kontakt .card form textarea:focus{
-  outline:none;
-  border-color:var(--brand2);
-  box-shadow:0 0 0 4px rgba(20,184,166,.15);
+.kontakt-form textarea {
+  min-height: 150px;
+  resize: vertical;
 }
 
-#kontakt .card form textarea{
-  min-height:150px;
-  resize:vertical;
+.checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  gap: .55rem;
 }
 
-#kontakt .card form .actions{
-  margin-top:4px;
+.checkbox-container input[type="checkbox"] {
+  transform: scale(1.1);
+  margin-top: .2rem;
 }
 
-#kontakt .card form .actions .btn{
-  width:100%;
-  padding:12px 18px;
-  border-radius:12px;
+/* Button inherits your .btn styles; ensure full-width on mobile */
+.kontakt-form .btn {
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 12px;
 }
 
-/* Desktop: 2 Spalten, Nachricht & Button über volle Breite */
-@media (min-width: 900px){
-  #kontakt .card form{
+/* Desktop: 2 Spalten, Nachricht & Button volle Breite */
+@media (min-width: 900px) {
+  .kontakt-form {
     grid-template-columns: 1fr 1fr;
-    column-gap:24px;
-    row-gap:16px;
+    column-gap: 24px;
+    row-gap: 16px;
   }
-  #kontakt .card form .form-field--full{ grid-column:1 / -1; }
-  #kontakt .card form .actions{ grid-column:1 / -1; }
-  #kontakt .card form .actions .btn{ width:auto; }
+  .kontakt-form textarea,
+  .kontakt-form .checkbox-container,
+  .kontakt-form .btn { grid-column: 1 / -1; }
 }
+
 
     /* ===== FOOTER & LEGAL ===== */
     footer{padding:32px 0;background:#fff;border-top:1px solid #e5e7eb}
@@ -226,95 +231,84 @@
     </div>
   </section>
 
-  <!-- REFERENZEN (Galerie) -->
-  <section id="Aktuelle Projekte">
-    <div class="wrap">
-      <h2>Aktuelle Projekte</h2>
-      <p class="muted">Ein Einblick in aktuelle Projekte, Schulungen und Designs:</p>
-      <div class="grid grid-3 gallery">
-        <div class="card">
-          <img src="assets/referenz1.jpg" alt="3D-Schulung" class="ref-img" loading="lazy" decoding="async">
-          <div style="padding:16px 16px 20px">
-            <h3>3D Design-Beratung</h3>
-            <p class="muted">Praxisnahe Einschulung im Designen von 3D Objekten mit CAD-Programmen für effizentes arbeiten mit FDM-3D-Druckern für KMUs & Leute die hohes Interesse für diesen Bereich in Oberösterreich bzw. Umgebung haben.</p>
-          </div>
+ <!-- AKTUELLE PROJEKTE -->
+<section id="aktuelle-projekte">
+  <div class="wrap">
+    <h2>Aktuelle Projekte</h2>
+    <p class="muted">Ein Einblick in aktuelle Projekte, Schulungen und Designs:</p>
+    <div class="grid grid-3 gallery">
+      <div class="card">
+        <img src="assets/referenz1.jpg" alt="3D Design-Beratung" class="ref-img" loading="lazy">
+        <div style="padding:16px 16px 20px">
+          <h3>3D Design-Beratung</h3>
+          <p class="muted">Praxisnahe Einschulung im Designen von 3D-Objekten mit CAD-Programmen für effizientes Arbeiten mit FDM-3D-Druckern.</p>
         </div>
-        <div class="card">
-          <img src="assets/referenz2.jpg" alt="Produkt-Design" class="ref-img" loading="lazy" decoding="async">
-          <div style="padding:16px 16px 20px">
-            <h3>3D-Logo Design für Schlüsselanhänger mit NFC-Chip Integration</h3>
-            <p class="muted">Gestaltung eines Firmenlogos & 3D gedruckten Schlüsselanhänger mit NFC Funktion.</p>
-          </div>
+      </div>
+      <div class="card">
+        <img src="assets/referenz2.jpg" alt="3D-Logo Design" class="ref-img" loading="lazy">
+        <div style="padding:16px 16px 20px">
+          <h3>3D-Logo Design mit NFC-Chip-Integration</h3>
+          <p class="muted">Gestaltung eines Firmenlogos & 3D-gedruckten Schlüsselanhängers mit NFC-Funktion.</p>
         </div>
-        <div class="card">
-          <img src="assets/referenz3.jpg" alt="Kleinserienfertigung" class="ref-img" loading="lazy" decoding="async">
-          <div style="padding:16px 16px 20px">
-            <h3>Kleinserien-Fertigung</h3>
-            <p class="muted">3D-gedruckte Designs als effiziente Lösung für regionale Betriebe.</p>
-          </div>
+      </div>
+      <div class="card">
+        <img src="assets/referenz3.jpg" alt="Kleinserien-Fertigung" class="ref-img" loading="lazy">
+        <div style="padding:16px 16px 20px">
+          <h3>Kleinserien-Fertigung</h3>
+          <p class="muted">3D-gedruckte Designs als effiziente Lösung für regionale Betriebe.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- KONTAKT -->
-  <section id="Kontakt">
-    <div class="wrap grid grid-2">
-      <div class="card">
-        <h2>Kontakt</h2>
-        <p class="muted">Schnellster Weg: Formular ausfüllen – wir melden uns innerhalb von 24 h.</p>
+<section id="kontakt"> <!-- lowercase id so anchors & CSS match -->
+  <div class="wrap grid grid-2">
+    <div class="card">
+      <h2>Kontakt</h2>
+      <p class="muted">Schnellster Weg: Formular ausfüllen – wir melden uns innerhalb von 24 h.</p>
 
-        <!-- Netlify Forms -->
-      <form action="https://formsubmit.co/office@sinn-3d.at" method="POST">
-  <!-- Einstellungen -->
-  <input type="hidden" name="_subject" value="Neue Anfrage über sinn-3d.at">
-  <input type="hidden" name="_template" value="table">
-  <!-- Nach Absenden auf Danke-Seite weiterleiten (URL kannst du anpassen) -->
-  <input type="hidden" name="_next" value="https://www.sinn-3d.at/danke.html">
-  <!-- Captcha von FormSubmit deaktivieren (du hast statische Seite) -->
-  <input type="hidden" name="_captcha" value="false">
-  <!-- Honeypot gegen Spam (nicht löschen!) -->
-  <input type="text" name="_honey" style="display:none">
+      <form action="https://formsubmit.co/office@sinn-3d.at" method="POST" class="kontakt-form">
+        <!-- Formsubmit / Settings -->
+        <input type="hidden" name="_subject"  value="Neue Anfrage über sinn-3d.at">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next"     value="https://www.sinn-3d.at/danke.html">
+        <input type="hidden" name="_captcha"  value="false">
+        <input type="text"   name="_honey"    style="display:none">
 
-  <!-- Felder fürs Formular -->
-  <label>
-    Name*<br>
-    <input type="text" name="Name" required>
- <label for="name">Name*</label>
-<input id="name" type="text" name="Name" required>
+        <label for="name">Name*</label>
+        <input id="name" type="text" name="Name" required>
 
-<label for="email">E-Mail*</label>
-<input id="email" type="email" name="email" required>
+        <label for="email">E-Mail*</label>
+        <input id="email" type="email" name="email" required>
 
-<label for="subject">Betreff</label>
-<input id="subject" type="text" name="Betreff">
+        <label for="subject">Betreff</label>
+        <input id="subject" type="text" name="Betreff">
 
-<label for="message">Nachricht*</label>
-<textarea id="message" name="Nachricht" rows="6" required></textarea>
+        <label for="message">Nachricht*</label>
+        <textarea id="message" name="Nachricht" rows="6" required></textarea>
 
-<div style="display:flex;align-items:flex-start;gap:.5rem;margin-top:.75rem">
-</div>
+        <div class="checkbox-container">
+          <input type="checkbox" id="consent" name="Einwilligung" required>
+          <label for="consent">Ich stimme zu, dass meine Angaben zur Kontaktaufnahme gespeichert werden.</label>
+        </div>
 
-
-  <!-- DSGVO-Zustimmung (optional/empfohlen) -->
-  <label>
-    <input type="checkbox" name="Einwilligung" required>
-    Ich stimme zu, dass meine Angaben zur Kontaktaufnahme gespeichert werden.
-  </label><br><br>
-
-  <button type="submit">Nachricht senden</button>
-</form>
-
-      </div>
-
-      <div class="card">
-        <h2>Direkt</h2>
-        <p><b>E-Mail:</b> <a href="mailto:office@sinn-3d.at">office@sinn-3d.at</a><br>
-           <b>WhatsApp:</b> <a href="https://wa.me/436765890068" target="_blank" rel="noopener">+43 676 5890068</a><br>
-           <b>Standort:</b> Innviertel, OÖ</p>
-      </div>
+        <button type="submit" class="btn btn-primary">Nachricht senden</button>
+      </form>
     </div>
-  </section>
+
+    <div class="card">
+      <h2>Direkt</h2>
+      <p>
+        <b>E-Mail:</b> <a href="mailto:office@sinn-3d.at">office@sinn-3d.at</a><br>
+        <b>WhatsApp:</b> <a href="https://wa.me/436765890068" target="_blank" rel="noopener">+43 676 5890068</a><br>
+        <b>Standort:</b> Innviertel, OÖ
+      </p>
+    </div>
+  </div>
+</section>
 </main>
 
 <!-- FOOTER -->
