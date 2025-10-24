@@ -7,7 +7,13 @@
   <title>S’INN3D – 3D-Design & CAD-Beratung für Firmen</title>
   <meta name="description" content="S’INN3D: Beratung für Unternehmen – 3D-Logo-Design, CAD-Konstruktion, 3D-Druck-Beratung, CAD-Schulung und 3D-Druck-Service für Kleinserien. Regional, nachhaltig, präzise.">
 
+  <!-- Social Preview / Favicon -->
   <link rel="icon" href="assets/logo.png" type="image/png">
+  <meta property="og:title" content="S’INN3D – 3D-Design & CAD-Beratung für Firmen">
+  <meta property="og:description" content="3D-Druck-Beratung, CAD-Schulung und Kleinserien aus dem Innviertel.">
+  <meta property="og:image" content="https://sinn-3d.at/assets/logo.png">
+  <meta property="og:url" content="https://sinn-3d.at/">
+  <meta name="twitter:card" content="summary_large_image">
 
   <style>
     :root{
@@ -17,81 +23,164 @@
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
 
-    /* ===== HEADER ===== */
+    /* ===== HEADER & NAV ===== */
     header{
-      position:sticky; top:0; z-index:20;
-      background:rgba(255,255,255,.96);
+      position:sticky; top:0; z-index:10;
+      background:rgba(255,255,255,.95);
       backdrop-filter:blur(8px);
       border-bottom:1px solid #e5e7eb;
     }
     .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
     .nav{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
 
-    .logo{display:flex;justify-content:center;align-items:center;padding:40px 0 12px;}
-    .logo img{height:320px;max-width:90vw;width:auto;object-fit:contain;display:block;filter:drop-shadow(0 6px 12px rgba(0,0,0,.15));pointer-events:none;}
+    /* Logo: groß, zentriert, ohne Schriftzug */
+    .logo{
+      display:flex;justify-content:center;align-items:center;
+      padding:40px 0 12px;
+    }
+    .logo img{
+      height:380px;          /* Desktop-Größe */
+      max-width:90vw;
+      width:auto;
+      object-fit:contain;
+      display:block;
+      filter:drop-shadow(0 6px 12px rgba(0,0,0,.15));
+    }
 
     .cta{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:4px 0 10px}
     .btn{display:inline-block;padding:10px 16px;border-radius:12px;text-decoration:none;font-weight:600;text-align:center;cursor:pointer}
     .btn-primary{background:linear-gradient(90deg,var(--brand),var(--brand2));color:#fff}
     .btn-ghost{border:1px solid #d1d5db;color:var(--text);background:#fff}
 
-    html { scroll-behavior: smooth; }
-    section { scroll-margin-top: 160px; } /* verhindert verdecken durch Sticky Header */
+    /* ===== HERO ===== */
+    .hero{padding:8px 0 16px;text-align:left}
+    .hero h1{font-size:clamp(28px,5.5vw,42px);line-height:1.1;margin:0 0 10px}
+    .hero p{max-width:720px;color:var(--muted);margin:0 0 16px;font-size:16px}
 
-    /* ===== SECTIONS ===== */
-    section{padding:32px 0}
+    /* ===== PROMO ===== */
+    .promo-section{background:#fffbe8;border:2px solid #ffe066;border-radius:16px;padding:20px 14px;margin:16px 0;text-align:center}
+    .promo-section h2{font-size:clamp(18px,5vw,24px);color:#16a34a;margin:0}
+
+    /* ===== SECTIONS / GRID / CARDS ===== */
+    section{padding:32px 0;scroll-margin-top:70px}
     .grid{display:grid;gap:20px}
     .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
     .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
     @media (max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
     .card{background:var(--card);border:1px solid #e5e7eb;border-radius:14px;padding:20px}
     h2{font-size:28px;margin:0 0 16px}
+    h3{margin:0 0 8px}
     .muted{color:var(--muted)}
 
-    /* ===== KONTAKTFORM ===== */
-    .kontakt-form {
-      width:100%;
-      display:grid;
-      grid-template-columns:1fr;
-      gap:16px;
-      align-items:start;
-    }
-    .kontakt-form label{font-weight:700;font-size:14px;color:var(--text);}
-    .kontakt-form input,
-    .kontakt-form textarea{
-      width:100%;padding:12px 14px;border:1px solid #d1d5db;
-      border-radius:12px;background:#fff;font:inherit;line-height:1.45;
-      box-shadow:0 1px 0 rgba(0,0,0,.02);
-      transition:border-color .15s ease, box-shadow .15s ease;
-    }
-    .kontakt-form input:focus,
-    .kontakt-form textarea:focus{
-      outline:none;border-color:var(--brand2);
-      box-shadow:0 0 0 4px rgba(20,184,166,.15);
-    }
-    .kontakt-form textarea{min-height:150px;resize:vertical;}
+    /* ===== REFERENZEN (Galerie) ===== */
+    .gallery .card{padding:0;overflow:hidden;border:none}
+    .ref-img{width:100%;height:auto;border-radius:12px;margin-bottom:10px;object-fit:cover;transition:transform .2s ease,box-shadow .2s ease}
+    .ref-img:hover{transform:scale(1.02);box-shadow:0 6px 20px rgba(0,0,0,0.08)}
 
-    .checkbox-container{display:flex;align-items:flex-start;gap:.55rem}
-    .checkbox-container input{transform:scale(1.1);margin-top:.2rem;}
+ /* ===== Kontaktformular – modernes, ruhiges Layout ===== */
+.kontakt-form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;  /* mobile: 1 Spalte */
+  gap: 16px;
+  align-items: start;
+}
 
-    .kontakt-form .btn{width:100%;padding:12px 18px;border-radius:12px;}
-    @media(min-width:900px){
-      .kontakt-form{grid-template-columns:1fr 1fr;column-gap:24px;row-gap:16px;}
-      .kontakt-form textarea,
-      .kontakt-form .checkbox-container,
-      .kontakt-form .btn{grid-column:1 / -1;}
+.kontakt-form label {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.kontakt-form input,
+.kontakt-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  background: #fff;
+  font: inherit;
+  line-height: 1.45;
+  box-shadow: 0 1px 0 rgba(0,0,0,.02);
+  transition: border-color .15s ease, box-shadow .15s ease;
+  box-sizing: border-box;
+}
+
+.kontakt-form input::placeholder,
+.kontakt-form textarea::placeholder {
+  color: #9ca3af;
+}
+
+.kontakt-form input:focus,
+.kontakt-form textarea:focus {
+  outline: none;
+  border-color: var(--brand2);
+  box-shadow: 0 0 0 4px rgba(20,184,166,.15);
+}
+
+.kontakt-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  gap: .55rem;
+}
+
+.checkbox-container input[type="checkbox"] {
+  transform: scale(1.1);
+  margin-top: .2rem;
+}
+
+/* Button inherits your .btn styles; ensure full-width on mobile */
+.kontakt-form .btn {
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 12px;
+}
+
+/* Desktop: 2 Spalten, Nachricht & Button volle Breite */
+@media (min-width: 900px) {
+  .kontakt-form {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+    row-gap: 16px;
+  }
+  .kontakt-form textarea,
+  .kontakt-form .checkbox-container,
+  .kontakt-form .btn { grid-column: 1 / -1; }
+}
+
+
+    /* ===== FOOTER & LEGAL ===== */
+    footer{padding:32px 0;background:#fff;border-top:1px solid #e5e7eb}
+    .legal-section{background:#fff;border-top:2px solid #e5e7eb;padding:40px 20px}
+    .toggle-title{cursor:pointer;font-weight:700;color:var(--brand);margin-top:20px}
+    .toggle-content{display:none;margin-top:10px;color:var(--text)}
+
+    /* ===== MOBILE TUNING ===== */
+    @media (max-width:1024px){
+      .logo img{height:280px}
     }
-
-    footer{padding:32px 0;background:#fff;border-top:1px solid #e5e7eb;text-align:center}
+    @media (max-width:768px){
+      .logo img{height:200px}
+      .cta .btn{flex:0 0 45%}
+      .hero{padding-top:4px}
+      .hero h1{font-size:clamp(24px,6vw,32px)}
+    }
   </style>
 </head>
-
 <body>
 <header>
   <div class="wrap nav">
+    <!-- Großes, zentriertes Logo (ohne Text) -->
     <div class="logo">
-      <img src="assets/logo.png" alt="S’INN3D Logo" loading="eager">
+      <img src="assets/logo.png" alt="S’INN3D Logo" loading="eager" decoding="async">
     </div>
+
+    <!-- Navigation -->
     <nav class="cta">
       <a class="btn btn-ghost" href="#leistungen">Leistungen</a>
       <a class="btn btn-ghost" href="#aktuelle-projekte">Aktuelle Projekte</a>
@@ -101,111 +190,167 @@
 </header>
 
 <main>
+  <!-- HERO -->
   <section class="hero">
     <div class="wrap">
+      <span style="font-weight:700;color:#16a34a;text-transform:uppercase;letter-spacing:.08em;font-size:12px">Beratung für Unternehmen</span>
       <h1>Greifbares 3D-Design.<br>Effiziente Prozesse.<br>Nachhaltige Lösungen.</h1>
-      <p>Viele Betriebe wissen, dass 3D-Druck Geld spart – aber keiner weiß, wie man richtig startet.</p>
+      <p>Viele Betriebe wissen, dass 3D-Druck Geld spart – aber keiner weiß, wie man richtig startet. Oft steht der Drucker ungenutzt herum oder Projekte kosten mehr als nötig, weil das Know-how fehlt.</p>
       <div class="cta">
         <a class="btn btn-primary" href="#kontakt">Erstgespräch anfragen</a>
-        <a class="btn btn-ghost" href="https://wa.me/436765890068" target="_blank">WhatsApp</a>
+        <a class="btn btn-ghost" href="https://wa.me/436765890068" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </section>
 
+  <!-- PROMO -->
   <section class="promo-section">
     <div class="wrap">
-      <h2>20 % Rabatt für die ersten 5 Unternehmen – nur bis 14. November 2025!</h2>
+      <h2>20 % Rabatt für die ersten 5 Unternehmen auf alle Design-Beratung & Schulungen – nur bis 14. November 2025!</h2>
     </div>
   </section>
 
+  <!-- LEISTUNGEN -->
   <section id="leistungen">
     <div class="wrap">
       <h2>Leistungen</h2>
       <div class="grid grid-3">
-        <div class="card"><h3>3D-Druck Beratung</h3><p class="muted">Unabhängige Beratung rund um additive Fertigung, Materialwahl und Designoptimierung.</p></div>
-        <div class="card"><h3>CAD-Design Basis Schulung</h3><p class="muted">Praxisnahe Einführung in die CAD-Modellierung – speziell für den 3D-Druck.</p></div>
-        <div class="card"><h3>3D-Druck-Designservice für Kleinserien</h3><p class="muted">Fertigung von Prototypen und Kleinserien – schnell, flexibel und maßgeschneidert.</p></div>
+        <div class="card">
+          <h3>3D-Druck Beratung</h3>
+          <p class="muted">Unabhängige Beratung rund um additive Fertigung, Materialwahl, Druckverfahren und Designoptimierung – für Einsteiger und Unternehmen.</p>
+        </div>
+        <div class="card">
+          <h3>CAD-Design Basis Schulung</h3>
+          <p class="muted">Praxisnahe Einführung in die CAD-Modellierung – speziell für den 3D-Druck. Ideal für Teams & Leute, die eigene Projekte umsetzen wollen.</p>
+        </div>
+        <div class="card">
+          <h3>3D-Druck-Designservice für Kleinserien</h3>
+          <p class="muted">Fertigung von Prototypen und Kleinserien – schnell, flexibel und maßgeschneidert. Beratung zur Bauteiloptimierung inklusive.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="aktuelle-projekte">
-    <div class="wrap">
-      <h2>Aktuelle Projekte</h2>
-      <div class="grid grid-3 gallery">
-        <div class="card"><img src="assets/referenz1.jpg" class="ref-img" alt="3D Design-Beratung"><h3>3D Design-Beratung</h3></div>
-        <div class="card"><img src="assets/referenz2.jpg" class="ref-img" alt="3D-Logo Design"><h3>3D-Logo Design mit NFC</h3></div>
-        <div class="card"><img src="assets/referenz3.jpg" class="ref-img" alt="Kleinserien-Fertigung"><h3>Kleinserien-Fertigung</h3></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="kontakt">
-    <div class="wrap grid grid-2">
+ <!-- AKTUELLE PROJEKTE -->
+<section id="aktuelle-projekte">
+  <div class="wrap">
+    <h2>Aktuelle Projekte</h2>
+    <p class="muted">Ein Einblick in aktuelle Projekte, Schulungen und Designs:</p>
+    <div class="grid grid-3 gallery">
       <div class="card">
-        <h2>Kontakt</h2>
-        <p class="muted">Schnellster Weg: Formular ausfüllen – wir melden uns innerhalb von 24 h.</p>
-
-        <form action="https://formsubmit.co/office@sinn-3d.at" method="POST" class="kontakt-form">
-          <input type="hidden" name="_subject" value="Neue Anfrage über sinn-3d.at">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_next" value="https://www.sinn-3d.at/danke.html">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="text" name="_honey" style="display:none">
-
-          <label for="name">Name*</label>
-          <input id="name" type="text" name="Name" required>
-
-          <label for="email">E-Mail*</label>
-          <input id="email" type="email" name="email" required>
-
-          <label for="subject">Betreff</label>
-          <input id="subject" type="text" name="Betreff">
-
-          <label for="message">Nachricht*</label>
-          <textarea id="message" name="Nachricht" rows="6" required></textarea>
-
-          <div class="checkbox-container">
-            <input type="checkbox" id="consent" name="Einwilligung" required>
-            <label for="consent">Ich stimme zu, dass meine Angaben zur Kontaktaufnahme gespeichert werden.</label>
-          </div>
-
-          <button type="submit" class="btn btn-primary">Nachricht senden</button>
-        </form>
+        <img src="assets/referenz1.jpg" alt="3D Design-Beratung" class="ref-img" loading="lazy">
+        <div style="padding:16px 16px 20px">
+          <h3>3D Design-Beratung</h3>
+          <p class="muted">Praxisnahe Einschulung im Designen von 3D-Objekten mit CAD-Programmen für effizientes Arbeiten mit FDM-3D-Druckern.</p>
+        </div>
       </div>
-
       <div class="card">
-        <h2>Direkt</h2>
-        <p><b>E-Mail:</b> <a href="mailto:office@sinn-3d.at">office@sinn-3d.at</a><br>
-        <b>WhatsApp:</b> <a href="https://wa.me/436765890068" target="_blank">+43 676 5890068</a><br>
-        <b>Standort:</b> Innviertel, OÖ</p>
+        <img src="assets/referenz2.jpg" alt="3D-Logo Design" class="ref-img" loading="lazy">
+        <div style="padding:16px 16px 20px">
+          <h3>3D-Logo Design mit NFC-Chip-Integration</h3>
+          <p class="muted">Gestaltung eines Firmenlogos & 3D-gedruckten Schlüsselanhängers mit NFC-Funktion.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="assets/referenz3.jpg" alt="Kleinserien-Fertigung" class="ref-img" loading="lazy">
+        <div style="padding:16px 16px 20px">
+          <h3>Kleinserien-Fertigung</h3>
+          <p class="muted">3D-gedruckte Designs als effiziente Lösung für regionale Betriebe.</p>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+
+  <!-- KONTAKT -->
+<section id="kontakt"> <!-- lowercase id so anchors & CSS match -->
+  <div class="wrap grid grid-2">
+    <div class="card">
+      <h2>Kontakt</h2>
+      <p class="muted">Schnellster Weg: Formular ausfüllen – wir melden uns innerhalb von 24 h.</p>
+
+      <form action="https://formsubmit.co/office@sinn-3d.at" method="POST" class="kontakt-form">
+        <!-- Formsubmit / Settings -->
+        <input type="hidden" name="_subject"  value="Neue Anfrage über sinn-3d.at">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next"     value="https://www.sinn-3d.at/danke.html">
+        <input type="hidden" name="_captcha"  value="false">
+        <input type="text"   name="_honey"    style="display:none">
+
+        <label for="name">Name*</label>
+        <input id="name" type="text" name="Name" required>
+
+        <label for="email">E-Mail*</label>
+        <input id="email" type="email" name="email" required>
+
+        <label for="subject">Betreff</label>
+        <input id="subject" type="text" name="Betreff">
+
+        <label for="message">Nachricht*</label>
+        <textarea id="message" name="Nachricht" rows="6" required></textarea>
+
+        <div class="checkbox-container">
+          <input type="checkbox" id="consent" name="Einwilligung" required>
+          <label for="consent">Ich stimme zu, dass meine Angaben zur Kontaktaufnahme gespeichert werden.</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Nachricht senden</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Direkt</h2>
+      <p>
+        <b>E-Mail:</b> <a href="mailto:office@sinn-3d.at">office@sinn-3d.at</a><br>
+        <b>WhatsApp:</b> <a href="https://wa.me/436765890068" target="_blank" rel="noopener">+43 676 5890068</a><br>
+        <b>Standort:</b> Innviertel, OÖ
+      </p>
+    </div>
+  </div>
+</section>
 </main>
 
+<!-- FOOTER -->
 <footer>
-  <div class="wrap">
-    © <span id="y"></span> S’INN3D – Beratung & 3D-Design · <a href="#rechtliches" style="color:#16a34a;text-decoration:none;">Impressum / Datenschutz</a>
+  <div class="wrap grid grid-2">
+    <div>© <span id="y"></span> S’INN3D – Beratung & 3D-Design</div>
+    <div style="text-align:right">
+      <a href="#rechtliches" class="muted" style="text-decoration:none">Impressum / Datenschutz</a>
+    </div>
   </div>
 </footer>
 
-<script>
-document.getElementById('y').textContent = new Date().getFullYear();
+<!-- RECHTLICHES (aufklappbar) -->
+<section id="rechtliches" class="legal-section">
+  <div class="wrap">
+    <h2 class="toggle-title" onclick="toggleRechtliches('impressum')">📄 Impressum anzeigen</h2>
+    <div id="impressum" class="toggle-content">
+      <p><strong>S’INN3D</strong><br>Jan Feichtenschlager<br>Edt 4, 4782 St. Florian am Inn<br>Österreich</p>
+      <p><b>Kontakt:</b> <a href="mailto:office@sinn-3d.at">office@sinn-3d.at</a></p>
+      <p><b>Unternehmensform:</b> Einzelunternehmen (nicht im Firmenbuch eingetragen)<br>
+         Aufsichtsbehörde: Bezirkshauptmannschaft Schärding<br>
+         Mitglied der Wirtschaftskammer Oberösterreich</p>
+      <p><b>Haftungsausschluss:</b> Alle Inhalte dieser Website wurden sorgfältig geprüft und nach bestem Wissen erstellt. Für Richtigkeit und Vollständigkeit wird keine Haftung übernommen.</p>
+    </div>
 
-/* Sanftes Scrollen mit Offset, damit der Sticky Header nichts verdeckt */
-document.addEventListener('click', function(e){
-  const link = e.target.closest('a[href^="#"]');
-  if(!link) return;
-  const id = link.getAttribute('href').slice(1);
-  const target = document.getElementById(id);
-  if(!target) return;
-  e.preventDefault();
-  const offset = document.querySelector('header').offsetHeight + 10;
-  const top = target.getBoundingClientRect().top + window.scrollY - offset;
-  window.scrollTo({ top, behavior: 'smooth' });
-  history.replaceState(null, '', '#' + id);
-});
+    <h2 class="toggle-title" onclick="toggleRechtliches('datenschutz')">🔐 Datenschutz anzeigen</h2>
+    <div id="datenschutz" class="toggle-content">
+      <p>Der Schutz Ihrer persönlichen Daten ist uns ein Anliegen. Wir verarbeiten Ihre Daten gemäß DSGVO & TKG 2003.</p>
+      <p><b>Kontaktformular:</b> Daten werden nur zur Bearbeitung Ihrer Anfrage gespeichert, nicht weitergegeben.</p>
+      <p><b>Ihre Rechte:</b> Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit & Widerspruch.</p>
+      <p>Datenschutzbehörde Österreich – <a href="https://www.dsb.gv.at" target="_blank" rel="noopener">www.dsb.gv.at</a></p>
+    </div>
+  </div>
+</section>
+
+<script>
+function toggleRechtliches(id){
+  const el = document.getElementById(id);
+  el.style.display = (el.style.display==='none' || el.style.display==='') ? 'block' : 'none';
+}
+document.getElementById('y').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
+
