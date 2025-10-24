@@ -3,58 +3,58 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>S’INN3D – 3D-Design & CAD-Beratung für Firmen</title>
   <meta name="description" content="S’INN3D: Beratung für Unternehmen – 3D-Logo-Design, CAD-Konstruktion, 3D-Druck-Beratung, CAD-Schulung und 3D-Druck-Service für Kleinserien. Regional, nachhaltig, präzise.">
+
+  <!-- Social Preview / Favicon -->
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <meta property="og:title" content="S’INN3D – 3D-Design & CAD-Beratung für Firmen">
+  <meta property="og:description" content="3D-Druck-Beratung, CAD-Schulung und Kleinserien aus dem Innviertel.">
+  <meta property="og:image" content="https://sinn-3d.at/assets/logo.png">
+  <meta property="og:url" content="https://sinn-3d.at/">
+  <meta name="twitter:card" content="summary_large_image">
+
   <style>
     :root{
       --bg:#f7faf9; --card:#ffffff; --text:#111827; --muted:#6b7280;
       --brand:#16a34a; --brand2:#14b8a6; --accent:#facc15;
     }
     *{box-sizing:border-box;margin:0;padding:0}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
 
-    /* ===== HEADER ===== */
+    /* ===== HEADER & NAV ===== */
     header{
       position:sticky; top:0; z-index:10;
-      background:rgba(255,255,255,.95); backdrop-filter:blur(8px);
-      border-bottom:1px solid #e5e7eb; padding:4px 0 0;
+      background:rgba(255,255,255,.95);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid #e5e7eb;
     }
     .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
-    .nav{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
-    .logo{display:flex;justify-content:center;align-items:center;font-weight:800;letter-spacing:.02em;font-size:18px}
-    
-  /* ===== RIESIGES LOGO (PC & Handy) ===== */
-.logo {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:40px 0 20px; /* mehr Platz oben und unten */
-}
+    .nav{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
 
-.logo img {
-  height:200px !important;   /* erzwingt große Größe */
-  width:auto;
-  max-width:100%;
-  object-fit:contain;
-  display:block;
-  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15)); /* schöner leichter Schatten */
-}
+    /* Logo: groß, zentriert, ohne Schriftzug */
+    .logo{
+      display:flex;justify-content:center;align-items:center;
+      padding:40px 0 12px;
+    }
+    .logo img{
+      height:380px;          /* Desktop-Größe */
+      max-width:90vw;
+      width:auto;
+      object-fit:contain;
+      display:block;
+      filter:drop-shadow(0 6px 12px rgba(0,0,0,.15));
+    }
 
-@media (max-width:1024px){
-  .logo img {height:280px !important;}
-}
-
-@media (max-width:768px){
-  .logo img {height:180px !important;}
-}
-    .cta{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:2px}
-    .btn{display:inline-block;padding:10px 16px;border-radius:12px;text-decoration:none;font-weight:600;cursor:pointer;text-align:center}
+    .cta{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:4px 0 10px}
+    .btn{display:inline-block;padding:10px 16px;border-radius:12px;text-decoration:none;font-weight:600;text-align:center;cursor:pointer}
     .btn-primary{background:linear-gradient(90deg,var(--brand),var(--brand2));color:#fff}
     .btn-ghost{border:1px solid #d1d5db;color:var(--text);background:#fff}
 
     /* ===== HERO ===== */
     .hero{padding:8px 0 16px;text-align:left}
-    .hero h1{font-size:clamp(24px,5.5vw,38px);line-height:1.1;margin:0 0 10px}
+    .hero h1{font-size:clamp(28px,5.5vw,42px);line-height:1.1;margin:0 0 10px}
     .hero p{max-width:720px;color:var(--muted);margin:0 0 16px;font-size:16px}
 
     /* ===== PROMO ===== */
@@ -73,50 +73,30 @@
     .muted{color:var(--muted)}
 
     /* ===== REFERENZEN (Galerie) ===== */
+    .gallery .card{padding:0;overflow:hidden;border:none}
     .ref-img{width:100%;height:auto;border-radius:12px;margin-bottom:10px;object-fit:cover;transition:transform .2s ease,box-shadow .2s ease}
     .ref-img:hover{transform:scale(1.02);box-shadow:0 6px 20px rgba(0,0,0,0.08)}
-    .gallery .card{padding:0;overflow:hidden;border:none}
 
-    /* ===== FOOTER ===== */
-    footer{padding:32px 0;background:#fff;border-top:1px solid #e5e7eb}
-
-    /* ===== RECHTLICHES (aufklappbar) ===== */
-    .legal-section{background:#fff;border-top:2px solid #e5e7eb;padding:40px 20px}
-    .toggle-title{cursor:pointer;font-weight:700;color:var(--brand);margin-top:20px}
-    .toggle-content{display:none;margin-top:10px;color:var(--text)}
-
-    /* ===== MOBILE FEINTUNING ===== */
-    @media (max-width:768px){
-      .logo{font-size:17px}
-      .cta .btn{flex:0 0 45%}          /* zwei gleich breite Buttons; dritter rutscht darunter */
-      .hero{padding-top:4px !important;}
-      .hero h1{font-size:clamp(22px,6vw,30px)}
-      .promo-section .wrap{max-width:560px}
-    /* ========== LOGO GRÖSSER & PRÄSENTER ========== */
-.logo img{height:44px}                /* Desktop */
-.logo span{font-size:20px;font-weight:800;letter-spacing:.02em}
-@media (max-width:768px){
-  .logo img{height:36px}              /* Handy */
-  .logo span{font-size:18px}
-}
-
-/* ========== KONTAKTFORMULAR – SAUBERES LAYOUT ========== */
-/* Grid-Layout: 2 Spalten auf Desktop, 1 Spalte auf Handy */
+   /* ===== Kontaktformular – modernes, ruhiges Layout ===== */
 #kontakt .card form{
   display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap:14px;
+  grid-template-columns: 1fr;          /* mobil: 1 Spalte */
+  gap:16px;
+  align-items:start;
 }
 
-/* Labels als Spalten-Container: Text oben, Feld darunter */
-#kontakt .card form label{
+#kontakt .card form .form-field{
   display:flex;
   flex-direction:column;
-  gap:6px;
-  font-weight:600;
+  gap:8px;
 }
 
-/* Eingabefelder: volle Breite, runde Ecken, ruhiger Schatten */
+#kontakt .card form .label{
+  font-weight:700;
+  font-size:14px;
+  color:var(--text);
+}
+
 #kontakt .card form input,
 #kontakt .card form textarea{
   width:100%;
@@ -124,11 +104,17 @@
   border:1px solid #d1d5db;
   border-radius:12px;
   background:#fff;
-  box-shadow:0 1px 0 rgba(0,0,0,.02);
   font:inherit;
+  line-height:1.45;
+  box-shadow:0 1px 0 rgba(0,0,0,.02);
+  transition:border-color .15s ease, box-shadow .15s ease;
 }
 
-/* Fokus: Brand-Farbkante + weicher Ring */
+#kontakt .card form input::placeholder,
+#kontakt .card form textarea::placeholder{
+  color:#9ca3af; /* dezente Platzhalter */
+}
+
 #kontakt .card form input:focus,
 #kontakt .card form textarea:focus{
   outline:none;
@@ -136,49 +122,60 @@
   box-shadow:0 0 0 4px rgba(20,184,166,.15);
 }
 
-/* Textarea über die volle Breite */
-#kontakt .card form textarea{grid-column:1 / -1; min-height:140px}
+#kontakt .card form textarea{
+  min-height:150px;
+  resize:vertical;
+}
 
-/* Submit-Button über volle Breite, aber nicht „erschlagend“ */
-#kontakt .card form button{
-  grid-column:1 / -1;
-  justify-self:start;
+#kontakt .card form .actions{
+  margin-top:4px;
+}
+
+#kontakt .card form .actions .btn{
+  width:100%;
   padding:12px 18px;
   border-radius:12px;
 }
 
-/* Handy: einspaltig und Button 100% Breite */
-@media (max-width:768px){
-  #kontakt .card form{grid-template-columns:1fr}
-  #kontakt .card form button{justify-self:stretch}
-}
-      /* ===== HERO-LOGO – GROSS UND MITTIG ===== */
-.logo {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:40px 0 30px; /* Abstand nach oben/unten */
-}
-
-.logo img {
-  height:400px;          /* Hauptgröße Logo – 5x größer */
-  max-width:80vw;        /* verhindert, dass es über den Rand geht */
-  object-fit:contain;
-}
-
-@media (max-width:768px){
-  .logo img {
-    height:220px;        /* Handy-Version */
+/* Desktop: 2 Spalten, Nachricht & Button über volle Breite */
+@media (min-width: 900px){
+  #kontakt .card form{
+    grid-template-columns: 1fr 1fr;
+    column-gap:24px;
+    row-gap:16px;
   }
+  #kontakt .card form .form-field--full{ grid-column:1 / -1; }
+  #kontakt .card form .actions{ grid-column:1 / -1; }
+  #kontakt .card form .actions .btn{ width:auto; }
 }
+
+    /* ===== FOOTER & LEGAL ===== */
+    footer{padding:32px 0;background:#fff;border-top:1px solid #e5e7eb}
+    .legal-section{background:#fff;border-top:2px solid #e5e7eb;padding:40px 20px}
+    .toggle-title{cursor:pointer;font-weight:700;color:var(--brand);margin-top:20px}
+    .toggle-content{display:none;margin-top:10px;color:var(--text)}
+
+    /* ===== MOBILE TUNING ===== */
+    @media (max-width:1024px){
+      .logo img{height:280px}
+    }
+    @media (max-width:768px){
+      .logo img{height:200px}
+      .cta .btn{flex:0 0 45%}
+      .hero{padding-top:4px}
+      .hero h1{font-size:clamp(24px,6vw,32px)}
+    }
   </style>
 </head>
 <body>
 <header>
   <div class="wrap nav">
+    <!-- Großes, zentriertes Logo (ohne Text) -->
     <div class="logo">
-      <img src="assets/logo.png" alt="S’INN3D Logo" onerror="this.style.display='none'">
+      <img src="assets/logo.png" alt="S’INN3D Logo" loading="eager" decoding="async">
     </div>
+
+    <!-- Navigation -->
     <nav class="cta">
       <a class="btn btn-ghost" href="#leistungen">Leistungen</a>
       <a class="btn btn-ghost" href="#referenzen">Referenzen</a>
@@ -236,21 +233,21 @@
       <p class="muted">Ein Einblick in aktuelle Projekte, Schulungen und Designs:</p>
       <div class="grid grid-3 gallery">
         <div class="card">
-          <img src="assets/referenz1.jpg" alt="3D-Schulung in Andorf" class="ref-img">
+          <img src="assets/referenz1.jpg" alt="3D-Schulung in Andorf" class="ref-img" loading="lazy" decoding="async">
           <div style="padding:16px 16px 20px">
             <h3>Schulung & Beratung</h3>
             <p class="muted">Praxisnahe Einschulung im Umgang mit FDM-3D-Druckern für KMUs in Oberösterreich.</p>
           </div>
         </div>
         <div class="card">
-          <img src="assets/referenz2.jpg" alt="3D-Logo Design" class="ref-img">
+          <img src="assets/referenz2.jpg" alt="3D-Logo Design" class="ref-img" loading="lazy" decoding="async">
           <div style="padding:16px 16px 20px">
             <h3>3D-Logo Design</h3>
             <p class="muted">Gestaltung eines nachhaltigen, haptischen Firmenlogos aus Recycling-Filament.</p>
           </div>
         </div>
         <div class="card">
-          <img src="assets/referenz3.jpg" alt="Kleinserienfertigung" class="ref-img">
+          <img src="assets/referenz3.jpg" alt="Kleinserienfertigung" class="ref-img" loading="lazy" decoding="async">
           <div style="padding:16px 16px 20px">
             <h3>Kleinserien-Fertigung</h3>
             <p class="muted">3D-gedruckte Bauteile als kosteneffiziente Lösung für regionale Betriebe.</p>
@@ -266,15 +263,37 @@
       <div class="card">
         <h2>Kontakt</h2>
         <p class="muted">Schnellster Weg: Formular ausfüllen – wir melden uns innerhalb von 24 h.</p>
+
+        <!-- Netlify Forms -->
         <form name="kontakt" method="POST" data-netlify="true">
-          <input type="hidden" name="form-name" value="kontakt">
-          <label>Firma<input name="firma" required></label>
-          <label>E-Mail<input type="email" name="email" required></label>
-          <label>Telefon (optional)<input name="telefon"></label>
-          <label>Nachricht<textarea name="nachricht" rows="5" required></textarea></label>
-          <button class="btn btn-primary" type="submit">Anfrage senden</button>
-        </form>
+  <input type="hidden" name="form-name" value="kontakt">
+
+  <div class="form-field">
+    <span class="label">Firma</span>
+    <input name="firma" placeholder="Muster GmbH" required>
+  </div>
+
+  <div class="form-field">
+    <span class="label">E-Mail</span>
+    <input type="email" name="email" placeholder="name@firma.at" required>
+  </div>
+
+  <div class="form-field">
+    <span class="label">Telefon (optional)</span>
+    <input name="telefon" placeholder="+43 …">
+  </div>
+
+  <div class="form-field form-field--full">
+    <span class="label">Nachricht</span>
+    <textarea name="nachricht" placeholder="Worum geht’s? Kurz beschreiben…" required></textarea>
+  </div>
+
+  <div class="actions">
+    <button class="btn btn-primary" type="submit">Anfrage senden</button>
+  </div>
+</form>
       </div>
+
       <div class="card">
         <h2>Direkt</h2>
         <p><b>E-Mail:</b> <a href="mailto:office@sinn-3d.at">office@sinn-3d.at</a><br>
@@ -327,5 +346,6 @@ document.getElementById('y').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
+
 
 
