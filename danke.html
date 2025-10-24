@@ -1,8 +1,86 @@
 <!doctype html>
 <html lang="de">
-<head><meta charset="utf-8"><title>Danke</title></head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Danke – S’INN3D</title>
+  <style>
+    :root {
+      --brand1: #16a34a; /* Grün */
+      --brand2: #14b8a6; /* Türkis */
+      --bg: #f7faf9;      /* Hintergrund */
+      --text: #111827;
+      --muted: #6b7280;
+    }
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--bg) 0%, #e7f8f4 100%);
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text);
+      text-align: center;
+    }
+    .card {
+      background: #fff;
+      padding: 50px 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,.08);
+      max-width: 480px;
+      width: 90%;
+      animation: fadeIn .6s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity:0; transform: translateY(15px); }
+      to   { opacity:1; transform: translateY(0); }
+    }
+    .logo {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 1.9rem;
+      color: var(--brand1);
+      margin: 0 0 10px;
+      font-weight: 700;
+    }
+    p {
+      margin: 0 0 30px;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--brand1), var(--brand2));
+      color: #fff;
+      padding: 12px 26px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 500;
+      box-shadow: 0 4px 10px rgba(0,0,0,.1);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0,0,0,.15);
+    }
+  </style>
+</head>
 <body>
-  <h1>Danke für deine Nachricht!</h1>
-  <p>Wir melden uns so schnell wie möglich.</p>
+  <div class="card">
+    <!-- Logo liegt im selben Ordner -->
+    <img src="./logo.png" alt="S’INN3D Logo" class="logo" />
+
+    <h1>Danke für deine Nachricht!</h1>
+    <p>Wir melden uns so schnell wie möglich.<br>
+       Dein <strong>S’INN3D</strong>-Team
+    </p>
+
+    <!-- Bei Custom Domain kannst du einfach "/" nutzen -->
+    <a class="btn" href="/">Zurück zur Startseite</a>
+  </div>
 </body>
 </html>
+
