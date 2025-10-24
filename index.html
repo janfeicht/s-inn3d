@@ -170,6 +170,12 @@
       .hero{padding-top:4px}
       .hero h1{font-size:clamp(24px,6vw,32px)}
     }
+    html { scroll-behavior: smooth; }
+
+/* Abstand beim Ankern, weil der Header sticky ist */
+section { scroll-margin-top: 90px; } /* 70–100 je nach Header-Höhe */
+    }
+ 
   </style>
 </head>
 <body>
@@ -182,10 +188,11 @@
 
     <!-- Navigation -->
     <nav class="cta">
-      <a class="btn btn-ghost" href="#leistungen">Leistungen</a>
-      <a class="btn btn-ghost" href="#aktuelle-projekte">Aktuelle Projekte</a>
-      <a class="btn btn-primary" href="#kontakt">Kostenloses Erstgespräch</a>
-    </nav>
+  <a class="btn btn-ghost" href="#leistungen">Leistungen</a>
+  <a class="btn btn-ghost" href="#aktuelle-projekte">Aktuelle Projekte</a>
+  <a class="btn btn-primary" href="#kontakt">Kostenloses Erstgespräch</a>
+</nav>
+
   </div>
 </header>
 
