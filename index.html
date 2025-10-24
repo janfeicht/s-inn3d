@@ -265,33 +265,47 @@
         <p class="muted">Schnellster Weg: Formular ausfüllen – wir melden uns innerhalb von 24 h.</p>
 
         <!-- Netlify Forms -->
-        <form name="kontakt" method="POST" data-netlify="true">
-  <input type="hidden" name="form-name" value="kontakt">
+      <form action="https://formsubmit.co/office@sinn-3d.at" method="POST">
+  <!-- Einstellungen -->
+  <input type="hidden" name="_subject" value="Neue Anfrage über sinn-3d.at">
+  <input type="hidden" name="_template" value="table">
+  <!-- Nach Absenden auf Danke-Seite weiterleiten (URL kannst du anpassen) -->
+  <input type="hidden" name="_next" value="https://www.sinn-3d.at/danke.html">
+  <!-- Captcha von FormSubmit deaktivieren (du hast statische Seite) -->
+  <input type="hidden" name="_captcha" value="false">
+  <!-- Honeypot gegen Spam (nicht löschen!) -->
+  <input type="text" name="_honey" style="display:none">
 
-  <div class="form-field">
-    <span class="label">Firma</span>
-    <input name="firma" placeholder="Muster GmbH" required>
-  </div>
+  <!-- Felder fürs Formular -->
+  <label>
+    Name*<br>
+    <input type="text" name="Name" required>
+  </label><br><br>
 
-  <div class="form-field">
-    <span class="label">E-Mail</span>
-    <input type="email" name="email" placeholder="name@firma.at" required>
-  </div>
+  <label>
+    E-Mail*<br>
+    <input type="email" name="email" required>
+  </label><br><br>
 
-  <div class="form-field">
-    <span class="label">Telefon (optional)</span>
-    <input name="telefon" placeholder="+43 …">
-  </div>
+  <label>
+    Betreff<br>
+    <input type="text" name="Betreff">
+  </label><br><br>
 
-  <div class="form-field form-field--full">
-    <span class="label">Nachricht</span>
-    <textarea name="nachricht" placeholder="Worum geht’s? Kurz beschreiben…" required></textarea>
-  </div>
+  <label>
+    Nachricht*<br>
+    <textarea name="Nachricht" rows="6" required></textarea>
+  </label><br><br>
 
-  <div class="actions">
-    <button class="btn btn-primary" type="submit">Anfrage senden</button>
-  </div>
+  <!-- DSGVO-Zustimmung (optional/empfohlen) -->
+  <label>
+    <input type="checkbox" name="Einwilligung" required>
+    Ich stimme zu, dass meine Angaben zur Kontaktaufnahme gespeichert werden.
+  </label><br><br>
+
+  <button type="submit">Nachricht senden</button>
 </form>
+
       </div>
 
       <div class="card">
