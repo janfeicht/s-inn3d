@@ -280,19 +280,21 @@
   <label>
     Name*<br>
     <input type="text" name="Name" required>
-  </label><br><br>
-  <label>
-    E-Mail*<br>
-    <input type="email" name="email" required>
-  </label><br><br>
-  <label>
-    Betreff<br>
-    <input type="text" name="Betreff">
-  </label><br><br>
-  <label>
-    Nachricht*<br>
-    <textarea name="Nachricht" rows="6" required></textarea>
-  </label><br><br>
+ <label for="name">Name*</label>
+<input id="name" type="text" name="Name" required>
+
+<label for="email">E-Mail*</label>
+<input id="email" type="email" name="email" required>
+
+<label for="subject">Betreff</label>
+<input id="subject" type="text" name="Betreff">
+
+<label for="message">Nachricht*</label>
+<textarea id="message" name="Nachricht" rows="6" required></textarea>
+
+<div style="display:flex;align-items:flex-start;gap:.5rem;margin-top:.75rem">
+</div>
+
 
   <!-- DSGVO-Zustimmung (optional/empfohlen) -->
   <label>
