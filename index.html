@@ -33,16 +33,6 @@
     .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
     .nav{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
 
-    /* Logo: groß, zentriert, ohne Schriftzug */
-    .logo{
-      display:flex;justify-content:center;align-items:center;
-      padding:40px 0 12px;}
-
-    .cta{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:4px 0 10px}
-    .btn{display:inline-block;padding:10px 16px;border-radius:12px;text-decoration:none;font-weight:600;text-align:center;cursor:pointer}
-    .btn-primary{background:linear-gradient(90deg,var(--brand),var(--brand2));color:#fff}
-    .btn-ghost{border:1px solid #d1d5db;color:var(--text);background:#fff}
-
     /* ===== HERO ===== */
     .hero{padding:8px 0 16px;text-align:left}
     .hero h1{font-size:clamp(28px,5.5vw,42px);line-height:1.1;margin:0 0 10px}
@@ -150,40 +140,39 @@
     .legal-section{background:#fff;border-top:2px solid #e5e7eb;padding:40px 20px}
     .toggle-title{cursor:pointer;font-weight:700;color:var(--brand);margin-top:20px}
     .toggle-content{display:none;margin-top:10px;color:var(--text)}
+  
 /* ===== LOGO RESPONSIVE ANPASSUNG (clean) ===== */
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0 8px;     /* etwas weniger Luft oben/unten */
+}
+
 .logo img {
   display: block;
   margin: 0 auto;
+  width: 55%;             /* Basis: 55% der Containerbreite */
+  max-width: 260px;       /* Obergrenze Desktop */
   height: auto;
-  width: 70%;           /* Basis: nimmt 70% der Containerbreite */
-  max-width: 300px;     /* Obergrenze Desktop */
   object-fit: contain;
   filter: drop-shadow(0 6px 12px rgba(0,0,0,.15));
 }
 
 /* Tablet */
 @media (max-width: 1024px) {
-  .logo img { max-width: 220px; }
+  .logo img { max-width: 200px; }
 }
 
 /* Handy quer / mittel */
 @media (max-width: 768px) {
-  .logo img { max-width: 160px; }
+  .logo img { max-width: 140px; }
 }
 
 /* Handy klein / hochkant */
 @media (max-width: 480px) {
-  .logo img { max-width: 130px; }
+  .logo img { max-width: 110px; }
 }
-
-/* Smooth Scrolling */
-html { scroll-behavior: smooth; }
-
-/* Offset für Sticky-Header beim Ankern */
-section { scroll-margin-top: 80px; } /* ggf. auf 90–100px erhöhen */
-
-/* Abstand beim Ankern, weil der Header sticky ist */
-section { scroll-margin-top: 80px; } /* 80 je nach Header-Höhe */
     
  
   </style>
