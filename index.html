@@ -159,31 +159,37 @@
     .legal-section{background:#fff;border-top:2px solid #e5e7eb;padding:40px 20px}
     .toggle-title{cursor:pointer;font-weight:700;color:var(--brand);margin-top:20px}
     .toggle-content{display:none;margin-top:10px;color:var(--text)}
-
-    /* ===== MOBILE TUNING ===== */
-    @media (max-width:1024px){
-  /* ===== LOGO RESPONSIVE ANPASSUNG ===== */
+/* ===== LOGO RESPONSIVE ANPASSUNG (clean) ===== */
 .logo img {
-  height: auto;
-  width: 80%;
-  max-width: 340px;
-  object-fit: contain;
   display: block;
   margin: 0 auto;
+  height: auto;
+  width: 70%;           /* Basis: nimmt 70% der Containerbreite */
+  max-width: 300px;     /* Obergrenze Desktop */
+  object-fit: contain;
   filter: drop-shadow(0 6px 12px rgba(0,0,0,.15));
 }
 
-/* Logo-Scaling auf verschiedenen Geräten */
-@media (max-width:1024px){
-  .logo img{max-width:260px;}
+/* Tablet */
+@media (max-width: 1024px) {
+  .logo img { max-width: 220px; }
 }
-@media (max-width:768px){
-  .logo img{max-width:200px;}
+
+/* Handy quer / mittel */
+@media (max-width: 768px) {
+  .logo img { max-width: 160px; }
 }
-@media (max-width:480px){
-  .logo img{max-width:160px;}
-    
-    html { scroll-behavior: smooth; }
+
+/* Handy klein / hochkant */
+@media (max-width: 480px) {
+  .logo img { max-width: 130px; }
+}
+
+/* Smooth Scrolling */
+html { scroll-behavior: smooth; }
+
+/* Offset für Sticky-Header beim Ankern */
+section { scroll-margin-top: 80px; } /* ggf. auf 90–100px erhöhen */
 
 /* Abstand beim Ankern, weil der Header sticky ist */
 section { scroll-margin-top: 80px; } /* 80 je nach Header-Höhe */
