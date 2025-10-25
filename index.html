@@ -141,39 +141,29 @@
     .toggle-title{cursor:pointer;font-weight:700;color:var(--brand);margin-top:20px}
     .toggle-content{display:none;margin-top:10px;color:var(--text)}
   
-/* ===== LOGO RESPONSIVE ANPASSUNG (clean) ===== */
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 16px 0 8px;     /* etwas weniger Luft oben/unten */
+/* === Logo: fixe, responsive Höhe – nie zu groß === */
+.logo{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  /* Höhe regelt die Größe des Logos */
+  height: clamp(110px, 20vw, 180px);  /* min 110, ideal ~20% Viewport, max 180 */
+  padding: 8px 0;
 }
 
-.logo img {
-  display: block;
-  margin: 0 auto;
-  width: 55%;             /* Basis: 55% der Containerbreite */
-  max-width: 260px;       /* Obergrenze Desktop */
-  height: auto;
+.logo img{
+  height: 100% !important;   /* fülle die Containerhöhe */
+  width: auto !important;     /* Breite passt sich proportional an */
+  max-width: 100%;
+  display:block;
   object-fit: contain;
   filter: drop-shadow(0 6px 12px rgba(0,0,0,.15));
 }
 
-/* Tablet */
-@media (max-width: 1024px) {
-  .logo img { max-width: 200px; }
+/* optional: Desktop etwas größer */
+@media (min-width: 1024px){
+  .logo{ height: clamp(130px, 14vw, 200px); }
 }
-
-/* Handy quer / mittel */
-@media (max-width: 768px) {
-  .logo img { max-width: 140px; }
-}
-
-/* Handy klein / hochkant */
-@media (max-width: 480px) {
-  .logo img { max-width: 110px; }
-}
-    
  
   </style>
 </head>
