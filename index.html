@@ -162,13 +162,26 @@
 
     /* ===== MOBILE TUNING ===== */
     @media (max-width:1024px){
-      .logo img{height:280px}
-    
-    @media (max-width:768px){
-      .logo img{height:200px}
-      .cta .btn{flex:0 0 45%}
-      .hero{padding-top:4px}
-      .hero h1{font-size:clamp(24px,6vw,32px)}
+  /* ===== LOGO RESPONSIVE ANPASSUNG ===== */
+.logo img {
+  height: auto;
+  width: 80%;
+  max-width: 340px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,.15));
+}
+
+/* Logo-Scaling auf verschiedenen Geräten */
+@media (max-width:1024px){
+  .logo img{max-width:260px;}
+}
+@media (max-width:768px){
+  .logo img{max-width:200px;}
+}
+@media (max-width:480px){
+  .logo img{max-width:160px;}
     
     html { scroll-behavior: smooth; }
 
