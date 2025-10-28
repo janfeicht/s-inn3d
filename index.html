@@ -257,6 +257,36 @@
 <script>
   document.getElementById('y').textContent = new Date().getFullYear();
 </script>
+<script>
+  (function () {
+    const form = document.getElementById('kontaktForm');
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault(); // Standard-Redirect von Formspree verhindern
+
+      // Honeypot abfangen (falls Bots das Feld befüllen)
+      const trap = document.getElementById('trap');
+      if (trap && trap.value.trim() !== '') return;
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          // -> Deine eigene Danke-Seite
+          window.location.href = '/danke.html';
+        } else {
+          alert('Senden fehlgeschlagen. Bitte später erneut versuchen oder per E-Mail melden.');
+        }
+      } catch (err) {
+        alert('Netzwerkfehler. Prüfe die Verbindung oder schreibe an office@sinn-3d.at.');
+      }
+    });
+  })();
+</script>
 
 </body>
 </html>
