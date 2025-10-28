@@ -39,7 +39,8 @@
     .nav{display:flex;flex-direction:column;align-items:center;gap:10px;padding:8px 0}
     .logo{display:flex;justify-content:center;align-items:center;height:clamp(110px,20vw,180px);padding:8px 0}
     .logo img{height:100%;width:auto;object-fit:contain;filter:drop-shadow(0 6px 12px rgba(0,0,0,.15))}
-    .cta{display:flex;gap:10px;flex-wrap:wrap}
+
+    /* Buttons */
     .btn{display:inline-block;padding:10px 16px;border-radius:999px;font-weight:600;border:1px solid transparent;transition:filter .15s ease,transform .02s ease}
     .btn:active{transform:translateY(1px)}
     .btn-primary{background:var(--brand2);color:#fff;border-color:var(--brand2)}
@@ -47,7 +48,16 @@
     .btn-ghost{background:#fff;color:#0b1720;border-color:var(--line)}
     .btn-ghost:hover{filter:brightness(.98)}
 
-    /* Hero – jetzt zentriert */
+    /* CTA container – ZENTRIERT */
+    .cta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+      align-items:center;
+    }
+
+    /* Hero – ZENTRIERT */
     .hero{
       padding:8px 0 16px;
       text-align:center;
