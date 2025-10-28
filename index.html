@@ -4,51 +4,45 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>S’INN3D – 3D-Design & CAD-Beratung für Firmen</title>
-  <meta name="description" content="S’INN3D: Beratung für Unternehmen – 3D-Logo-Design, CAD-Konstruktion, 3D-Druck-Beratung, CAD-Schulung und 3D-Druck-Service für Kleinserien. Regional, präzise.">
+  <meta name="description" content="S’INN3D: Beratung für Unternehmen – 3D-Logo-Design, CAD-Konstruktion, 3D-Druck-Beratung, CAD-Schulung und Kleinserien-Fertigung.">
 
-  <!-- Social Preview / Favicon -->
   <link rel="icon" href="assets/logo.png" type="image/png">
-  <meta property="og:title" content="S’INN3D – 3D-Design & CAD-Beratung für Firmen">
-  <meta property="og:description" content="3D-Druck-Beratung, CAD-Schulung und Kleinserien aus dem Innviertel.">
-  <meta property="og:image" content="https://www.sinn-3d.at/assets/logo.png">
-  <meta property="og:url" content="https://www.sinn-3d.at/">
-  <meta name="twitter:card" content="summary_large_image">
 
   <style>
     :root{
       --bg:#f7faf9; --card:#ffffff; --text:#111827; --muted:#6b7280;
-      --brand:#16a34a; --brand2:#14b8a6; --accent:#facc15; --line:#e5e7eb;
-      --wrap:1100px;
+      --brand:#16a34a; --brand2:#14b8a6; --accent:#facc15;
+      --line:#e5e7eb; --wrap:1100px;
     }
     *{box-sizing:border-box;margin:0;padding:0}
-    img{max-width:100%;display:block}
     body{
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,'Helvetica Neue',Arial,sans-serif;
-      background:var(--bg); color:var(--text); line-height:1.6
+      background:var(--bg); color:var(--text); line-height:1.6;
     }
-    a{color:var(--brand2);text-decoration:none}
-    a:focus{outline:3px solid rgba(20,184,166,.35);outline-offset:2px}
+    img{max-width:100%;display:block}
+    a{text-decoration:none}
+
     .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
 
-    /* Header / Nav */
     header{
-      position:sticky; top:0; z-index:20;
-      background:rgba(255,255,255,.95); backdrop-filter:blur(8px);
+      position:sticky;top:0;z-index:10;
+      background:rgba(255,255,255,.95);backdrop-filter:blur(8px);
       border-bottom:1px solid var(--line);
     }
     .nav{display:flex;flex-direction:column;align-items:center;gap:10px;padding:8px 0}
+
     .logo{display:flex;justify-content:center;align-items:center;height:clamp(110px,20vw,180px);padding:8px 0}
-    .logo img{height:100%;width:auto;object-fit:contain;filter:drop-shadow(0 6px 12px rgba(0,0,0,.15))}
+    .logo img{height:100%;width:auto;object-fit:contain}
 
-    /* Buttons */
-    .btn{display:inline-block;padding:10px 16px;border-radius:999px;font-weight:600;border:1px solid transparent;transition:filter .15s ease,transform .02s ease}
-    .btn:active{transform:translateY(1px)}
+    .btn{
+      display:inline-block;padding:10px 16px;border-radius:999px;font-weight:600;
+      transition:filter .15s ease,transform .05s ease;border:1px solid transparent;
+    }
     .btn-primary{background:var(--brand2);color:#fff;border-color:var(--brand2)}
-    .btn-primary:hover{filter:brightness(.98)}
-    .btn-ghost{background:#fff;color:#0b1720;border-color:var(--line)}
-    .btn-ghost:hover{filter:brightness(.98)}
+    .btn-primary:hover{filter:brightness(.95)}
+    .btn-ghost{background:#fff;color:var(--text);border:1px solid var(--line)}
+    .btn-ghost:hover{filter:brightness(.95)}
 
-    /* CTA container – ZENTRIERT */
     .cta{
       display:flex;
       gap:10px;
@@ -57,69 +51,73 @@
       align-items:center;
     }
 
-    /* Hero – ZENTRIERT */
-    .hero{
-      padding:8px 0 16px;
-      text-align:center;
-    }
-    .hero h1{
-      font-size:clamp(28px,5.5vw,42px);line-height:1.1;margin:0 0 10px
-    }
-    .hero p{
-      max-width:720px;
-      color:var(--muted);
-      margin:0 auto 16px;
-      font-size:16px;
-      text-align:center;
-    }
+    /* HERO zentriert */
+    .hero{text-align:center;padding:8px 0 16px}
+    .hero h1{font-size:clamp(28px,5.5vw,42px);line-height:1.1;margin:0 0 10px}
+    .hero p{max-width:720px;margin:0 auto 16px;color:var(--muted)}
 
     /* Promo */
-    .promo{background:#fffbe8;border:2px solid #ffe066;border-radius:16px;padding:20px 14px;margin:16px auto;text-align:center}
-    .promo h2{font-size:clamp(18px,5vw,24px);color:var(--brand);margin:0}
+    .promo{background:#fffbe8;border:2px solid #ffe066;border-radius:16px;padding:20px;text-align:center;margin:16px auto}
 
-    /* Sections / Cards */
+    /* Grid / Cards */
     section{padding:32px 0;scroll-margin-top:90px}
     .grid{display:grid;gap:20px}
-    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
     .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-    @media (max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:0 1px 0 rgba(0,0,0,.02)}
-    h2{font-size:28px;margin:0 0 16px}
-    h3{margin:0 0 8px}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+
     .muted{color:var(--muted)}
 
     /* Galerie */
-    .gallery .card{padding:0;overflow:hidden;border:none}
-    .ref-img{width:100%;border-radius:12px;margin-bottom:10px;object-fit:cover;transition:transform .2s,box-shadow .2s}
-    .ref-img:hover{transform:scale(1.02);box-shadow:0 6px 20px rgba(0,0,0,.08)}
+    .gallery .card{padding:0;border:none;overflow:hidden}
+    .ref-img{width:100%;border-radius:12px;object-fit:cover;margin-bottom:10px;transition:.2s}
+    .ref-img:hover{transform:scale(1.02)}
 
     /* Kontaktformular */
-    .kontakt-form{display:grid;grid-template-columns:1fr;gap:16px;align-items:start}
-    .kontakt-form label{font-weight:700;font-size:14px;color:var(--text)}
+    .kontakt-form{display:grid;grid-template-columns:1fr;gap:16px}
     .kontakt-form input,.kontakt-form textarea{
-      width:100%;padding:12px 14px;border:1px solid #d1d5db;border-radius:12px;background:#fff;
-      font:inherit;line-height:1.45;box-shadow:0 1px 0 rgba(0,0,0,.02);transition:border-color .15s,box-shadow .15s
+      width:100%;padding:12px;border:1px solid #d1d5db;border-radius:12px;background:#fff;
     }
-    .kontakt-form input:focus,.kontakt-form textarea:focus{outline:none;border-color:var(--brand2);box-shadow:0 0 0 4px rgba(20,184,166,.15)}
     .kontakt-form textarea{min-height:150px;resize:vertical}
-    .checkbox-container{display:flex;align-items:flex-start;gap:.55rem}
-    .checkbox-container input{transform:scale(1.1);margin-top:.2rem}
-    .kontakt-form .btn{width:100%;padding:12px 18px;border-radius:12px}
-    @media (min-width:900px){
-      .kontakt-form{grid-template-columns:1fr 1fr;column-gap:24px;row-gap:16px}
+    .checkbox-container{display:flex;align-items:flex-start;gap:10px}
+    @media(min-width:900px){
+      .kontakt-form{grid-template-columns:1fr 1fr;column-gap:24px}
       .kontakt-form textarea,.kontakt-form .checkbox-container,.kontakt-form .btn{grid-column:1/-1}
     }
 
-    /* Footer */
     footer{padding:32px 0;background:#fff;border-top:1px solid var(--line)}
-    footer .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    footer .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+    /* ✅ Social Icons in Originalfarben */
+    .social-icons{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      margin-top:18px;
+    }
+    .social-icons a{
+      height:40px;width:40px;display:flex;justify-content:center;align-items:center;
+      border-radius:50%;transition:filter .15s ease,transform .05s ease;
+    }
+    .social-icons a:active{transform:translateY(1px)}
+    .social-icons svg{height:22px;width:22px}
+
+    /* Farben */
+    .fb{background:#1877f2}
+    .ig{background:linear-gradient(45deg,#fd1d1d,#f56040,#f77737,#fcaf45,#ffdc80,#833ab4,#c13584,#e1306c,#fd1d1d)}
+    .social-icons svg{fill:#fff}
   </style>
 </head>
 <body>
+
 <header>
   <div class="wrap nav">
-    <div class="logo"><img src="assets/logo.png" alt="S’INN3D Logo"></div>
-    <nav class="cta" aria-label="Hauptnavigation">
+    <div class="logo">
+      <img src="assets/logo.png" alt="S’INN3D Logo">
+    </div>
+
+    <nav class="cta">
       <a class="btn btn-ghost" href="#leistungen">Leistungen</a>
       <a class="btn btn-ghost" href="#projekte">Aktuelle Projekte</a>
       <a class="btn btn-primary" href="#kontakt">Kostenloses Erstgespräch</a>
@@ -128,12 +126,13 @@
 </header>
 
 <main>
-  <!-- HERO -->
+
   <section class="hero">
     <div class="wrap">
-      <span style="font-weight:700;color:#16a34a;text-transform:uppercase;letter-spacing:.08em;font-size:12px">Beratung für Unternehmen</span>
+      <span style="font-weight:700;color:#16a34a;text-transform:uppercase;font-size:12px;letter-spacing:.08em">Beratung für Unternehmen</span>
       <h1>Greifbares 3D-Design.<br>Effiziente Prozesse.<br>Nachhaltige Lösungen.</h1>
       <p>Viele Betriebe wissen, dass 3D-Druck Geld spart – aber keiner weiß, wie man richtig startet. Oft steht der Drucker ungenutzt herum oder Projekte kosten mehr als nötig, weil das Know-how fehlt.</p>
+
       <div class="cta">
         <a class="btn btn-primary" href="#kontakt">Erstgespräch anfragen</a>
         <a class="btn btn-ghost" href="https://wa.me/436765890068" target="_blank" rel="noopener">WhatsApp</a>
@@ -141,143 +140,138 @@
     </div>
   </section>
 
-  <!-- PROMO -->
   <section class="promo">
     <div class="wrap">
-      <h2>20 % Rabatt für die ersten 5 Unternehmen auf alle Design-Beratung & Schulungen – nur bis 14. November 2025!</h2>
+      <h2>20 % Rabatt für die ersten 5 Unternehmen – nur bis 14. November 2025!</h2>
     </div>
   </section>
 
-  <!-- LEISTUNGEN -->
   <section id="leistungen">
     <div class="wrap">
       <h2>Leistungen</h2>
       <div class="grid grid-3">
         <div class="card">
           <h3>3D-Druck Beratung</h3>
-          <p class="muted">Additive Fertigung, Materialwahl, Druckverfahren und Designoptimierung – für Einsteiger und Unternehmen.</p>
+          <p class="muted">Materialwahl, Verfahren, Probleme lösen, Qualität verbessern.</p>
         </div>
         <div class="card">
-          <h3>CAD-Design Basis Schulung</h3>
-          <p class="muted">Praxisnahe Einführung in CAD – speziell für den 3D-Druck. Ideal für Teams & Macher.</p>
+          <h3>CAD-Design Schulung</h3>
+          <p class="muted">Schnelle Einführung in CAD & Modellierung für 3D-Druck.</p>
         </div>
         <div class="card">
-          <h3>Designservice für Kleinserien</h3>
-          <p class="muted">Prototypen & Kleinserien – schnell, flexibel, maßgeschneidert. Inkl. Bauteiloptimierung.</p>
+          <h3>Kleinserien-Fertigung</h3>
+          <p class="muted">Prototypen & Kleinserien für Unternehmen und Privat.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROJEKTE -->
   <section id="projekte">
     <div class="wrap">
       <h2>Aktuelle Projekte</h2>
-      <p class="muted">Ein Einblick in aktuelle Projekte, Schulungen und Designs:</p>
+      <p class="muted">Ein Blick in aktuelle Designs & Aufträge:</p>
+
       <div class="grid grid-3 gallery">
         <div class="card">
-          <img src="assets/referenz1.jpg" alt="3D Design-Beratung" class="ref-img" loading="lazy">
-          <div style="padding:16px 16px 20px">
+          <img src="assets/referenz1.jpg" alt="3D Design-Beratung" class="ref-img">
+          <div style="padding:12px 16px">
             <h3>3D Design-Beratung</h3>
-            <p class="muted">Einschulung in CAD & Design für effizienten FDM-Druck.</p>
+            <p class="muted">Optimiertes Designen für FDM-3D-Druck.</p>
           </div>
         </div>
         <div class="card">
-          <img src="assets/referenz2.jpg" alt="3D-Logo Design mit NFC" class="ref-img" loading="lazy">
-          <div style="padding:16px 16px 20px">
-            <h3>3D-Logo Design mit NFC</h3>
-            <p class="muted">Firmenlogo & 3D-gedruckter Schlüsselanhänger mit unsichtbarer NFC-Integration.</p>
+          <img src="assets/referenz2.jpg" alt="3D Logo & NFC" class="ref-img">
+          <div style="padding:12px 16px">
+            <h3>3D-Logo mit NFC</h3>
+            <p class="muted">Firmenlogo als echter Schlüsselanhänger mit NFC.</p>
           </div>
         </div>
         <div class="card">
-          <img src="assets/referenz3.jpg" alt="Kleinserien-Fertigung" class="ref-img" loading="lazy">
-          <div style="padding:16px 16px 20px">
-            <h3>Kleinserien-Fertigung</h3>
-            <p class="muted">Regionale Lösungen – kurze Wege, messbare Qualität.</p>
+          <img src="assets/referenz3.jpg" alt="Kleinserien-Fertigung" class="ref-img">
+          <div style="padding:12px 16px">
+            <h3>Kleinserien</h3>
+            <p class="muted">Regionale Fertigung, kurze Wege, schnelle Ergebnisse.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- KONTAKT -->
   <section id="kontakt">
     <div class="wrap grid grid-2">
       <div class="card">
         <h2>Kontakt</h2>
-        <p class="muted">Schnellster Weg: Formular ausfüllen – wir melden uns innerhalb von 24 h.</p>
+        <p class="muted">Schnellstes: Formular ausfüllen – Antwort in 24h.</p>
 
-        <form action="https://formsubmit.co/office@sinn-3d.at" method="POST" class="kontakt-form" autocomplete="on">
-          <!-- FormSubmit Einstellungen -->
-          <input type="hidden" name="_subject"  value="Neue Anfrage über sinn-3d.at">
+        <form action="https://formsubmit.co/office@sinn-3d.at" method="POST" class="kontakt-form">
+          <input type="hidden" name="_subject" value="Neue Anfrage über sinn-3d.at">
           <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_next"     value="https://www.sinn-3d.at/danke.html">
-          <input type="hidden" name="_captcha"  value="false">
-          <input type="text"   name="_honey"    style="display:none" tabindex="-1" autocomplete="off">
+          <input type="hidden" name="_next" value="https://www.sinn-3d.at/danke.html">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" style="display:none">
 
-          <label for="name">Name*</label>
-          <input id="name" type="text" name="Name" required>
+          <label>Name*</label>
+          <input type="text" name="Name" required>
 
-          <label for="email">E-Mail*</label>
-          <input id="email" type="email" name="E-Mail" required>
+          <label>E-Mail*</label>
+          <input type="email" name="E-Mail" required>
 
-          <label for="subject">Betreff</label>
-          <input id="subject" type="text" name="Betreff">
+          <label>Betreff</label>
+          <input type="text" name="Betreff">
 
-          <label for="message">Nachricht*</label>
-          <textarea id="message" name="Nachricht" rows="6" required></textarea>
+          <label>Nachricht*</label>
+          <textarea name="Nachricht" required></textarea>
 
           <div class="checkbox-container">
-            <input type="checkbox" id="consent" name="Einwilligung" required>
-            <label for="consent">Ich stimme zu, dass meine Angaben zur Kontaktaufnahme gespeichert werden. Details siehe <a href="/datenschutz.html">Datenschutz</a>.</label>
+            <input type="checkbox" name="Einwilligung" required>
+            <label>Ich stimme zu, dass meine Angaben zur Kontaktaufnahme gespeichert werden.</label>
           </div>
 
           <button type="submit" class="btn btn-primary">Nachricht senden</button>
         </form>
       </div>
 
-      <div class="card" aria-label="Direktkontakt">
+      <div class="card">
         <h2>Direkt</h2>
         <p>
           <b>E-Mail:</b> <a href="mailto:office@sinn-3d.at">office@sinn-3d.at</a><br>
           <b>WhatsApp:</b> <a href="https://wa.me/436765890068" target="_blank" rel="noopener">+43 676 5890068</a><br>
           <b>Standort:</b> Innviertel, OÖ
         </p>
+
+        <!-- ⚡ ORIGINALFARBEN SOCIAL ICONS -->
+        <div class="social-icons">
+          <a class="fb" href="https://www.facebook.com/share/1Zb4kS49oo/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24">
+              <path d="M22 12.07C22 6.49 17.52 2 11.93 2S2 6.49 2 12.07c0 5 3.66 9.14 8.44 9.93v-7.03H8.05v-2.9h2.39V9.41c0-2.36 1.4-3.67 3.55-3.67 1.03 0 2.12.18 2.12.18v2.33h-1.2c-1.18 0-1.55.74-1.55 1.5v1.79h2.64l-.42 2.9h-2.22v7.03c4.78-.79 8.44-4.93 8.44-9.93z"/>
+            </svg>
+          </a>
+
+          <a class="ig" href="https://www.instagram.com/s.inn3d?igsh=MXZpYnZ3dHFseGxldQ==" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24">
+              <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.9a1.1 1.1 0 100 2.2 1.1 1.1 0 000-2.2z"/>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
+
 </main>
 
 <footer>
   <div class="wrap foot">
     <div>© <span id="y"></span> S’INN3D – Beratung & 3D-Design</div>
-    <nav>
+    <div>
       <a href="/impressum.html">Impressum</a> ·
       <a href="/datenschutz.html">Datenschutz</a>
-    </nav>
+    </div>
   </div>
 </footer>
 
 <script>
-  // Jahr im Footer
   document.getElementById('y').textContent = new Date().getFullYear();
-
-  // Smooth Scroll mit Header-Offset
-  (function(){
-    const header = document.querySelector('header');
-    const offset = () => (header ? header.offsetHeight + 10 : 0);
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id = a.getAttribute('href').slice(1);
-        const t = document.getElementById(id);
-        if(!t) return;
-        e.preventDefault();
-        const y = t.getBoundingClientRect().top + window.pageYOffset - offset();
-        window.scrollTo({top:y,behavior:'smooth'});
-        history.replaceState(null,'','#'+id);
-      });
-    });
-  })();
 </script>
+
 </body>
 </html>
