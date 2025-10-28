@@ -6,139 +6,73 @@
   <title>S’INN3D – 3D-Design & CAD-Beratung für Firmen</title>
   <meta name="description" content="S’INN3D: Beratung für Unternehmen – 3D-Logo-Design, CAD-Konstruktion, 3D-Druck-Beratung, CAD-Schulung und Kleinserien-Fertigung.">
   <link rel="icon" href="assets/logo.png" type="image/png">
-
   <style>
-    :root{
-      --bg:#f7faf9; --card:#ffffff; --text:#111827; --muted:#6b7280;
-      --brand:#16a34a; --brand2:#14b8a6; --accent:#facc15;
-      --line:#e5e7eb; --wrap:1100px;
-    }
+    :root{ --bg:#f7faf9; --card:#ffffff; --text:#111827; --muted:#6b7280;
+      --brand:#16a34a; --brand2:#14b8a6; --accent:#facc15; --line:#e5e7eb; --wrap:1100px; }
     *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,'Helvetica Neue',Arial,sans-serif;
-      background:var(--bg); color:var(--text); line-height:1.6;
-    }
-    img{max-width:100%;display:block}
-    a{text-decoration:none}
-
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    img{max-width:100%;display:block} a{text-decoration:none}
     .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
 
-    header{
-      position:sticky;top:0;z-index:10;
-      background:rgba(255,255,255,.95);backdrop-filter:blur(8px);
-      border-bottom:1px solid var(--line);
-    }
+    header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
     .nav{display:flex;flex-direction:column;align-items:center;gap:10px;padding:8px 0}
-
     .logo{display:flex;justify-content:center;align-items:center;height:clamp(100px,16vw,150px);padding:8px 0}
     .logo img{height:100%;width:auto;object-fit:contain}
 
-    .btn{
-      display:inline-block;padding:10px 16px;border-radius:999px;font-weight:600;
-      transition:filter .15s ease,transform .05s ease;border:1px solid transparent;
-    }
-    .btn-primary{background:var(--brand2);color:#fff;border-color:var(--brand2)}
-    .btn-primary:hover{filter:brightness(.95)}
-    .btn-ghost{background:#fff;color:var(--text);border:1px solid var(--line)}
-    .btn-ghost:hover{filter:brightness(.95)}
-
+    .btn{display:inline-block;padding:10px 16px;border-radius:999px;font-weight:600;transition:filter .15s ease,transform .05s ease;border:1px solid transparent}
+    .btn-primary{background:var(--brand2);color:#fff;border-color:var(--brand2)} .btn-primary:hover{filter:brightness(.95)}
+    .btn-ghost{background:#fff;color:var(--text);border:1px solid var(--line)} .btn-ghost:hover{filter:brightness(.95)}
     .cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center}
 
     .hero{text-align:center;padding:8px 0 16px}
     .hero h1{font-size:clamp(28px,5.5vw,42px);line-height:1.1;margin:0 0 10px;letter-spacing:-0.3px}
     .hero p{max-width:680px;margin:0 auto 16px;color:var(--muted);font-size:15.5px}
 
-    .promo{
-      border:1px solid #ffe066;
-      background:#fffdf2;
-      padding:14px 18px;
-      border-radius:12px;
-      margin:12px auto 18px;
-      text-align:center;
-    }
+    .promo{border:1px solid #ffe066;background:#fffdf2;padding:14px 18px;border-radius:12px;margin:12px auto 18px;text-align:center}
 
     section{padding:32px 0;scroll-margin-top:90px}
     .grid{display:grid;gap:22px}
     .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
     .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
     @media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}}
-    .card{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:20px;
-      box-shadow:0 2px 10px rgba(0,0,0,.04);
-    }
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
 
     .muted{color:var(--muted)}
-
     .gallery .card{padding:0;border:none;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.04)}
     .ref-img{width:100%;height:200px;object-fit:cover}
 
     .kontakt-form{display:grid;grid-template-columns:1fr;gap:16px}
-    .kontakt-form input,.kontakt-form textarea{width:100%;padding:14px 14px;border:1px solid #d1d5db;border-radius:12px;background:#fff}
+    .kontakt-form input,.kontakt-form textarea{width:100%;padding:14px;border:1px solid #d1d5db;border-radius:12px;background:#fff}
     .kontakt-form textarea{min-height:150px;resize:vertical}
     .checkbox-container{display:flex;align-items:flex-start;gap:10px}
-    @media(min-width:900px){
-      .kontakt-form{grid-template-columns:1fr 1fr;column-gap:24px}
-      .kontakt-form textarea,.kontakt-form .checkbox-container,.kontakt-form .btn{grid-column:1/-1}
-    }
+    @media(min-width:900px){.kontakt-form{grid-template-columns:1fr 1fr;column-gap:24px}
+      .kontakt-form textarea,.kontakt-form .checkbox-container,.kontakt-form .btn{grid-column:1/-1}}
 
     footer{padding:28px 0;background:#fff;border-top:1px solid var(--line)}
     footer .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
-    /* Social Icons in Farbfassung */
-    .social-icons{
-      display:flex;
-      justify-content:center;
-      gap:12px;
-      margin-top:14px;
-    }
-    .social-icons a{
-      height:44px;width:44px;
-      display:flex;justify-content:center;align-items:center;
-      border-radius:50%;
-      transition:filter .15s ease,transform .05s ease;
-    }
-    .social-icons a:active{transform:translateY(1px)}
-    .social-icons svg{width:22px;height:22px;fill:#fff}
+    .social-icons{display:flex;justify-content:center;gap:12px;margin-top:14px}
+    .social-icons a{height:44px;width:44px;display:flex;justify-content:center;align-items:center;border-radius:50%;transition:filter .15s ease,transform .05s ease}
+    .social-icons a:active{transform:translateY(1px)} .social-icons svg{width:22px;height:22px;fill:#fff}
     .fb{background:#1877f2}
-    .ig{
-      background:linear-gradient(45deg,#fd1d1d,#f56040,#f77737,#fcaf45,#ffdc80,#833ab4,#c13584,#e1306c,#fd1d1d);
-    }
+    .ig{background:linear-gradient(45deg,#fd1d1d,#f56040,#f77737,#fcaf45,#ffdc80,#833ab4,#c13584,#e1306c,#fd1d1d)}
+    .direkt-center{text-align:center} .direkt-center p{text-align:center;margin:0 auto}
 
-    /* Direkt-Karte zentriert */
-    .direkt-center{
-      text-align:center;
-    }
-    .direkt-center p{
-      text-align:center;
-      justify-content:center;
-      margin:0 auto;
-    }
-
-    /* Videokarte */
     .video-card{border-radius:12px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.06)}
     .video-frame{position:relative;width:100%;padding-bottom:56.25%;background:#000}
-    .video-frame video,.video-frame .poster{
-      position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;
-    }
-    .video-overlay{
-      position:absolute;inset:0;display:grid;place-items:center;
-      background:linear-gradient(0deg,rgba(0,0,0,.28),rgba(0,0,0,.12));transition:opacity .25s ease;
-    }
+    .video-frame video,.video-frame .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+    .video-overlay{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(0deg,rgba(0,0,0,.28),rgba(0,0,0,.12));transition:opacity .25s ease}
     .video-overlay.is-hidden{opacity:0;pointer-events:none}
-    .play-btn{
-      height:64px;width:64px;background:#ffffffcc;border-radius:999px;
-      display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.25);
-      transition:transform .12s ease,filter .12s ease;
-    }
+    .play-btn{height:64px;width:64px;background:#ffffffcc;border-radius:999px;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.25);transition:transform .12s ease,filter .12s ease}
     .play-btn svg{width:28px;height:28px;fill:#111827;transform:translateX(1px)}
-    .play-btn:hover{transform:scale(1.03);filter:brightness(.96)}
-    .play-btn:active{transform:scale(.97)}
+    .play-btn:hover{transform:scale(1.03);filter:brightness(.96)} .play-btn:active{transform:scale(.97)}
+
+    /* Statusmeldung Formular */
+    .form-status{font-size:14px;color:var(--muted)}
+    .form-status.error{color:#b91c1c}
+    .form-status.ok{color:#16a34a}
   </style>
 </head>
-
 <body>
 
 <header>
@@ -161,19 +95,17 @@
       <p>Viele Betriebe wissen, dass 3D-Druck Geld spart – aber keiner weiß, wie man richtig startet. Oft steht der Drucker ungenutzt herum oder Projekte kosten mehr als nötig, weil das Know-how fehlt.</p>
       <div class="cta">
         <a class="btn btn-primary" href="#kontakt">Erstgespräch anfragen</a>
-<a class="btn btn-ghost" href="https://wa.me/436765890068" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <svg style="width:20px;height:20px;fill:#25D366" viewBox="0 0 24 24">
-    <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.51-5.81C.234 5.318 5.443 0 12.107 0c3.23 0 6.229 1.265 8.499 3.558a11.822 11.822 0 013.495 8.413c-.003 6.664-5.21 11.873-11.876 11.873a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.593 5.448.003 9.886-4.431 9.889-9.88.002-5.462-4.416-9.887-9.881-9.889-5.463-.002-9.887 4.417-9.889 9.88a9.864 9.864 0 001.8 5.576l-.987 3.602 3.676-.882zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.149-.173.198-.297.298-.496.099-.198.05-.372-.025-.521-.074-.149-.669-1.611-.916-2.208-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.521.074-.793.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.693.627.711.227 1.36.195 1.872.118.571-.085 1.758-.719 2.007-1.413.248-.695.248-1.292.173-1.414z"/>
-  </svg>
-</a>
-     </div>
+        <a class="btn btn-ghost" href="https://wa.me/436765890068" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg style="width:20px;height:20px;fill:#25D366" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.51-5.81C.234 5.318 5.443 0 12.107 0c3.23 0 6.229 1.265 8.499 3.558a11.822 11.822 0 013.495 8.413c-.003 6.664-5.21 11.873-11.876 11.873a11.9 11.9 0 01-5.688-1.448L.057 24z"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </section>
 
   <section class="promo">
-    <div class="wrap">
-      <h2>20 % Rabatt für die ersten 5 Unternehmen – nur bis 14. November 2025!</h2>
-    </div>
+    <div class="wrap"><h2>20 % Rabatt für die ersten 5 Unternehmen – nur bis 14. November 2025!</h2></div>
   </section>
 
   <section id="leistungen">
@@ -191,33 +123,19 @@
     <div class="wrap">
       <h2>Aktuelle Projekte</h2>
       <p class="muted">Einblick in aktuelle Designs & Aufträge:</p>
-
       <div class="grid grid-3 gallery">
-
         <div class="card">
           <img src="assets/referenz1.jpg" alt="3D Design-Beratung" class="ref-img">
-          <div style="padding:12px 16px">
-            <h3>3D Design-Beratung</h3><p class="muted">Optimiertes CAD für effizienten Druck.</p>
-          </div>
+          <div style="padding:12px 16px"><h3>3D Design-Beratung</h3><p class="muted">Optimiertes CAD für effizienten Druck.</p></div>
         </div>
-
         <div class="card">
           <img src="assets/referenz2.jpg" alt="3D-Logo mit NFC" class="ref-img">
-          <div style="padding:12px 16px">
-            <h3>3D-Logo mit NFC</h3><p class="muted">Schlüsselanhänger & Firmenlogo mit NFC-Funktion.</p>
-          </div>
+          <div style="padding:12px 16px"><h3>3D-Logo mit NFC</h3><p class="muted">Schlüsselanhänger & Firmenlogo mit NFC-Funktion.</p></div>
         </div>
-
         <div class="card video-card">
           <div class="video-frame" data-video-container>
             <img class="poster" src="assets/kleinserie_poster.png" alt="Kleinserien-Fertigung Vorschaubild" loading="lazy">
-            <video
-              preload="metadata"
-              playsinline
-              muted
-              poster="assets/kleinserie_poster.png"
-              tabindex="0"
-              aria-label="Kleinserien-Fertigung Video">
+            <video preload="metadata" playsinline muted poster="assets/kleinserie_poster.png" tabindex="0" aria-label="Kleinserien-Fertigung Video">
               <source src="assets/kleinserie.mp4" type="video/mp4">
             </video>
             <div class="video-overlay" data-video-overlay>
@@ -226,13 +144,11 @@
               </button>
             </div>
           </div>
-
           <div style="padding:16px 16px 20px">
             <h3>Kleinserien-Fertigung</h3>
             <p class="muted">3D-gedruckte Designs als effiziente Lösung für regionale Betriebe.</p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -240,44 +156,47 @@
   <section id="kontakt">
     <div class="wrap grid grid-2">
 
+      <!-- Kontaktformular: Formspree + Linkfeld + sichere Redirect-Logik -->
       <div class="card">
         <h2>Kontakt</h2>
         <p class="muted">Schnellstes: Formular ausfüllen – Antwort in 24 h.</p>
 
-       <form action="https://formspree.io/f/xovkgzvl"
-      method="POST"
-      enctype="multipart/form-data"
-      class="kontakt-form">
+        <form id="kontaktForm"
+              action="https://formspree.io/f/xovkgzvl"
+              method="POST"
+              class="kontakt-form"
+              novalidate>
+          <!-- Honeypot gegen Bots -->
+          <input type="text" name="website" id="trap" style="display:none">
 
           <label>Name*</label>
           <input type="text" name="Name" required>
 
           <label>E-Mail*</label>
-          <input type="email" name="E-Mail" required>
+          <input type="email" name="Email" required>
 
           <label>Betreff</label>
           <input type="text" name="Betreff">
 
           <label>Nachricht*</label>
           <textarea name="Nachricht" required></textarea>
-         
-<label for="file">Datei anhängen (optional)</label>
-<input id="file"
-       type="file"
-       name="attachment"
-       accept=".stl,.step,.stp,.iges,.igs,.obj,.3mf,.zip,.pdf,.png,.jpg,.jpeg">
-<small class="muted">Erlaubte Formate: STL, STEP, IGES, OBJ, 3MF, ZIP, PDF, PNG, JPG.</small>
+
+          <!-- Kostenlose Alternative zum Upload: Linkfeld -->
+          <label for="filelink">Dateilink (optional)</label>
+          <input id="filelink" type="url" name="Dateilink" placeholder="https://…">
+          <small class="muted">Bitte Datei (z. B. STL/STEP/ZIP) bei WeTransfer, Google Drive oder Dropbox hochladen und den Freigabelink hier einfügen.</small>
 
           <div class="checkbox-container">
             <input type="checkbox" name="Einwilligung" required>
             <label>Ich stimme zu, dass meine Angaben zur Kontaktaufnahme gespeichert werden.</label>
           </div>
 
+          <div id="formStatus" class="form-status" aria-live="polite"></div>
           <button type="submit" class="btn btn-primary">Nachricht senden</button>
         </form>
       </div>
 
-      <!-- ✅ HIER jetzt zentriert -->
+      <!-- Direkt-Karte (zentriert) -->
       <div class="card direkt-center">
         <h2>Direkt</h2>
         <p style="margin-bottom:6px;">
@@ -285,12 +204,10 @@
           <b>WhatsApp:</b> <a href="https://wa.me/436765890068" target="_blank" rel="noopener">+43 676 5890068</a><br>
           <b>Standort:</b> Innviertel, OÖ
         </p>
-
         <div class="social-icons">
           <a class="fb" href="https://www.facebook.com/share/1Zb4kS49oo/" target="_blank" aria-label="Facebook">
             <svg viewBox="0 0 24 24"><path d="M22 12.07C22 6.49 17.52 2 11.93 2S2 6.49 2 12.07c0 5 3.66 9.14 8.44 9.93v-7.03H8.05v-2.9h2.39V9.41c0-2.36 1.4-3.67 3.55-3.67 1.03 0 2.12.18 2.12.18v2.33h-1.2c-1.18 0-1.55.74-1.55 1.5v1.79h2.64l-.42 2.9h-2.22v7.03c4.78-.79 8.44-4.93 8.44-9.93z"/></svg>
           </a>
-
           <a class="ig" href="https://www.instagram.com/s.inn3d?igsh=MXZpYnZ3dHFseGxldQ==" target="_blank" aria-label="Instagram">
             <svg viewBox="0 0 24 24"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.9a1.1 1.1 0 100 2.2 1.1 1.1 0 000-2.2z"/></svg>
           </a>
@@ -305,32 +222,51 @@
 <footer>
   <div class="wrap foot">
     <div>© <span id="y"></span> S’INN3D – Beratung & 3D-Design</div>
-    <div>
-      <a href="/impressum.html">Impressum</a> ·
-      <a href="/datenschutz.html">Datenschutz</a>
-    </div>
+    <div><a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></div>
   </div>
 </footer>
 
 <script>
+  // Jahr im Footer
   document.getElementById('y').textContent = new Date().getFullYear();
 
+  // Video Overlay Play
   (function(){
     document.querySelectorAll('[data-video-container]').forEach(container=>{
       const video = container.querySelector('video');
       const overlay = container.querySelector('[data-video-overlay]');
       const btn = container.querySelector('[data-video-play]');
-
-      function play(){
-        video.setAttribute('controls','controls');
-        overlay.classList.add('is-hidden');
-        video.play().catch(()=>{});
-      }
-
+      function play(){ video.setAttribute('controls','controls'); overlay.classList.add('is-hidden'); video.play().catch(()=>{}); }
       btn.addEventListener('click', play);
-      overlay.addEventListener('click', e=>{
-        if(e.target===overlay) play();
-      });
+      overlay.addEventListener('click', e=>{ if(e.target===overlay) play(); });
+    });
+  })();
+
+  // Formspree: Free-Plan mit eigener Redirect-Logik (Danke-Seite)
+  (function(){
+    const form = document.getElementById('kontaktForm');
+    const status = document.getElementById('formStatus');
+    if(!form) return;
+
+    form.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+
+      // Honeypot: wenn befüllt, still ignorieren
+      if (document.getElementById('trap').value.trim() !== '') return;
+
+      const data = new FormData(form);
+      try{
+        const res = await fetch(form.action, { method:'POST', body:data, headers:{'Accept':'application/json'} });
+        if(res.ok){
+          window.location.href = '/danke.html';
+        }else{
+          status.textContent = 'Senden fehlgeschlagen. Bitte später erneut versuchen oder per E-Mail melden.';
+          status.className = 'form-status error';
+        }
+      }catch(err){
+        status.textContent = 'Netzwerkfehler. Prüfe deine Verbindung oder schreibe an office@sinn-3d.at.';
+        status.className = 'form-status error';
+      }
     });
   })();
 </script>
