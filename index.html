@@ -244,12 +244,10 @@
         <h2>Kontakt</h2>
         <p class="muted">Schnellstes: Formular ausfüllen – Antwort in 24 h.</p>
 
-        <form action="https://formsubmit.co/office@sinn-3d.at" method="POST" class="kontakt-form">
-          <input type="hidden" name="_subject" value="Neue Anfrage über sinn-3d.at">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_next" value="https://www.sinn-3d.at/danke.html">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="text" name="_honey" style="display:none">
+       <form action="https://formspree.io/f/xovkgzvl"
+      method="POST"
+      enctype="multipart/form-data"
+      class="kontakt-form">
 
           <label>Name*</label>
           <input type="text" name="Name" required>
@@ -262,6 +260,13 @@
 
           <label>Nachricht*</label>
           <textarea name="Nachricht" required></textarea>
+         
+<label for="file">Datei anhängen (optional)</label>
+<input id="file"
+       type="file"
+       name="attachment"
+       accept=".stl,.step,.stp,.iges,.igs,.obj,.3mf,.zip,.pdf,.png,.jpg,.jpeg">
+<small class="muted">Erlaubte Formate: STL, STEP, IGES, OBJ, 3MF, ZIP, PDF, PNG, JPG.</small>
 
           <div class="checkbox-container">
             <input type="checkbox" name="Einwilligung" required>
