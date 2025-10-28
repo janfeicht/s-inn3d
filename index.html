@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>S’INN3D – 3D-Design & CAD-Beratung für Firmen</title>
   <meta name="description" content="S’INN3D: Beratung für Unternehmen – 3D-Logo-Design, CAD-Konstruktion, 3D-Druck-Beratung, CAD-Schulung und 3D-Druck-Service für Kleinserien. Regional, präzise.">
 
@@ -11,117 +10,97 @@
   <link rel="icon" href="assets/logo.png" type="image/png">
   <meta property="og:title" content="S’INN3D – 3D-Design & CAD-Beratung für Firmen">
   <meta property="og:description" content="3D-Druck-Beratung, CAD-Schulung und Kleinserien aus dem Innviertel.">
-  <meta property="og:image" content="https://sinn-3d.at/assets/logo.png">
-  <meta property="og:url" content="https://sinn-3d.at/">
+  <meta property="og:image" content="https://www.sinn-3d.at/assets/logo.png">
+  <meta property="og:url" content="https://www.sinn-3d.at/">
   <meta name="twitter:card" content="summary_large_image">
 
   <style>
     :root{
       --bg:#f7faf9; --card:#ffffff; --text:#111827; --muted:#6b7280;
-      --brand:#16a34a; --brand2:#14b8a6; --accent:#facc15;
-      --line:#e5e7eb;
+      --brand:#16a34a; --brand2:#14b8a6; --accent:#facc15; --line:#e5e7eb;
+      --wrap:1100px;
     }
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    img{max-width:100%;display:block}
+    body{
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,'Helvetica Neue',Arial,sans-serif;
+      background:var(--bg); color:var(--text); line-height:1.6
+    }
     a{color:var(--brand2);text-decoration:none}
     a:focus{outline:3px solid rgba(20,184,166,.35);outline-offset:2px}
-    img{max-width:100%;display:block}
+    .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
 
-    /* ===== HEADER & NAV ===== */
+    /* Header / Nav */
     header{
-      position:sticky; top:0; z-index:10;
-      background:rgba(255,255,255,.95);
-      backdrop-filter:blur(8px);
+      position:sticky; top:0; z-index:20;
+      background:rgba(255,255,255,.95); backdrop-filter:blur(8px);
       border-bottom:1px solid var(--line);
     }
-    .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
-    .nav{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
-
-    /* Buttons */
-    .btn{display:inline-block;padding:10px 16px;border-radius:999px;font-weight:600;border:1px solid transparent;transition:filter .15s ease, transform .02s ease}
+    .nav{display:flex;flex-direction:column;align-items:center;gap:10px;padding:8px 0}
+    .logo{display:flex;justify-content:center;align-items:center;height:clamp(110px,20vw,180px);padding:8px 0}
+    .logo img{height:100%;width:auto;object-fit:contain;filter:drop-shadow(0 6px 12px rgba(0,0,0,.15))}
+    .cta{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:10px 16px;border-radius:999px;font-weight:600;border:1px solid transparent;transition:filter .15s ease,transform .02s ease}
     .btn:active{transform:translateY(1px)}
     .btn-primary{background:var(--brand2);color:#fff;border-color:var(--brand2)}
     .btn-primary:hover{filter:brightness(.98)}
     .btn-ghost{background:#fff;color:#0b1720;border-color:var(--line)}
     .btn-ghost:hover{filter:brightness(.98)}
 
-    /* ===== HERO ===== */
-    .hero{padding:8px 0 16px;text-align:left}
+    /* Hero */
+    .hero{padding:8px 0 16px}
     .hero h1{font-size:clamp(28px,5.5vw,42px);line-height:1.1;margin:0 0 10px}
     .hero p{max-width:720px;color:var(--muted);margin:0 0 16px;font-size:16px}
-    .cta{display:flex;gap:10px;flex-wrap:wrap}
 
-    /* ===== PROMO ===== */
-    .promo-section{background:#fffbe8;border:2px solid #ffe066;border-radius:16px;padding:20px 14px;margin:16px auto;text-align:center}
-    .promo-section h2{font-size:clamp(18px,5vw,24px);color:#16a34a;margin:0}
+    /* Promo */
+    .promo{background:#fffbe8;border:2px solid #ffe066;border-radius:16px;padding:20px 14px;margin:16px auto;text-align:center}
+    .promo h2{font-size:clamp(18px,5vw,24px);color:var(--brand);margin:0}
 
-    /* ===== SECTIONS / GRID / CARDS ===== */
+    /* Sections / Cards */
     section{padding:32px 0;scroll-margin-top:90px}
     .grid{display:grid;gap:20px}
     .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
     .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
     @media (max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
     .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:0 1px 0 rgba(0,0,0,.02)}
-
     h2{font-size:28px;margin:0 0 16px}
     h3{margin:0 0 8px}
     .muted{color:var(--muted)}
 
-    /* ===== REFERENZEN (Galerie) ===== */
+    /* Galerie */
     .gallery .card{padding:0;overflow:hidden;border:none}
-    .ref-img{width:100%;height:auto;border-radius:12px;margin-bottom:10px;object-fit:cover;transition:transform .2s ease,box-shadow .2s ease}
-    .ref-img:hover{transform:scale(1.02);box-shadow:0 6px 20px rgba(0,0,0,0.08)}
+    .ref-img{width:100%;border-radius:12px;margin-bottom:10px;object-fit:cover;transition:transform .2s,box-shadow .2s}
+    .ref-img:hover{transform:scale(1.02);box-shadow:0 6px 20px rgba(0,0,0,.08)}
 
-    /* ===== Kontaktformular – ruhiges Layout ===== */
-    .kontakt-form {
-      width:100%;
-      display:grid;
-      grid-template-columns:1fr;
-      gap:16px;
-      align-items:start;
-    }
+    /* Kontaktformular */
+    .kontakt-form{display:grid;grid-template-columns:1fr;gap:16px;align-items:start}
     .kontakt-form label{font-weight:700;font-size:14px;color:var(--text)}
     .kontakt-form input,.kontakt-form textarea{
       width:100%;padding:12px 14px;border:1px solid #d1d5db;border-radius:12px;background:#fff;
-      font:inherit;line-height:1.45;box-shadow:0 1px 0 rgba(0,0,0,.02);transition:border-color .15s ease, box-shadow .15s ease
+      font:inherit;line-height:1.45;box-shadow:0 1px 0 rgba(0,0,0,.02);transition:border-color .15s,box-shadow .15s
     }
-    .kontakt-form input::placeholder,.kontakt-form textarea::placeholder{color:#9ca3af}
     .kontakt-form input:focus,.kontakt-form textarea:focus{outline:none;border-color:var(--brand2);box-shadow:0 0 0 4px rgba(20,184,166,.15)}
     .kontakt-form textarea{min-height:150px;resize:vertical}
     .checkbox-container{display:flex;align-items:flex-start;gap:.55rem}
-    .checkbox-container input[type="checkbox"]{transform:scale(1.1);margin-top:.2rem}
+    .checkbox-container input{transform:scale(1.1);margin-top:.2rem}
     .kontakt-form .btn{width:100%;padding:12px 18px;border-radius:12px}
-
-    /* Desktop: 2 Spalten, Nachricht & Button volle Breite */
     @media (min-width:900px){
       .kontakt-form{grid-template-columns:1fr 1fr;column-gap:24px;row-gap:16px}
-      .kontakt-form textarea,.kontakt-form .checkbox-container,.kontakt-form .btn{grid-column:1 / -1}
+      .kontakt-form textarea,.kontakt-form .checkbox-container,.kontakt-form .btn{grid-column:1/-1}
     }
 
-    /* ===== FOOTER & LEGAL ===== */
+    /* Footer */
     footer{padding:32px 0;background:#fff;border-top:1px solid var(--line)}
-    .legal-section{background:#fff;border-top:2px solid var(--line);padding:40px 20px}
-    .toggle-title{cursor:pointer;font-weight:700;color:var(--brand);margin-top:20px}
-    .toggle-content{display:none;margin-top:10px;color:var(--text)}
-
-    /* === Logo responsiv === */
-    .logo{display:flex;justify-content:center;align-items:center;height:clamp(110px,20vw,180px);padding:8px 0}
-    .logo img{height:100%;width:auto;object-fit:contain;filter:drop-shadow(0 6px 12px rgba(0,0,0,.15))}
-    @media (min-width:1024px){ .logo{ height:clamp(130px,14vw,200px) } }
+    footer .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   </style>
 </head>
 <body>
 <header>
   <div class="wrap nav">
-    <!-- Zentriertes Logo (ohne Inline-Styles!) -->
-    <div class="logo">
-      <img src="assets/logo.png" alt="S’INN3D Logo">
-    </div>
-
-    <!-- Navigation -->
+    <div class="logo"><img src="assets/logo.png" alt="S’INN3D Logo"></div>
     <nav class="cta" aria-label="Hauptnavigation">
       <a class="btn btn-ghost" href="#leistungen">Leistungen</a>
-      <a class="btn btn-ghost" href="#aktuelle-projekte">Aktuelle Projekte</a>
+      <a class="btn btn-ghost" href="#projekte">Aktuelle Projekte</a>
       <a class="btn btn-primary" href="#kontakt">Kostenloses Erstgespräch</a>
     </nav>
   </div>
@@ -142,7 +121,7 @@
   </section>
 
   <!-- PROMO -->
-  <section class="promo-section">
+  <section class="promo">
     <div class="wrap">
       <h2>20 % Rabatt für die ersten 5 Unternehmen auf alle Design-Beratung & Schulungen – nur bis 14. November 2025!</h2>
     </div>
@@ -155,22 +134,22 @@
       <div class="grid grid-3">
         <div class="card">
           <h3>3D-Druck Beratung</h3>
-          <p class="muted">Unabhängige Beratung rund um additive Fertigung, Materialwahl, Druckverfahren und Designoptimierung – für Einsteiger und Unternehmen.</p>
+          <p class="muted">Additive Fertigung, Materialwahl, Druckverfahren und Designoptimierung – für Einsteiger und Unternehmen.</p>
         </div>
         <div class="card">
           <h3>CAD-Design Basis Schulung</h3>
-          <p class="muted">Praxisnahe Einführung in die CAD-Modellierung – speziell für den 3D-Druck. Ideal für Teams & Leute, die eigene Projekte umsetzen wollen.</p>
+          <p class="muted">Praxisnahe Einführung in CAD – speziell für den 3D-Druck. Ideal für Teams & Macher.</p>
         </div>
         <div class="card">
-          <h3>3D-Druck-Designservice für Kleinserien</h3>
-          <p class="muted">Prototypen und Kleinserien – schnell, flexibel und maßgeschneidert. Beratung zur Bauteiloptimierung inklusive.</p>
+          <h3>Designservice für Kleinserien</h3>
+          <p class="muted">Prototypen & Kleinserien – schnell, flexibel, maßgeschneidert. Inkl. Bauteiloptimierung.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- AKTUELLE PROJEKTE -->
-  <section id="aktuelle-projekte">
+  <!-- PROJEKTE -->
+  <section id="projekte">
     <div class="wrap">
       <h2>Aktuelle Projekte</h2>
       <p class="muted">Ein Einblick in aktuelle Projekte, Schulungen und Designs:</p>
@@ -179,21 +158,21 @@
           <img src="assets/referenz1.jpg" alt="3D Design-Beratung" class="ref-img" loading="lazy">
           <div style="padding:16px 16px 20px">
             <h3>3D Design-Beratung</h3>
-            <p class="muted">Praxisnahe Einschulung im Designen von 3D-Objekten mit CAD-Programmen für effizientes Arbeiten mit FDM-3D-Druckern.</p>
+            <p class="muted">Einschulung in CAD & Design für effizienten FDM-Druck.</p>
           </div>
         </div>
         <div class="card">
-          <img src="assets/referenz2.jpg" alt="3D-Logo Design" class="ref-img" loading="lazy">
+          <img src="assets/referenz2.jpg" alt="3D-Logo Design mit NFC" class="ref-img" loading="lazy">
           <div style="padding:16px 16px 20px">
-            <h3>3D-Logo Design mit NFC-Chip-Integration</h3>
-            <p class="muted">Firmenlogo & 3D-gedruckter Schlüsselanhänger mit unsichtbarer NFC-Funktion.</p>
+            <h3>3D-Logo Design mit NFC</h3>
+            <p class="muted">Firmenlogo & 3D-gedruckter Schlüsselanhänger mit unsichtbarer NFC-Integration.</p>
           </div>
         </div>
         <div class="card">
           <img src="assets/referenz3.jpg" alt="Kleinserien-Fertigung" class="ref-img" loading="lazy">
           <div style="padding:16px 16px 20px">
             <h3>Kleinserien-Fertigung</h3>
-            <p class="muted">3D-gedruckte Designs als effiziente Lösung für regionale Betriebe.</p>
+            <p class="muted">Regionale Lösungen – kurze Wege, messbare Qualität.</p>
           </div>
         </div>
       </div>
@@ -208,7 +187,7 @@
         <p class="muted">Schnellster Weg: Formular ausfüllen – wir melden uns innerhalb von 24 h.</p>
 
         <form action="https://formsubmit.co/office@sinn-3d.at" method="POST" class="kontakt-form" autocomplete="on">
-          <!-- Formsubmit / Settings -->
+          <!-- FormSubmit Einstellungen -->
           <input type="hidden" name="_subject"  value="Neue Anfrage über sinn-3d.at">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_next"     value="https://www.sinn-3d.at/danke.html">
@@ -219,7 +198,7 @@
           <input id="name" type="text" name="Name" required>
 
           <label for="email">E-Mail*</label>
-          <input id="email" type="email" name="email" required>
+          <input id="email" type="email" name="E-Mail" required>
 
           <label for="subject">Betreff</label>
           <input id="subject" type="text" name="Betreff">
@@ -229,14 +208,14 @@
 
           <div class="checkbox-container">
             <input type="checkbox" id="consent" name="Einwilligung" required>
-            <label for="consent">Ich stimme zu, dass meine Angaben zur Kontaktaufnahme gespeichert werden. Details siehe Impressum/Datenschutz.</label>
+            <label for="consent">Ich stimme zu, dass meine Angaben zur Kontaktaufnahme gespeichert werden. Details siehe <a href="/datenschutz.html">Datenschutz</a>.</label>
           </div>
 
           <button type="submit" class="btn btn-primary">Nachricht senden</button>
         </form>
       </div>
 
-      <div class="card">
+      <div class="card" aria-label="Direktkontakt">
         <h2>Direkt</h2>
         <p>
           <b>E-Mail:</b> <a href="mailto:office@sinn-3d.at">office@sinn-3d.at</a><br>
@@ -248,65 +227,36 @@
   </section>
 </main>
 
-<!-- FOOTER -->
 <footer>
-  <div class="wrap grid grid-2">
+  <div class="wrap foot">
     <div>© <span id="y"></span> S’INN3D – Beratung & 3D-Design</div>
-    <div style="text-align:right">
-      <a href="#rechtliches" class="muted" style="text-decoration:none">Impressum / Datenschutz</a>
-    </div>
+    <nav>
+      <a href="/impressum.html">Impressum</a> ·
+      <a href="/datenschutz.html">Datenschutz</a>
+    </nav>
   </div>
 </footer>
 
-<!-- RECHTLICHES (aufklappbar) -->
-<section id="rechtliches" class="legal-section">
-  <div class="wrap">
-    <h2 class="toggle-title" onclick="toggleRechtliches('impressum')">📄 Impressum anzeigen</h2>
-    <div id="impressum" class="toggle-content">
-      <p><strong>S’INN3D</strong><br>Jan Feichtenschlager<br>Edt 4, 4782 St. Florian am Inn<br>Österreich</p>
-      <p><b>Kontakt:</b> <a href="mailto:office@sinn-3d.at">office@sinn-3d.at</a></p>
-      <p><b>Unternehmensform:</b> Einzelunternehmen (nicht im Firmenbuch eingetragen)<br>
-         Aufsichtsbehörde: Bezirkshauptmannschaft Schärding<br>
-         Mitglied der Wirtschaftskammer Oberösterreich</p>
-      <p><b>Haftungsausschluss:</b> Alle Inhalte dieser Website wurden sorgfältig geprüft und nach bestem Wissen erstellt. Für Richtigkeit und Vollständigkeit wird keine Haftung übernommen.</p>
-    </div>
-
-    <h2 class="toggle-title" onclick="toggleRechtliches('datenschutz')">🔐 Datenschutz anzeigen</h2>
-    <div id="datenschutz" class="toggle-content">
-      <p>Der Schutz Ihrer persönlichen Daten ist uns ein Anliegen. Wir verarbeiten Ihre Daten gemäß DSGVO & TKG.</p>
-      <p><b>Kontaktformular:</b> Daten werden nur zur Bearbeitung Ihrer Anfrage gespeichert und nicht ohne Einwilligung weitergegeben.</p>
-      <p><b>Ihre Rechte:</b> Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit & Widerspruch.</p>
-      <p>Datenschutzbehörde Österreich – <a href="https://www.dsb.gv.at" target="_blank" rel="noopener">www.dsb.gv.at</a></p>
-    </div>
-  </div>
-</section>
-
-<!-- Scripts am Ende -->
 <script>
-  // Jahr setzen
+  // Jahr im Footer
   document.getElementById('y').textContent = new Date().getFullYear();
 
-  // Smooth scroll mit Header-Offset
-  (function() {
+  // Smooth Scroll mit Header-Offset
+  (function(){
     const header = document.querySelector('header');
-    const getOffset = () => (header ? header.offsetHeight + 10 : 0);
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
+    const offset = () => (header ? header.offsetHeight + 10 : 0);
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
         const id = a.getAttribute('href').slice(1);
-        const target = document.getElementById(id);
-        if (!target) return;
+        const t = document.getElementById(id);
+        if(!t) return;
         e.preventDefault();
-        const y = target.getBoundingClientRect().top + window.pageYOffset - getOffset();
-        window.scrollTo({ top: y, behavior: 'smooth' });
-        history.replaceState(null, '', '#' + id);
+        const y = t.getBoundingClientRect().top + window.pageYOffset - offset();
+        window.scrollTo({top:y,behavior:'smooth'});
+        history.replaceState(null,'','#'+id);
       });
     });
   })();
-
-  function toggleRechtliches(id){
-    const el = document.getElementById(id);
-    el.style.display = (el.style.display==='none' || el.style.display==='') ? 'block' : 'none';
-  }
 </script>
 </body>
 </html>
