@@ -67,7 +67,6 @@
     .play-btn svg{width:28px;height:28px;fill:#111827;transform:translateX(1px)}
     .play-btn:hover{transform:scale(1.03);filter:brightness(.96)} .play-btn:active{transform:scale(.97)}
 
-    /* Statusmeldung Formular */
     .form-status{font-size:14px;color:var(--muted)}
     .form-status.error{color:#b91c1c}
     .form-status.ok{color:#16a34a}
@@ -95,9 +94,11 @@
       <p>Viele Betriebe wissen, dass 3D-Druck Geld spart – aber keiner weiß, wie man richtig startet. Oft steht der Drucker ungenutzt herum oder Projekte kosten mehr als nötig, weil das Know-how fehlt.</p>
       <div class="cta">
         <a class="btn btn-primary" href="#kontakt">Erstgespräch anfragen</a>
+        <!-- WhatsApp: Original-Look als Ghost-Button -->
         <a class="btn btn-ghost" href="https://wa.me/436765890068" target="_blank" rel="noopener" aria-label="WhatsApp">
-          <svg style="width:20px;height:20px;fill:#25D366" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.51-5.81C.234 5.318 5.443 0 12.107 0c3.23 0 6.229 1.265 8.499 3.558a11.822 11.822 0 013.495 8.413c-.003 6.664-5.21 11.873-11.876 11.873a11.9 11.9 0 01-5.688-1.448L.057 24z"/>
+          <svg style="width:22px;height:22px" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#25D366" d="M12.04 2C6.55 2 2.04 6.51 2.04 12c0 2.1.55 4.02 1.52 5.77L2 22l4.36-1.52A9.87 9.87 0 0012.04 22c5.49 0 10-4.51 10-10S17.53 2 12.04 2z"/>
+            <path fill="#fff" d="M17 14.77c-.21-.11-1.28-.63-1.48-.71-.2-.07-.34-.11-.48.11-.14.21-.55.71-.68.86-.12.14-.25.16-.46.05-.21-.11-.89-.33-1.7-1.05-.63-.56-1.06-1.25-1.19-1.46-.12-.21-.01-.33.1-.44.1-.1.21-.25.32-.38.1-.12.14-.21.21-.36.07-.14.04-.27-.03-.38-.07-.11-.48-1.15-.66-1.58-.17-.41-.34-.35-.46-.36l-.39-.01c-.14 0-.36.05-.54.25-.19.2-.71.69-.71 1.69 0 1 .74 1.96.84 2.1.1.14 1.46 2.23 3.54 3.12.49.21.88.34 1.18.43.49.15.94.13 1.29.08.39-.06 1.21-.5 1.38-.98.17-.48.17-.9.12-.99-.05-.08-.19-.14-.41-.25z"/>
           </svg>
         </a>
       </div>
@@ -112,9 +113,18 @@
     <div class="wrap">
       <h2>Leistungen</h2>
       <div class="grid grid-3">
-        <div class="card"><h3>3D-Druck Beratung</h3><p class="muted">Materialwahl, Verfahren, Bauteiloptimierung.</p></div>
-        <div class="card"><h3>CAD-Design Schulung</h3><p class="muted">3D-Modellierung für FDM – schnell & praxisnah.</p></div>
-        <div class="card"><h3>Kleinserien-Fertigung</h3><p class="muted">Prototypen & Kleinserien – schnell & maßgeschneidert.</p></div>
+        <div class="card">
+          <h3>3D-Druck Beratung</h3>
+          <p class="muted">Unabhängige Beratung rund um additive Fertigung, Materialwahl, Druckverfahren und Designoptimierung – für Einsteiger und Unternehmen.</p>
+        </div>
+        <div class="card">
+          <h3>CAD-Design Schulung</h3>
+          <p class="muted">Praxisnahe Einführung in die CAD-Modellierung – speziell für den 3D-Druck. Ideal für Teams & Leute, die eigene Projekte umsetzen wollen.</p>
+        </div>
+        <div class="card">
+          <h3>Kleinserien-Fertigung</h3>
+          <p class="muted">Fertigung von Prototypen und Kleinserien – schnell, flexibel und maßgeschneidert. Beratung zur Bauteiloptimierung inklusive.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -126,11 +136,17 @@
       <div class="grid grid-3 gallery">
         <div class="card">
           <img src="assets/referenz1.jpg" alt="3D Design-Beratung" class="ref-img">
-          <div style="padding:12px 16px"><h3>3D Design-Beratung</h3><p class="muted">Optimiertes CAD für effizienten Druck.</p></div>
+          <div style="padding:12px 16px">
+            <h3>3D Design-Beratung</h3>
+            <p class="muted">Praxisnahe Einschulung im Designen von 3D-Objekten mit CAD-Programmen für effizientes Arbeiten mit FDM-3D-Druckern.</p>
+          </div>
         </div>
         <div class="card">
           <img src="assets/referenz2.jpg" alt="3D-Logo mit NFC" class="ref-img">
-          <div style="padding:12px 16px"><h3>3D-Logo mit NFC</h3><p class="muted">Schlüsselanhänger & Firmenlogo mit NFC-Funktion.</p></div>
+          <div style="padding:12px 16px">
+            <h3>3D-Logo mit NFC</h3>
+            <p class="muted">Gestaltung eines Firmenlogos & 3D-gedruckten Schlüsselanhängers mit NFC-Funktion.</p>
+          </div>
         </div>
         <div class="card video-card">
           <div class="video-frame" data-video-container>
@@ -156,7 +172,7 @@
   <section id="kontakt">
     <div class="wrap grid grid-2">
 
-      <!-- Kontaktformular: Formspree + Linkfeld + sichere Redirect-Logik -->
+      <!-- Kontaktformular: Formspree + Linkfeld + Redirect auf danke.html -->
       <div class="card">
         <h2>Kontakt</h2>
         <p class="muted">Schnellstes: Formular ausfüllen – Antwort in 24 h.</p>
