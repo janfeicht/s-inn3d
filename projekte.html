@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Leistungen – S’INN3D</title>
-  <link rel="icon" href="/assets/logo.png" type="image/png">
+  <title>Projekte – S’INN3D</title>
+  <link rel="icon" href="assets/logo.png" type="image/png">
 
   <style>
     :root{
@@ -17,9 +17,8 @@
       font-family:system-ui, Arial, sans-serif;
       background:
         linear-gradient(180deg, rgba(255,255,255,0.88) 0%, rgba(210,240,230,0.88) 100%),
-        url("/assets/polygon_bg.svg");
+        url("assets/polygon_bg.svg");
       background-size:cover;
-      background-attachment:fixed;
       background-repeat:no-repeat;
       background-position:center;
       color:var(--text);
@@ -29,14 +28,14 @@
 
     .wrap{max-width:var(--wrap);margin:0 auto;padding:20px}
 
-    /* --- HEADER FIX --- */
+    /* Header */
     header{
-      background:rgba(255,255,255,.96);
-      backdrop-filter:blur(10px);
+      background:#fff;
       border-bottom:1px solid var(--line);
+      padding:14px 0;
       position:sticky;
-      top:0; left:0; right:0;
-      z-index:100;
+      top:0; z-index:50;
+      backdrop-filter:blur(8px);
     }
 
     .nav-flex{
@@ -45,42 +44,34 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      padding:8px 14px;
+      padding:0 20px;
     }
 
     .nav-flex img{
-      height:64px; /* kleiner als vorher */
+      height:58px;
       width:auto;
     }
 
-    nav{
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-
     nav a{
+      text-decoration:none;
       font-weight:600;
-      padding:8px 14px;
+      padding:9px 14px;
       border-radius:999px;
       border:1px solid var(--line);
-      text-decoration:none;
       color:var(--text);
-      white-space:nowrap;
-      background:#fff;
+      transition:0.15s;
     }
 
     nav a:hover{background:#f3f4f6}
 
     h1{
+      margin:30px 0 10px;
+      font-size:32px;
       text-align:center;
-      margin:32px 0 6px;
-      font-size:clamp(24px, 5vw, 36px);
     }
+
     p.muted{text-align:center;color:var(--muted);margin-bottom:26px}
 
-    /* CARDS */
     .grid{
       display:grid;
       gap:22px;
@@ -92,42 +83,39 @@
       border:1px solid var(--line);
       border-radius:14px;
       overflow:hidden;
-      box-shadow:0 2px 10px rgba(0,0,0,.07);
-      padding:0 0 16px;
+      box-shadow:0 2px 10px rgba(0,0,0,.04);
     }
 
     .media{
       width:100%;
       aspect-ratio:16/9;
       object-fit:cover;
-      background:#f3f4f6;
+      display:block;
     }
 
-    .card-content{padding:14px 18px}
+    .card-content{padding:16px 18px}
 
-    ul.clean{margin:8px 0 0 18px}
-    ul.clean li{margin:4px 0}
-
-    footer{
-      margin-top:40px;
-      text-align:center;
-      padding:20px 0;
-      border-top:1px solid var(--line);
-      background:#fff;
-    }
-
-    /* Buttons */
-    .cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:10px}
-    .btn-primary{
+    .btn-back{
+      display:inline-block;
+      margin-top:26px;
       background:var(--brand2);
       color:#fff;
       padding:12px 20px;
       border-radius:999px;
       text-decoration:none;
       font-weight:600;
-      border:1px solid var(--brand2);
+      text-align:center;
     }
-    .btn-primary:hover{filter:brightness(.92)}
+    .btn-back:hover{filter:brightness(.92)}
+
+    footer{
+      background:#fff;
+      border-top:1px solid var(--line);
+      margin-top:40px;
+      padding:18px 0;
+      text-align:center;
+      font-size:14px;
+    }
   </style>
 </head>
 
@@ -135,77 +123,87 @@
 
 <header>
   <div class="nav-flex">
-    <a href="/"><img src="/assets/logo.png" alt="S’INN3D Logo"></a>
-
+    <a href="/"><img src="assets/logo.png" alt="S’INN3D Logo"></a>
     <nav>
-      <a href="/">Start</a>
-      <a href="/leistungen.html">Leistungen</a>
-      <a href="/projekte.html">Projekte</a>
+      <a href="/">Startseite</a>
       <a href="/ueber-mich.html">Über mich</a>
+      <a href="/kontakt.html">Kontakt</a>
     </nav>
   </div>
 </header>
 
 <main class="wrap">
 
-  <h1>Leistungen</h1>
-  <p class="muted">Druckfertig · Wiederholbar · Praxisnah.</p>
+  <h1>Aktuelle Projekte</h1>
+  <p class="muted">Einblick in Designs und laufende Aufträge.</p>
 
   <div class="grid">
 
+    <!-- Projekt 1 -->
     <article class="card">
-      <img class="media" src="/assets/slicer.png" alt="3D-Design & CAD-Modellierung">
+      <img class="media" src="assets/designberatung.jpg" alt="3D Design-Beratung">
       <div class="card-content">
-        <h2>3D-Design & CAD-Modellierung</h2>
-        <p class="muted">Sauber konstruierte Modelle: funktional, kollisionsfrei, druckfertig.</p>
-        <ul class="clean">
-          <li>Bauteile, Logos, Vorrichtungen</li>
-          <li>FDM & Resin optimiert</li>
-          <li>Export als STEP, STL, 3MF</li>
-        </ul>
+        <h3>3D Design-Beratung</h3>
+        <p class="muted">Einschulung in CAD & saubere Bauteilkonstruktion für FDM-Druck.</p>
       </div>
     </article>
 
+    <!-- Projekt 2 -->
     <article class="card">
-      <img class="media" src="/assets/cad.jpg" alt="CAD Einschulung">
+      <img class="media" src="assets/slicer.png" alt="Modellierung & Slicer Optimierung">
       <div class="card-content">
-        <h2>CAD-Einschulung & Projektbegleitung</h2>
-        <p class="muted">Wir bauen gemeinsam ein echtes Bauteil. Praxis statt Theorie.</p>
-        <ul class="clean">
-          <li>Fusion 360 Grundlagen</li>
-          <li>Materialwahl & Slicer-Tipps</li>
-          <li>Optional: bis zur fertigen Serie</li>
-        </ul>
+        <h3>Druckfertiges CAD-Design</h3>
+        <p class="muted">Bauteile werden so konstruiert, dass sie wiederholbar druckbar sind.</p>
       </div>
     </article>
 
+    <!-- Projekt 3 -->
     <article class="card">
-      <img class="media" src="/assets/nfc_kopf.jpg" alt="Personalisierte Produkte & Kleinserien">
+      <img class="media" src="assets/nfc_kopf.jpg" alt="NFC-Schlüsselanhänger">
       <div class="card-content">
-        <h2>Personalisierte Produkte & Kleinserien</h2>
-        <p class="muted">NFC-Schlüsselanhänger, Musterstücke & kleine Serien – gefertigt mit Partnerbetrieb.</p>
-        <ul class="clean">
-          <li>NFC NTAG215/216</li>
-          <li>Plexiglas, Laser, UV-Sticker</li>
-          <li>Bespielung & Übergabe</li>
-        </ul>
+        <h3>NFC Schlüsselanhänger</h3>
+        <p class="muted">Personalisierte Produkte – gefertigt mit regionalem Partnerbetrieb.</p>
+      </div>
+    </article>
+
+    <!-- Projekt 4 -->
+    <article class="card">
+      <img class="media" src="assets/logo_nfc.jpg" alt="Individuelle Logodesigns">
+      <div class="card-content">
+        <h3>Individuelle Logo-Objekte</h3>
+        <p class="muted">Logos als 3D-Objekt, druckfertig konstruiert und veredelbar.</p>
+      </div>
+    </article>
+
+    <!-- Projekt 5 (Video) -->
+    <article class="card">
+      <div class="media" style="background:#000;position:relative">
+        <video
+          src="assets/kleinserie.mp4"
+          controls
+          style="width:100%;height:100%;object-fit:cover;border-radius:0;">
+        </video>
+      </div>
+      <div class="card-content">
+        <h3>Kleinserie (über Partner)</h3>
+        <p class="muted">3D-gedruckte Teile in Stückzahlen. Konstruktion + Vorbereitung.</p>
       </div>
     </article>
 
   </div>
 
-  <div class="cta">
-    <a class="btn-primary" href="/index.html#kontakt">Kontakt aufnehmen</a>
+  <div style="text-align:center">
+    <a class="btn-back" href="/">Zurück zur Startseite</a>
   </div>
 
 </main>
 
 <footer>
-  © <span id="year"></span> S’INN3D – 3D-Design, CAD-Modellierung & Kleinserien
+  © <span id="y"></span> S’INN3D – 3D-Design, CAD-Modellierung & Begleitung
 </footer>
 
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('y').textContent = new Date().getFullYear();
 </script>
 
 </body>
