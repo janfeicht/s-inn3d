@@ -27,6 +27,17 @@
     h1{margin:24px 0}
     p{margin:0 0 14px;font-size:17px}
 
+    .portrait{
+      width:160px;
+      height:160px;
+      border-radius:50%;
+      object-fit:cover;
+      margin:10px 0 28px;
+      box-shadow:0 3px 14px rgba(0,0,0,.08);
+      background:#e5e7eb;
+      display:block;
+    }
+
     .btn{
       display:inline-block;background:var(--brand2);color:#fff;font-weight:600;
       padding:11px 18px;border-radius:999px;margin-top:16px;text-decoration:none;
@@ -34,14 +45,9 @@
     }
     .btn:hover{filter:brightness(.92)}
 
-    footer{background:#fff;border-top:1px solid var(--line);margin-top:40px}
-    footer .inner{
-      max-width:1100px;margin:0 auto;padding:16px 20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
-    }
-
     .back-link{
       display:inline-block;
-      margin-top:26px;
+      margin-top:22px;
       background:#fff;
       border:1px solid var(--line);
       padding:10px 18px;
@@ -52,6 +58,11 @@
       transition:filter .15s ease;
     }
     .back-link:hover{filter:brightness(.95)}
+
+    footer{background:#fff;border-top:1px solid var(--line);margin-top:40px}
+    footer .inner{
+      max-width:1100px;margin:0 auto;padding:16px 20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    }
   </style>
 </head>
 
@@ -68,36 +79,24 @@
 
   <h1>Über mich</h1>
 
-  <p><strong>Ich bin Jan Feichtenschlager</strong> – gelernter Metallbearbeiter, bautechnischer Zeichner und geprüfter 3D-Konstrukteur.
-    In den letzten Jahren habe ich mich auf CAD-Modellierung, 3D-Design und funktionale Produktentwicklung spezialisiert.
-  </p>
+  <!-- ✅ Portrait-Platzhalter (einfach portrait.jpg ersetzen) -->
+  <img src="assets/portrait.jpg" alt="Foto von Jan Feichtenschlager" class="portrait">
 
-  <p>
-    Meine Arbeit richtet sich an Unternehmen und Privatkunden, die saubere, druckfertige und wiederholbare 3D-Modelle benötigen –
-    ohne unnötige Stützfehler, Kollisionen oder Probleme beim Slicen.
-  </p>
+  <p><strong>Ich bin Jan Feichtenschlager</strong> – gelernter Metallbearbeiter, bautechnischer Zeichner und zertifizierter 3D-Konstrukteur.
+     In den letzten Jahren habe ich mich stark auf CAD-Modellierung, 3D-Design und digitale Produktentwicklung spezialisiert.</p>
 
-  <p>
-    Ich entwickle funktionale 3D-Designs wie Schutzlösungen, personalisierte Produkte, Logodesigns
-    und Schlüsselanhänger mit integrierter NFC-Funktion.  
-    Auf Wunsch übernehme ich auch die Vorbereitung, Materialempfehlung und Slicer-Einstellungen,
-    damit das Modell auf verschiedenen Druckern zuverlässig produziert werden kann.
-  </p>
+  <p>Für viele klingt 3D-Design kompliziert, teuer oder technisch schwer zugänglich.
+     Mein Ansatz ist das Gegenteil: saubere Modelle, druckgerechte Konstruktion und klare Kommunikation – damit jeder Aufbau logisch,
+     wiederholbar und effizient ist.</p>
 
-  <p>
-    Wenn eine physische Fertigung oder Kleinserie benötigt wird, erfolgt diese
-    <strong>gemeinsam mit regionalen Partnerbetrieben</strong>.  
-    So bleibt die Umsetzung professionell, sauber dokumentiert und rechtlich einwandfrei.
-  </p>
+  <p>Ich erstelle druckfertige 3D-Modelle für Betriebe und Privatkunden:  
+     Schutzlösungen, personalisierte Produkte, Firmenlogos, Schlüsselanhänger mit NFC oder Bauteile für additiven Druck.
+     Alles so konstruiert, dass es auf unterschiedlichen Druckern zuverlässig hergestellt werden kann.</p>
 
-  <p>
-    Wenn du Fragen hast oder ein Projekt starten möchtest, melde dich gern:
-  </p>
+  <p><strong>Wichtig:</strong> Wenn physische Teile oder Kleinserien benötigt werden, arbeite ich mit regionalen Partnerbetrieben zusammen –
+     professionell, sauber und rechtlich korrekt umgesetzt.</p>
 
-  <a class="btn" href="/#kontakt">Kontakt aufnehmen</a>
-
-  <!-- ✅ Zurück zur Startseite -->
-  <br>
+  <a class="btn" href="/#kontakt">Kontakt aufnehmen</a><br>
   <a class="back-link" href="/">Zurück zur Startseite</a>
 
 </main>
