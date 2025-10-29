@@ -4,10 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projekte – S’INN3D</title>
-  <meta name="description" content="Aktuelle Projekte von S’INN3D: CAD-Design, druckfertige Modelle, NFC-Produkte (über Partner) und Kleinserien.">
-  <link rel="icon" href="/assets/logo.png" type="image/png">
+  <link rel="icon" href="assets/logo.png" type="image/png">
   <style>
-    /* Basis / Variablen */
     html{scroll-behavior:smooth;scroll-padding-top:var(--headerH,0px)}
     :root{
       --bg:#f7faf9; --card:#ffffff; --text:#111827; --muted:#6b7280;
@@ -19,12 +17,11 @@
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,'Helvetica Neue',Arial,sans-serif;
       background:
         linear-gradient(180deg, rgba(255,255,255,0.88) 0%, rgba(210,240,230,0.88) 100%),
-        url("/assets/polygon_bg.svg");
+        url("assets/polygon_bg.svg");
       background-size:cover;
       background-repeat:no-repeat;
       background-position:center;
       background-attachment:fixed;
-      background-blend-mode:lighten;
       color:var(--text);
       line-height:1.6;
     }
@@ -32,168 +29,114 @@
     a{text-decoration:none;color:inherit}
     .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
 
-    /* Header (wie auf Start/Leistungen) */
+    /* HEADER ident wie Startseite */
     header{
-      position:sticky; top:0; z-index:100;
+      position:sticky;top:0;z-index:100;
       background:rgba(255,255,255,.95);
       backdrop-filter:blur(8px);
       border-bottom:1px solid var(--line);
     }
-    .nav{display:flex;flex-direction:column;align-items:center;gap:10px;padding:8px 0}
-   /* Header-Logo bewusst kleiner als auf der Startseite */
-.logo{
-  display:flex;justify-content:center;align-items:center;
-  height:clamp(72px, 10vw, 120px); /* vorher 140–200px */
-  padding:0;
-}
-.logo img{height:100%; width:auto; object-fit:contain; max-height:120px;}
+    .nav{display:flex;flex-direction:column;align-items:center;gap:8px;padding:6px 0}
+    .logo{display:flex;justify-content:center;align-items:center;height:clamp(100px,14vw,160px)}
+    .logo img{height:100%;width:auto;object-fit:contain;max-height:160px}
 
-
-    .btn{display:inline-block;padding:10px 16px;border-radius:999px;font-weight:600;
-      transition:filter .15s ease,transform .05s ease;border:1px solid transparent;cursor:pointer;white-space:nowrap}
+    .btn{display:inline-block;padding:10px 16px;border-radius:999px;font-weight:600;border:1px solid var(--line);cursor:pointer;white-space:nowrap;transition:.15s}
+    .btn:hover{filter:brightness(.96)}
     .btn-primary{background:var(--brand2);color:#fff;border-color:var(--brand2)}
-    .btn-primary:hover{filter:brightness(.95)}
-    .btn-ghost{background:#fff;color:var(--text);border:1px solid var(--line)}
-    .btn-ghost:hover{filter:brightness(.95)}
-    .cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center}
+    .btn-ghost{background:#fff;color:var(--text)}
 
-    /* Sektionen / Typo */
-    section{padding:40px 0}
-    h1{font-size:clamp(28px,5.5vw,40px);line-height:1.15;text-align:center;margin:6px 0 4px}
-    h2{font-size:clamp(22px,3.8vw,28px);margin-bottom:6px}
-    h3{font-size:18px;margin-bottom:6px}
-    .muted{color:var(--muted)}
+    h1{text-align:center;font-size:clamp(26px,5vw,38px);margin:20px 0 6px}
+    .muted{text-align:center;color:var(--muted)}
 
-    /* Karten / Grid */
-    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.04)}
-    .grid{display:grid;gap:22px}
-    .grid-auto{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-    @media(max-width:900px){.grid-auto{grid-template-columns:1fr}}
+    .grid{display:grid;gap:22px;margin-top:26px}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media(max-width:900px){.grid-3{grid-template-columns:1fr}}
 
-    /* Einheitliche Medienflächen */
-    .media{width:100%;aspect-ratio:16/9;object-fit:cover;background:#f3f4f6;display:block}
-    .card-body{padding:12px 16px 16px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+    .media{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+    .box{padding:16px 18px}
 
-    /* Footer */
-    footer{padding:28px 0;background:#fff;border-top:1px solid var(--line)}
-    footer .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-
-    /* Abstand oben unter dem Header verbessern (mobiler Safe-Space) */
-    .page-intro{margin-top:6px;text-align:center}
+    footer{padding:28px 0;background:#fff;border-top:1px solid var(--line);margin-top:30px;text-align:center;font-size:14px}
   </style>
 </head>
+
 <body>
 
 <header>
   <div class="wrap nav">
-    <div class="logo"><a href="/"><img src="/assets/logo.png" alt="S’INN3D Logo"></a></div>
-    <nav class="cta">
+    <div class="logo"><img src="assets/logo.png" alt="S’INN3D Logo"></div>
+    <nav class="cta" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
       <a class="btn btn-ghost" href="/index.html">Start</a>
       <a class="btn btn-ghost" href="/leistungen.html">Leistungen</a>
-      <a class="btn btn-ghost" href="/projekte.html">Projekte</a>
+      <a class="btn btn-primary" href="/projekte.html">Projekte</a>
       <a class="btn btn-ghost" href="/ueber-mich.html">Über mich</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <!-- Intro -->
-  <section class="page-intro">
-    <div class="wrap" style="max-width:900px">
-      <p class="muted" style="font-weight:700;letter-spacing:.3px;color:#16a34a">
-        Einblick in laufende Arbeiten & fertige Beispiele
-      </p>
-      <h1>Aktuelle Projekte</h1>
-      <p class="muted" style="margin-top:6px">
-        CAD-Design, druckfertige Modelle und personalisierte Produkte (Fertigung über Partner) – klar konstruiert, zuverlässig reproduzierbar.
-      </p>
-    </div>
-  </section>
+  <section class="wrap">
+    <h1>Aktuelle Projekte</h1>
+    <p class="muted">Einblick in laufende Arbeiten & fertige Beispiele.</p>
 
-  <!-- Karten-Grid -->
-  <section>
-    <div class="wrap grid grid-auto">
-      <!-- Projekt 1 -->
+    <div class="grid grid-3">
+
       <article class="card">
-        <img class="media" src="/assets/designberatung.jpg" alt="3D Design-Beratung">
-        <div class="card-body">
+        <img class="media" src="assets/designberatung.jpg" alt="3D Design-Beratung">
+        <div class="box">
           <h3>3D Design-Beratung</h3>
-          <p class="muted">Einschulung in saubere Konstruktionslogik für wiederholbar druckbare Bauteile.</p>
+          <p class="muted">Einschulung in CAD & saubere Konstruktionslogik für druckbare Bauteile.</p>
         </div>
       </article>
 
-      <!-- Projekt 2 -->
       <article class="card">
-        <img class="media" src="/assets/slicer.png" alt="Druckfertiges CAD-Design">
-        <div class="card-body">
+        <img class="media" src="assets/slicer.png" alt="CAD Design">
+        <div class="box">
           <h3>Druckfertiges CAD-Design</h3>
-          <p class="muted">Modelle mit sinnvollen Wandstärken, stützfreundlicher Geometrie und kollisionsfreiem Aufbau.</p>
+          <p class="muted">Kollisionsfrei, wiederholbar, sauber exportiert als STEP & STL.</p>
         </div>
       </article>
 
-      <!-- Projekt 3 -->
       <article class="card">
-        <img class="media" src="/assets/nfc_kopf.jpg" alt="NFC-Schlüsselanhänger">
-        <div class="card-body">
+        <img class="media" src="assets/nfc_kopf.jpg" alt="NFC Schlüsselanhänger">
+        <div class="box">
           <h3>NFC-Schlüsselanhänger</h3>
-          <p class="muted">Personalisierte Produkte mit NTAG215/216 – Design & Bespielung, Fertigung über regionalen Partner.</p>
+          <p class="muted">Individuell personalisiert, Fertigung über regionalen Partner.</p>
         </div>
       </article>
 
-      <!-- Projekt 4 -->
       <article class="card">
-        <img class="media" src="/assets/logo_nfc.jpg" alt="Individuelle Logo-Objekte">
-        <div class="card-body">
+        <img class="media" src="assets/logo_nfc.jpg" alt="Logo-Objekte">
+        <div class="box">
           <h3>Individuelle Logo-Objekte</h3>
-          <p class="muted">Logos als 3D-Objekte – druckgerecht konstruiert, auf Wunsch veredelt.</p>
+          <p class="muted">Logos als physische Objekte, lackierbar & druckfertig konstruiert.</p>
         </div>
       </article>
 
-      <!-- Projekt 5 (Video) -->
       <article class="card">
-        <div class="media" style="background:#000;position:relative">
-          <video
-            src="/assets/kleinserie.mp4"
-            controls
-            style="width:100%;height:100%;object-fit:cover;border-radius:0">
-          </video>
-        </div>
-        <div class="card-body">
+        <video class="media" controls>
+          <source src="assets/kleinserie.mp4" type="video/mp4">
+        </video>
+        <div class="box">
           <h3>Kleinserie (über Partner)</h3>
-          <p class="muted">Stückzahlen zügig realisieren: Konstruktion + Druckvorbereitung, regionale Fertigung.</p>
+          <p class="muted">3D-gedruckte Teile in Stückzahlen, sauber dokumentiert.</p>
         </div>
       </article>
+
     </div>
 
-    <!-- CTA zurück -->
-    <div class="wrap" style="text-align:center;margin-top:18px">
-      <a class="btn btn-primary" href="/index.html#projekte">Zurück zur Startseite</a>
+    <div style="text-align:center;margin:28px 0 0">
+      <a class="btn btn-primary" href="/index.html">Zurück zur Startseite</a>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="wrap foot">
-    <div>© <span id="y"></span> S’INN3D – 3D-Design, CAD-Modellierung & Projektbegleitung</div>
-    <div>
-      <a href="/ueber-mich.html">Über mich</a> ·
-      <a href="/impressum.html">Impressum</a> ·
-      <a href="/datenschutz.html">Datenschutz</a>
-    </div>
-  </div>
+  © <span id="y"></span> S’INN3D – 3D-Design, CAD-Modellierung & Projektbegleitung
 </footer>
 
 <script>
-  // Jahr
   document.getElementById('y').textContent = new Date().getFullYear();
-
-  // Headerhöhe → Scroll-Offset
-  function setHeaderHeightVar(){
-    const h = document.querySelector('header')?.offsetHeight || 0;
-    document.documentElement.style.setProperty('--headerH', h + 'px');
-  }
-  window.addEventListener('load', setHeaderHeightVar);
-  window.addEventListener('resize', setHeaderHeightVar);
 </script>
 
 </body>
