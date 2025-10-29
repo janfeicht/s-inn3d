@@ -7,74 +7,82 @@
   <meta name="description" content="S’INN3D Leistungen: 3D-Design & CAD-Modellierung, CAD-Einschulung & Projektbegleitung, personalisierte Produkte & Kleinserien (über Partner). Druckfertig, wiederholbar, praxisnah.">
   <link rel="icon" href="/assets/logo.png" type="image/png">
   <style>
-    html{scroll-behavior:smooth;scroll-padding-top:var(--headerH,0px)}
+    /* ---------- Variablen & Basics ---------- */
     :root{
       --bg:#f7faf9; --card:#ffffff; --text:#111827; --muted:#6b7280;
-      --brand:#16a34a; --brand2:#14b8a6; --accent:#facc15; --line:#e5e7eb; --wrap:1100px;
-      --headerH:0px;
+      --brand:#16a34a; --brand2:#14b8a6; --accent:#facc15; --line:#e5e7eb;
+      --wrap:1100px; --headerH:0px;
     }
+    html{scroll-behavior:smooth; scroll-padding-top:var(--headerH)}
     *{box-sizing:border-box;margin:0;padding:0}
     body{
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,'Helvetica Neue',Arial,sans-serif;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.88) 0%, rgba(210,240,230,0.88) 100%),
-        url("/assets/polygon_bg.svg");
-      background-size:cover;
-      background-repeat:no-repeat;
-      background-position:center;
-      background-attachment:fixed;
-      background-blend-mode:lighten;
       color:var(--text); line-height:1.6;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(210,240,230,0.9) 100%),
+        url("/assets/polygon_bg.svg");
+      background-size:cover; background-repeat:no-repeat; background-position:center;
+      /* Mobile: kein fixed, vermeidet Ruckeln */
+      background-attachment:scroll;
+    }
+    @media (min-width:768px){
+      body{ background-attachment:fixed; }
     }
     img{max-width:100%;display:block}
     a{text-decoration:none;color:inherit}
-    .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+    .wrap{max-width:var(--wrap);margin:0 auto;padding:0 16px}
 
+    /* ---------- Header (mobil-sicher) ---------- */
     header{
       position:sticky; top:0; z-index:100;
-      background:rgba(255,255,255,.95);
+      background:rgba(255,255,255,.96);
       backdrop-filter:blur(8px);
       border-bottom:1px solid var(--line);
     }
-    .nav{display:flex;flex-direction:column;align-items:center;gap:10px;padding:8px 0}
-    .logo{display:flex;justify-content:center;align-items:center;height:clamp(140px,16vw,200px)}
+    .nav{display:flex;flex-direction:column;align-items:center;gap:8px;padding:8px 0}
+    .logo{display:flex;justify-content:center;align-items:center;height:clamp(80px,14vw,130px)}
     .logo img{height:100%;width:auto;object-fit:contain}
 
-    .btn{display:inline-block;padding:10px 16px;border-radius:999px;font-weight:600;
-      transition:filter .15s ease,transform .05s ease;border:1px solid transparent;cursor:pointer;white-space:nowrap}
-    .btn-primary{background:var(--brand2);color:#fff;border-color:var(--brand2)}
-    .btn-primary:hover{filter:brightness(.95)}
+    .cta{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center}
+    .btn{
+      display:inline-block;border-radius:999px;border:1px solid transparent;cursor:pointer;
+      padding:10px 14px;font-weight:600;white-space:nowrap; font-size:14.5px;
+      transition:filter .15s ease, transform .05s ease;
+      min-height:44px; /* Tap-Target */
+    }
     .btn-ghost{background:#fff;color:var(--text);border:1px solid var(--line)}
-    .btn-ghost:hover{filter:brightness(.95)}
-    .cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center}
+    .btn-primary{background:var(--brand2);color:#fff;border-color:var(--brand2)}
+    .btn:active{transform:translateY(1px)}
 
-    section{padding:40px 0}
-    h1{font-size:clamp(28px,5.5vw,40px);line-height:1.15}
-    h2{font-size:clamp(22px,3.8vw,28px);margin-bottom:6px}
-    h3{font-size:18px;margin-bottom:6px}
+    /* ---------- Typo & Layout ---------- */
+    section{padding:28px 0}
+    h1{font-size:clamp(26px,6vw,36px);line-height:1.15}
+    h2{font-size:clamp(20px,4.5vw,26px);margin-bottom:6px}
+    h3{font-size:clamp(17px,3.8vw,20px);margin-bottom:6px}
     .muted{color:var(--muted)}
+    .eyebrow{font-size:13px;font-weight:700;color:#16a34a;letter-spacing:.3px;text-transform:uppercase}
 
-    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
-    .grid{display:grid;gap:22px}
-    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-    @media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}}
+    /* ---------- Cards & Media ---------- */
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+    .media{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;background:#f3f4f6;margin-top:10px}
 
-    /* Medien einheitlich */
-    .media{width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:12px; background:#f3f4f6}
+    /* ---------- Grid: mobile-first ---------- */
+    .grid{display:grid;gap:18px}
+    .grid-2{grid-template-columns:1fr}
+    .grid-3{grid-template-columns:1fr}
+    @media (min-width:900px){ .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))} }
+    @media (min-width:900px){ .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))} }
 
-    /* Listen kompakt */
+    /* ---------- Listen & Badges ---------- */
     ul.clean{margin:8px 0 0 18px}
     ul.clean li{margin:4px 0}
+    .kpis{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .pill{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 10px;font-size:13px}
 
-    /* Feature-Badges */
-    .kpis{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-    .kpis .pill{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 10px;font-size:13px}
-
-    /* Prozess-Schritte */
+    /* ---------- Prozess ---------- */
     .steps{counter-reset:stp}
-    .step{position:relative;padding-left:44px}
-    .step:not(:first-child){margin-top:14px}
+    .step{position:relative;padding-left:42px}
+    .step:not(:first-child){margin-top:12px}
     .step:before{
       counter-increment:stp; content:counter(stp);
       position:absolute;left:0;top:2px;height:28px;width:28px;border-radius:50%;
@@ -82,58 +90,58 @@
       box-shadow:0 2px 8px rgba(0,0,0,.12)
     }
 
-    /* Video-Karte hell */
+    /* ---------- Video-Karte (hell) ---------- */
     .video-card{border-radius:12px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.06);background:var(--card)}
     .video-frame{position:relative;width:100%;padding-bottom:56.25%}
     .video-frame video,.video-frame .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
     .video-overlay{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(0deg,rgba(0,0,0,.28),rgba(0,0,0,.12));transition:opacity .25s ease}
     .video-overlay.is-hidden{opacity:0;pointer-events:none}
-    .play-btn{height:64px;width:64px;background:#ffffffcc;border-radius:999px;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.25);border:none;cursor:pointer}
-    .play-btn svg{width:28px;height:28px;fill:#111827;transform:translateX(1px)}
+    .play-btn{height:60px;width:60px;background:#ffffffcc;border-radius:999px;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.25);border:none;cursor:pointer}
+    .play-btn svg{width:26px;height:26px;fill:#111827;transform:translateX(1px)}
 
-    footer{padding:28px 0;background:#fff;border-top:1px solid var(--line)}
+    /* ---------- Footer ---------- */
+    footer{padding:24px 0;background:#fff;border-top:1px solid var(--line)}
+    footer .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   </style>
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
-    <div class="logo"><img src="/assets/logo.png" alt="S’INN3D Logo"></div>
+    <a class="logo" href="/"><img src="/assets/logo.png" alt="S’INN3D Logo"></a>
     <nav class="cta">
       <a class="btn btn-ghost" href="/index.html">Start</a>
-      <a class="btn btn-ghost" href="/leistungen.html">Leistungen</a>
+      <a class="btn btn-ghost" href="/leistungen.html" aria-current="page">Leistungen</a>
       <a class="btn btn-ghost" href="/projekte.html">Projekte</a>
       <a class="btn btn-ghost" href="/ueber-mich.html">Über mich</a>
+      <a class="btn btn-primary" href="/index.html#kontakt">Kontakt</a>
     </nav>
   </div>
 </header>
 
 <main>
-
   <!-- HERO -->
   <section>
     <div class="wrap" style="text-align:center;max-width:900px">
-      <p class="muted" style="font-weight:700;letter-spacing:.3px;color:#16a34a">
-        Sauber konstruiert · Druckfertig · Wiederholbar
-      </p>
+      <p class="eyebrow">Sauber konstruiert · Druckfertig · Wiederholbar</p>
       <h1>Leistungen</h1>
-      <p class="muted" style="margin-top:8px">
+      <p class="muted" style="margin-top:6px">
         Von präziser CAD-Modellierung bis zur Kleinserien-Fertigung (über Partner): klar aufgebaut,
         effizient produziert, praxisnah erklärt.
       </p>
-      <div class="cta" style="margin-top:14px">
+      <div class="cta" style="margin-top:12px">
         <a class="btn btn-primary" href="/index.html#kontakt">Kontakt aufnehmen</a>
         <a class="btn btn-ghost" href="https://wa.me/436765890068" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </section>
 
-  <!-- LEISTUNGS-KARTEN -->
+  <!-- LEISTUNGEN-KARTEN -->
   <section>
     <div class="wrap grid grid-3">
       <article class="card">
         <img src="/assets/slicer.png" alt="3D-Design & CAD-Modellierung" class="media">
-        <h2 style="margin-top:12px">3D-Design & CAD-Modellierung</h2>
+        <h2 style="margin-top:10px">3D-Design & CAD-Modellierung</h2>
         <p class="muted">Druckfertige Modelle für Bauteile, Logos und Produktideen. Logisch aufgebaut, kollisionsfrei, wiederholbar.</p>
         <ul class="clean">
           <li>Bauteile, Vorrichtungen, Logos, Textprägungen</li>
@@ -142,15 +150,15 @@
           <li>Lieferformate: STEP, STL, 3MF</li>
         </ul>
         <div class="kpis">
-          <div class="pill">typisch ≤ 7 Tage</div>
-          <div class="pill">0,2 mm Ziel-Layer</div>
-          <div class="pill">100 % druckgetestet</div>
+          <span class="pill">typisch ≤ 7 Tage</span>
+          <span class="pill">0,2 mm Ziel-Layer</span>
+          <span class="pill">100 % druckgetestet</span>
         </div>
       </article>
 
       <article class="card">
         <img src="/assets/cad.jpg" alt="CAD-Einschulung – Fusion 360" class="media">
-        <h2 style="margin-top:12px">CAD-Einschulung & Projektbegleitung</h2>
+        <h2 style="margin-top:10px">CAD-Einschulung & Projektbegleitung</h2>
         <p class="muted">Praxisnah an einem echten Teil. Wir setzen Konstruktion & Druck gemeinsam auf – Schritt für Schritt.</p>
         <ul class="clean">
           <li>Grundlagen & saubere Konstruktionslogik</li>
@@ -159,15 +167,15 @@
           <li>Optional: Begleitung bis zur druckfertigen Serie</li>
         </ul>
         <div class="kpis">
-          <div class="pill">Einsteiger bis Pro</div>
-          <div class="pill">Fusion 360 Praxis</div>
-          <div class="pill">Vor-Ort/remote</div>
+          <span class="pill">Einsteiger bis Pro</span>
+          <span class="pill">Fusion 360 Praxis</span>
+          <span class="pill">Vor-Ort/remote</span>
         </div>
       </article>
 
       <article class="card">
         <img src="/assets/nfc_kopf.jpg" alt="NFC-Schlüsselanhänger – individuelle Fertigung" class="media">
-        <h2 style="margin-top:12px">Personalisierte Produkte & Kleinserien</h2>
+        <h2 style="margin-top:10px">Personalisierte Produkte & Kleinserien</h2>
         <p class="muted">Individuelle Artikel wie Schlüsselanhänger mit NFC sowie kleine Stückzahlen – Fertigung über Partner.</p>
         <ul class="clean">
           <li>NFC (NTAG215/216), inkl. Bespielung</li>
@@ -176,9 +184,9 @@
           <li>Musterstücke & Testchargen möglich</li>
         </ul>
         <div class="kpis">
-          <div class="pill">Kleine Serien</div>
-          <div class="pill">Regionaler Partner</div>
-          <div class="pill">Fix & wiederholbar</div>
+          <span class="pill">Kleine Serien</span>
+          <span class="pill">Regionaler Partner</span>
+          <span class="pill">Fix & wiederholbar</span>
         </div>
       </article>
     </div>
@@ -202,7 +210,7 @@
           <li>Marketing-Bling ohne Funktion</li>
           <li>Unrealistische Toleranz-Versprechen</li>
           <li>Unklare Zuständigkeiten in der Fertigung</li>
-          <li>Husch-husch ohne saubere Übergabe</li>
+          <li>„Husch-husch“ ohne saubere Übergabe</li>
         </ul>
       </article>
     </div>
@@ -232,8 +240,8 @@
           <h3>Technische Eckdaten</h3>
           <ul class="clean">
             <li>FDM: 0,4 mm Nozzle, 0,2 mm Layer (Standard) · Resin auf Anfrage</li>
-            <li>Typische Kunststoffe: PLA/PETG/ASA · Spezialmaterial in Rücksprache</li>
-            <li>Resistente Geometrien (Wandstärken-Checks, keine unnötigen Stützen)</li>
+            <li>Kunststoffe: PLA/PETG/ASA – Spezialmaterial nach Rücksprache</li>
+            <li>Resistente Geometrien (Wandstärken-Checks, stützarm)</li>
             <li>Lieferformate: STEP, STL, 3MF · Zeichnung auf Wunsch</li>
           </ul>
         </div>
@@ -250,7 +258,7 @@
     </div>
   </section>
 
-  <!-- VIDEOCASE optional -->
+  <!-- VIDEOCASE -->
   <section>
     <div class="wrap">
       <div class="card video-card">
@@ -265,7 +273,7 @@
             </button>
           </div>
         </div>
-        <div style="padding:16px 16px 20px">
+        <div style="padding:16px 16px 18px">
           <h3>Kleinserien-Fertigung (über Partner)</h3>
           <p class="muted">Schneller Prototyp → stabile Serie. Regional produziert, von uns konstruiert & dokumentiert.</p>
         </div>
@@ -278,17 +286,16 @@
     <div class="wrap" style="text-align:center">
       <h2>Lass uns starten</h2>
       <p class="muted">Ein kurzes Briefing genügt. Den Rest strukturieren wir sauber & wiederholbar.</p>
-      <div class="cta" style="margin-top:12px">
+      <div class="cta" style="margin-top:10px">
         <a class="btn btn-primary" href="/index.html#kontakt">Kontaktformular</a>
         <a class="btn btn-ghost" href="https://wa.me/436765890068" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </section>
-
 </main>
 
 <footer>
-  <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:16px 0">
+  <div class="wrap foot">
     <div>© <span id="y"></span> S’INN3D – 3D-Design, CAD-Modellierung & Projektbegleitung</div>
     <div>
       <a href="/ueber-mich.html">Über mich</a> ·
@@ -296,19 +303,18 @@
       <a href="/datenschutz.html">Datenschutz</a>
     </div>
   </div>
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </footer>
 
 <script>
-  // Header-Höhe an Scroll-Offset binden
+  // Scroll-Offset für Anker
   function setHeaderHeightVar(){
     const h=document.querySelector('header')?.offsetHeight||0;
     document.documentElement.style.setProperty('--headerH',h+'px');
   }
-  window.addEventListener('load',setHeaderHeightVar);
-  window.addEventListener('resize',setHeaderHeightVar);
+  addEventListener('load',setHeaderHeightVar);
+  addEventListener('resize',setHeaderHeightVar);
 
-  // Video-Play Overlay
+  // Video-Overlay Play
   (function(){
     document.querySelectorAll('[data-video-container]').forEach(c=>{
       const v=c.querySelector('video');
@@ -317,9 +323,12 @@
       if(!v||!o||!b) return;
       function play(){o.classList.add('is-hidden'); v.setAttribute('controls','controls'); v.play().catch(()=>{});}
       b.addEventListener('click',play);
-      o.addEventListener('click',e=>{if(e.target===o) play();});
+      o.addEventListener('click',e=>{ if(e.target===o) play(); });
     });
   })();
+
+  // Jahr im Footer
+  document.getElementById('y').textContent=new Date().getFullYear();
 </script>
 
 </body>
