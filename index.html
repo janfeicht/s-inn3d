@@ -315,14 +315,30 @@ Zusätzlich unterstütze ich bei Materialwahl, Druckvorbereitung und Slicer-Eins
 </main>
 
 <footer>
-  <div class="wrap foot">
-    <div>© <span id="y"></span> S’INN3D – Beratung & 3D-Design</div>
-    <div>
-      <a href="/ueber-mich.html">Über mich</a> ·
-      <a href="/impressum.html">Impressum</a> ·
-      <a href="/datenschutz.html">Datenschutz</a>
-    </div>
+  <div class="inner" style="max-width:1100px;margin:0 auto;padding:16px 20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+      
+      <div>
+        © <span id="y"></span> S’INN3D – 3D-Design, CAD-Modellierung & Projektbegleitung<br>
+        Fertigung erfolgt bei Bedarf über regionale Partnerbetriebe.
+      </div>
+
+      <div>
+        <strong>E-Mail:</strong> office@sinn-3d.at<br>
+        <strong>WhatsApp:</strong> +43 676 5890068<br>
+        <strong>Standort:</strong> Innviertel, OÖ
+      </div>
+
+      <div>
+        <a href="/ueber-mich.html">Über mich</a> ·
+        <a href="/impressum.html">Impressum</a> ·
+        <a href="/datenschutz.html">Datenschutz</a>
+      </div>
+
   </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </footer>
 
 
