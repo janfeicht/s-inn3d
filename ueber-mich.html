@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Über mich – S’INN3D</title>
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <style>
+    :root{
+      --bg:#f7faf9; --card:#ffffff; --text:#111827; --muted:#6b7280;
+      --brand:#16a34a; --brand2:#14b8a6; --line:#e5e7eb; --wrap:900px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,'Helvetica Neue',Arial,sans-serif;
+      background:var(--bg);color:var(--text);line-height:1.6;
+    }
+
+    .wrap{max-width:var(--wrap);margin:0 auto;padding:30px 20px}
+
+    header{background:#fff;border-bottom:1px solid var(--line)}
+    .brand{
+      max-width:1100px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;gap:12px;
+    }
+    .brand img{height:42px;width:auto}
+
+    h1{margin:24px 0}
+    p{margin:0 0 14px;font-size:17px}
+
+    .portrait{
+      width:140px;height:140px;border-radius:50%;object-fit:cover;margin:10px 0 20px;
+      box-shadow:0 3px 14px rgba(0,0,0,.08);
+    }
+
+    .btn{
+      display:inline-block;background:var(--brand2);color:#fff;font-weight:600;
+      padding:11px 18px;border-radius:999px;margin-top:16px;text-decoration:none;
+      transition:filter .15s ease;
+    }
+    .btn:hover{filter:brightness(.92)}
+
+    footer{background:#fff;border-top:1px solid var(--line);margin-top:40px}
+    footer .inner{
+      max-width:1100px;margin:0 auto;padding:16px 20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">
+    <a href="/"><img src="assets/logo.png" alt="S’INN3D Logo"></a>
+    <strong>S’INN3D</strong>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <h1>Über mich</h1>
+
+  <!-- Falls du ein Foto von dir hast: assets/portrait.jpg -->
+  <!-- Wenn später: Kommentar einfach entfernen -->
+  <!-- <img src="assets/portrait.jpg" alt="Jan Feichtenschlager" class="portrait"> -->
+
+  <p><strong>Ich bin Jan Feichtenschlager</strong>, gelernter Metallbearbeiter, bautechnischer Zeichner und geprüfter 3D-Konstrukteur.
+    In den letzten Jahren habe ich mich auf CAD-Modellierung, 3D-Druck und Produktentwicklung spezialisiert.
+  </p>
+
+  <p>Meine Leidenschaft ist es, Unternehmen dabei zu unterstützen, 3D-Design nicht als komplizierte Technik,
+    sondern als <strong>praktisches Werkzeug</strong> zu nutzen – um Abläufe zu vereinfachen, Bauteile zu optimieren
+    und echte Kosten zu sparen.</p>
+
+  <p>Ich designe Prototypen, Logos, Schutzelemente, Industrieteile und digitale Bauteile.
+     Bei Bedarf übernehme ich auch die komplette Abwicklung mit Druck, Nachbearbeitung oder Kleinserien-Produktion.</p>
+
+  <p>Wenn du Fragen hast oder ein Projekt umsetzen möchtest, melde dich gern:</p>
+
+  <a class="btn" href="/#kontakt">Kontakt aufnehmen</a>
+
+</main>
+
+<footer>
+  <div class="inner">
+    <div>© <span id="y"></span> S’INN3D – Beratung & 3D-Design</div>
+    <div>
+      <a href="/ueber-mich.html">Über mich</a> ·
+      <a href="/impressum.html">Impressum</a> ·
+      <a href="/datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
