@@ -23,19 +23,14 @@
       max-width:1100px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;gap:12px;
     }
     .brand img{height:42px;width:auto}
+    .brand a{text-decoration:none;color:var(--text);font-weight:700;font-size:18px}
 
     h1{margin:24px 0}
     p{margin:0 0 14px;font-size:17px}
 
     .portrait{
-      width:160px;
-      height:160px;
-      border-radius:50%;
-      object-fit:cover;
-      margin:10px 0 28px;
+      width:140px;height:140px;border-radius:50%;object-fit:cover;margin:10px 0 20px;
       box-shadow:0 3px 14px rgba(0,0,0,.08);
-      background:#e5e7eb;
-      display:block;
     }
 
     .btn{
@@ -45,24 +40,11 @@
     }
     .btn:hover{filter:brightness(.92)}
 
-    .back-link{
-      display:inline-block;
-      margin-top:22px;
-      background:#fff;
-      border:1px solid var(--line);
-      padding:10px 18px;
-      border-radius:999px;
-      color:var(--text);
-      text-decoration:none;
-      font-weight:600;
-      transition:filter .15s ease;
-    }
-    .back-link:hover{filter:brightness(.95)}
-
     footer{background:#fff;border-top:1px solid var(--line);margin-top:40px}
     footer .inner{
       max-width:1100px;margin:0 auto;padding:16px 20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
     }
+    footer a{text-decoration:none;color:var(--text)}
   </style>
 </head>
 
@@ -71,7 +53,7 @@
 <header>
   <div class="brand">
     <a href="/"><img src="assets/logo.png" alt="S’INN3D Logo"></a>
-    <strong>S’INN3D</strong>
+    <a href="/">Zurück zur Startseite</a>
   </div>
 </header>
 
@@ -79,36 +61,29 @@
 
   <h1>Über mich</h1>
 
-  <!-- ✅ Portrait-Platzhalter (einfach portrait.jpg ersetzen) -->
-  <img src="assets/portrait.jpg" alt="Foto von Jan Feichtenschlager" class="portrait">
+  <!-- Platzhalter für Portrait -->
+  <!-- Wenn Foto vorhanden: einfach durch "portrait.jpg" ersetzen -->
+  <img src="assets/portrait.jpg" alt="Jan Feichtenschlager" class="portrait">
 
-  <p><strong>Ich bin Jan Feichtenschlager</strong> – gelernter Metallbearbeiter, bautechnischer Zeichner und zertifizierter 3D-Konstrukteur.
-     In den letzten Jahren habe ich mich stark auf CAD-Modellierung, 3D-Design und digitale Produktentwicklung spezialisiert.</p>
+  <p><strong>Ich bin Jan Feichtenschlager</strong> – gelernter Metallbearbeiter, bautechnischer Zeichner und zertifizierter 3D-Konstrukteur. In den letzten Jahren habe ich mich auf CAD-Modellierung, 3D-Design und digitale Produktentwicklung spezialisiert.</p>
 
   <p>Ich bin im Innviertel daheim und arbeite bodenständig, ehrlich und unkompliziert – kurze Wege, direkte Kommunikation und schnelle Rückmeldungen gehören für mich dazu.</p>
-  
-  <p>Für viele klingt 3D-Design kompliziert, teuer oder technisch schwer zugänglich.
-     Mein Ansatz ist das Gegenteil: saubere Modelle, druckgerechte Konstruktion und klare Kommunikation – damit jeder Aufbau logisch,
-     wiederholbar und effizient ist.</p>
 
-  <p>Ich erstelle druckfertige 3D-Modelle für Betriebe und Privatkunden:  
-     Schutzlösungen, personalisierte Produkte, Firmenlogos, Schlüsselanhänger mit NFC oder Bauteile für additiven Druck.
-     Alles so konstruiert, dass es auf unterschiedlichen Druckern zuverlässig hergestellt werden kann.</p>
+  <p>Für viele wirkt 3D-Design kompliziert oder technisch schwer zugänglich. Mein Ansatz ist das Gegenteil: saubere Konstruktion, klare Kommunikation und druckfertige Modelle – damit jedes Projekt logisch, wiederholbar und effizient ist.</p>
 
-  <p><strong>Wichtig:</strong> Wenn physische Teile oder Kleinserien benötigt werden, arbeite ich mit regionalen Partnerbetrieben zusammen –
-     professionell, sauber und rechtlich korrekt umgesetzt.</p>
+  <p>Ich erstelle druckfertige 3D-Modelle für Betriebe und Privatkunden: Schutzlösungen, personalisierte Produkte, Firmenlogos, Schlüsselanhänger mit NFC oder Bauteile für den 3D-Druck. Alle Modelle sind so konstruiert, dass sie auf verschiedenen Druckern zuverlässig produziert werden können.</p>
 
-  <a class="btn" href="/#kontakt">Kontakt aufnehmen</a><br>
-  <a class="back-link" href="/">Zurück zur Startseite</a>
+  <p><strong>Wichtig:</strong> Wenn physische Teile, Muster oder Kleinserien benötigt werden, arbeite ich mit regionalen Partnerbetrieben zusammen – professionell, sauber und rechtlich korrekt umgesetzt.</p>
 
+  <a class="btn" href="/#kontakt">Kontakt aufnehmen</a>
 </main>
 
 <footer>
   <div class="inner">
     <div>© <span id="y"></span> S’INN3D – Beratung & 3D-Design</div>
     <div>
-      <a href="/ueber-mich.html">Über mich</a> ·
-      <a href="/impressum.html">Impressum</a> ·
+      <a href="/ueber-mich.html">Über mich</a> · 
+      <a href="/impressum.html">Impressum</a> · 
       <a href="/datenschutz.html">Datenschutz</a>
     </div>
   </div>
