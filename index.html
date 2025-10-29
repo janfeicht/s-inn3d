@@ -113,7 +113,28 @@ body{
 
     footer{padding:28px 0;background:#fff;border-top:1px solid var(--line)}
     footer .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-  </style>
+
+    /* Einheitliches, responsives Grid für Projekte */
+.grid.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:18px;
+  align-items:start;
+}
+
+/* Einheitliche Medienbox, verhindert „schwarze Blöcke“ */
+.media{
+  width:100%;
+  aspect-ratio:16 / 9;
+  object-fit:cover;
+  display:block;
+  border-radius:12px;
+  background:#f3f4f6;
+}
+
+/* Falls alte ref-img Regeln stören: */
+.ref-img{ all:unset; }  /* nicht nötig, wenn du .media wie oben nutzt */
+</style>
 </head>
 <body>
 
