@@ -21,14 +21,20 @@
     *{box-sizing:border-box;margin:0;padding:0}
 body{
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,'Helvetica Neue',Arial,sans-serif;
-  background: linear-gradient(180deg,#f7faf9 0%, #dff8f1 100%);
-  background-image: url("assets/polygon_bg.svg");
-  background-size: 420px;
-  background-repeat: repeat;
-  background-blend-mode: overlay;
+
+  /* Hintergrundbild als EIN großes Bild */
+  background: 
+    linear-gradient(180deg,#f7faf9 0%, #e8fff6 100%),
+    url("assets/polygon_bg.svg");
+
+  background-size: cover;      /* skaliert bild über gesamte seite */
+  background-repeat: no-repeat; /* verhindert die Kacheln */
+  background-position: center;  /* zentriert das bild */
+
   color:var(--text);
   line-height:1.6;
 }
+
     img{max-width:100%;display:block} a{text-decoration:none;color:inherit}
 
     .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
