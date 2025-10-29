@@ -23,17 +23,19 @@
 body{
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,'Helvetica Neue',Arial,sans-serif;
 
-  /* Hintergrund: mint → weiß Verlauf + EIN großes Polygon-Bild */
+  /* Verlauf + Polygon-Bild leicht sichtbar */
   background:
-    linear-gradient(180deg,#f7faf9 0%, #dff8f1 100%),
+    linear-gradient(180deg, #edf6f3 0%, #c7efe4 100%),
     url("assets/polygon_bg.svg");
 
-  background-size: cover;          /* nur EIN großes Bild */
-  background-repeat: no-repeat;    /* nicht kacheln */
-  background-position: center;     /* mittig */
-  background-attachment: fixed;    /* parallax feel: Bild bleibt stehen */
+  background-size: cover;          
+  background-repeat: no-repeat;    
+  background-position: center;     
+  background-attachment: fixed;
 
-  background-blend-mode: overlay;  /* macht es heller & dezenter */
+  /* Hier wird das Bild stärker sichtbar */
+  background-blend-mode: multiply;
+
   color:var(--text);
   line-height:1.6;
 }
