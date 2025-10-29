@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leistungen – S’INN3D | 3D-Design, CAD, Kleinserien</title>
+  <meta name="description" content="S’INN3D Leistungen: 3D-Design & CAD-Modellierung, CAD-Einschulung & Projektbegleitung, personalisierte Produkte & Kleinserien über Partner. Klar, effizient, wiederholbar.">
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <style>
+    :root{
+      --bg:#f7faf9; --card:#ffffff; --text:#111827; --muted:#6b7280;
+      --brand:#16a34a; --brand2:#14b8a6; --accent:#facc15; --line:#e5e7eb; --wrap:1100px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,'Helvetica Neue',Arial,sans-serif;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.88) 0%, rgba(210,240,230,0.88) 100%),
+        url("assets/polygon_bg.svg");
+      background-size:cover; background-repeat:no-repeat; background-position:center; background-attachment:fixed;
+      background-blend-mode:lighten;
+      color:var(--text); line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;flex-direction:column;align-items:center;gap:10px;padding:10px 0}
+    .logo{display:flex;justify-content:center;align-items:center;height:clamp(120px,16vw,200px)}
+    .logo img{height:100%;width:auto;object-fit:contain}
+    .cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+    .btn{display:inline-block;padding:10px 16px;border-radius:999px;font-weight:600;border:1px solid transparent;cursor:pointer;white-space:nowrap}
+    .btn-primary{background:var(--brand2);color:#fff;border-color:var(--brand2)}
+    .btn-ghost{background:#fff;border:1px solid var(--line)}
+    .btn-soft{background:#eafff1;border:1px solid #c9f5d9}
+    h1{font-size:clamp(28px,5.5vw,42px);line-height:1.1;margin-bottom:8px;text-align:center}
+    h2{font-size:clamp(22px,3.8vw,30px);line-height:1.15;margin:8px 0 12px}
+    h3{font-size:20px;margin:0 0 6px}
+    p.muted{color:var(--muted)}
+    section{padding:30px 0}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+    .grid{display:grid;gap:22px}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}}
+    .hero{padding:8px 0 16px;text-align:center}
+    .subnav{position:sticky;top:calc(70px);z-index:40;background:#ffffffcc;border-top:1px solid var(--line);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+    .subnav .wrap{display:flex;gap:8px;overflow:auto;padding:10px 20px}
+    .pill{padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;font-weight:600;white-space:nowrap}
+    .highlight{background:#fffdf2;border:1px solid #ffe066}
+    .media{border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+    .list{display:grid;gap:8px;margin:10px 0 0 0}
+    .list li{display:flex;gap:10px}
+    .kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .kpi .card{text-align:center}
+    footer{padding:28px 0;background:#fff;border-top:1px solid var(--line)}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo"><a href="/"><img src="assets/logo.png" alt="S’INN3D Logo"></a></div>
+    <nav class="cta">
+      <a class="btn btn-ghost" href="/">Start</a>
+      <a class="btn btn-ghost" href="/leistungen.html">Leistungen</a>
+      <a class="btn btn-ghost" href="/#projekte">Projekte</a>
+      <a class="btn btn-ghost" href="/ueber-mich.html">Über mich</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <p style="font-size:14px;font-weight:700;color:#16a34a;letter-spacing:.3px;text-transform:uppercase;">
+        Klar, reproduzierbar, ohne Spielerei
+      </p>
+      <h1>Leistungen, die Ergebnisse liefern.</h1>
+      <p class="muted" style="max-width:720px;margin:0 auto">
+        Drei Pakete – ein Ziel: saubere 3D-Ergebnisse. Konstruktion, Einschulung und kleine Serien über Partner.
+        Alles so aufgebaut, dass es <b>nachweislich druckbar</b> ist und <b>jeder Schritt wiederholbar</b> bleibt.
+      </p>
+      <div class="cta" style="margin-top:12px">
+        <a class="btn btn-primary" href="/#kontakt">Kontakt aufnehmen</a>
+        <a class="btn btn-ghost" href="https://wa.me/436765890068" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Untermenü -->
+  <div class="subnav">
+    <div class="wrap">
+      <a class="pill" href="#cad">3D-Design & CAD</a>
+      <a class="pill" href="#einschulung">CAD-Einschulung</a>
+      <a class="pill" href="#kleinserie">Personalisierte Produkte & Kleinserien</a>
+      <a class="pill highlight" href="#ablauf">Ablauf</a>
+      <a class="pill" href="#faq">FAQ</a>
+      <a class="pill" href="#cta">Anfrage</a>
+    </div>
+  </div>
+
+  <!-- 1) CAD -->
+  <section id="cad">
+    <div class="wrap grid grid-2">
+      <div class="card">
+        <h2>3D-Design & CAD-Modellierung</h2>
+        <p class="muted">Druckfertige Modelle für Bauteile, Logos und Produktideen. Logisch aufgebaut, kollisionsfrei, stützoptimiert – ideal für FDM & Resin.</p>
+        <ul class="list">
+          <li>✅ saubere Parametrik (Maßänderungen ohne Chaos)</li>
+          <li>✅ Kollisions- & Wandstärken-Checks</li>
+          <li>✅ STL/3MF + STEP für Übergabe</li>
+          <li>✅ auf Wunsch: Slicer-Profil-Empfehlungen</li>
+        </ul>
+        <div class="kpi" style="margin-top:12px">
+          <div class="card"><div style="font-weight:800;font-size:22px">≤ 7 Tage</div><div class="muted">typisch bis Erstversion</div></div>
+          <div class="card"><div style="font-weight:800;font-size:22px">0,2 mm</div><div class="muted">FDM-Ziel-Layer (Standard)</div></div>
+          <div class="card"><div style="font-weight:800;font-size:22px">100 %</div><div class="muted">druckfertig geliefert</div></div>
+        </div>
+      </div>
+      <div class="media card">
+        <img src="assets/slicer.png" alt="Druckgerechtes CAD-Modell – Slicer-Vorschau">
+      </div>
+    </div>
+  </section>
+
+  <!-- 2) Einschulung -->
+  <section id="einschulung">
+    <div class="wrap grid grid-2">
+      <div class="media card">
+        <img src="assets/cad.jpg" alt="CAD-Einschulung – Praxisnahes Arbeiten in Fusion/Inventor">
+      </div>
+      <div class="card">
+        <h2>CAD-Einschulung & Projektbegleitung</h2>
+        <p class="muted">Praxis statt PowerPoint. Wir bauen ein reales Teil von Null auf und übertragen das Vorgehen auf eure Bauteile.</p>
+        <ul class="list">
+          <li>✅ Grundlagen & saubere Konstruktionslogik</li>
+          <li>✅ Drucktaugliches Design (FDM/Resin, Stützstrategien)</li>
+          <li>✅ Materialwahl & Einstellungen (Nozzle, Temp, Infill, Wandstärke)</li>
+          <li>✅ Optional: Begleitung bis zur druckfertigen Serie</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3) Personalisierte Produkte / Kleinserie -->
+  <section id="kleinserie">
+    <div class="wrap grid grid-2">
+      <div class="card">
+        <h2>Personalisierte Produkte & Kleinserien <span class="muted">(über Partner)</span></h2>
+        <p class="muted">NFC-Schlüsselanhänger, Logoschilder, Musterteile. Design & Personalisierung von mir – die physische Fertigung erfolgt über regionale Partnerbetriebe.</p>
+        <ul class="list">
+          <li>✅ NFC (NTAG215/216) inkl. Bespielung</li>
+          <li>✅ Laserzuschnitt, Folien/UV-Sticker, 3D-Druck</li>
+          <li>✅ Stückzahlen: Muster bis Kleinserie</li>
+        </ul>
+        <div class="cta" style="margin-top:10px">
+          <a class="btn btn-soft" href="#cta">Unverbindlich anfragen</a>
+        </div>
+      </div>
+      <div class="media card">
+        <img src="assets/nfc_kopf.jpg" alt="Personalisierte NFC-Schlüsselanhänger">
+      </div>
+    </div>
+  </section>
+
+  <!-- Prozess -->
+  <section id="ablauf">
+    <div class="wrap">
+      <div class="card">
+        <h2>So läuft’s ab</h2>
+        <div class="grid grid-3">
+          <div class="card">
+            <h3>1) Kurz-Briefing</h3>
+            <p class="muted">Ziel, Maße, Einsatz, Druckumgebung. 10–15 Min, reicht.</p>
+          </div>
+          <div class="card">
+            <h3>2) Erstversion</h3>
+            <p class="muted">Druckfertiges Modell + Vorschläge für Material & Slicer.</p>
+          </div>
+          <div class="card">
+            <h3>3) Feinschliff</h3>
+            <p class="muted">Kleine Iterationen, danach Übergabe als STEP + STL/3MF.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap grid grid-2">
+      <div class="card">
+        <h2>FAQ</h2>
+        <h3>Kannst du funktionale Teile liefern?</h3>
+        <p class="muted">Ich konstruiere funktional – die Fertigung erfolgt bei Bedarf über Partner. So bleiben Recht & Qualität sauber getrennt.</p>
+        <h3>Welche Formate bekomme ich?</h3>
+        <p class="muted">Immer STEP (Änderbarkeit) + STL/3MF (Druck). Auf Wunsch Baugruppenstruktur & Naming-Konventionen.</p>
+        <h3>Machst du auch Slicer-Profile?</h3>
+        <p class="muted">Ja, ich gebe Profil-Empfehlungen für FDM/Resin mit sinnvollen Startwerten für euer Setup.</p>
+      </div>
+      <div class="card">
+        <h2>Was ich nicht mache</h2>
+        <ul class="list">
+          <li>❌ Marketing-Bling ohne Funktion</li>
+          <li>❌ Unrealistische Toleranz-Versprechen</li>
+          <li>❌ Unklare Zuständigkeiten bei der Fertigung</li>
+        </ul>
+        <p class="muted" style="margin-top:8px">Klarheit spart Zeit und Geld.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta">
+    <div class="wrap">
+      <div class="card" style="text-align:center">
+        <h2>Lass uns starten</h2>
+        <p class="muted" style="max-width:700px;margin:0 auto 10px">Schick mir Ziel, Maße und optional Fotos/Skizzen. Ich melde mich mit einem konkreten Vorschlag.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="/#kontakt">Kontaktformular</a>
+          <a class="btn btn-ghost" href="mailto:office@sinn-3d.at">office@sinn-3d.at</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px">
+    <div>© <span id="y"></span> S’INN3D – 3D-Design, CAD-Modellierung & Projektbegleitung</div>
+    <div><a href="/ueber-mich.html">Über mich</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></div>
+  </div>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</footer>
+
+</body>
+</html>
