@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:G;Jan;;;
+FN:Jan Feichtenschlager
+ORG:S’INN3D
+TITLE:Design / Industriedesign
+TEL;TYPE=CELL,VOICE:+43 676 58 90 068
+EMAIL;TYPE=INTERNET:office@sinn-3d.at
+URL:https://www.sinn-3d.at
+ADR;TYPE=WORK:;;Edt 4;St. Florian am Inn;;4782;Austria
+END:VCARD
