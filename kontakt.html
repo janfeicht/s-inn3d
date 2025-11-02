@@ -2,25 +2,182 @@
 <html lang="de">
 <head>
   <meta charset="utf-8">
-  <title>Kontakt – S’INN3D</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0;url=/#kontakt">
-  <script>location.replace('/#kontakt');</script>
+  <title>Kontakt – S’INN3D</title>
+  <meta name="description" content="S’INN3D – 3D-Logos, CAD-Design & NFC-Keys. Kontakt speichern oder direkt Nachricht senden.">
+  <link rel="icon" href="/assets/logo.png" type="image/png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Kontakt – S’INN3D">
+  <meta property="og:description" content="Kontakt speichern (VCF) oder direkt per WhatsApp schreiben.">
+  <meta property="og:image" content="https://www.sinn-3d.at/assets/logo.png">
+  <meta property="og:url" content="https://www.sinn-3d.at/kontakt">
+
   <style>
-    body{font-family:system-ui,Segoe UI,Roboto,Inter,Arial,sans-serif;margin:0;padding:2rem;background:#f7faf9;color:#111}
-    .wrap{max-width:640px;margin:8vh auto;padding:2rem;border:1px solid #e5e7eb;border-radius:12px;background:#fff}
-    a{color:#0b7a5c;text-decoration:none}
-    .btn{display:inline-block;margin:.5rem .5rem 0 0;padding:.8rem 1rem;border:1px solid #0b7a5c;border-radius:10px}
+    :root{
+      --bg:#f7faf9;      /* Hintergrund wie auf deiner Site */
+      --text:#111827;    /* Haupttext */
+      --muted:#6b7280;   /* Sekundärtext */
+      --line:#e5e7eb;    /* Linien */
+      --brand:#14b8a6;   /* dein Grün (brand2) */
+      --wrap:900px;
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,'Helvetica Neue',Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{
+      max-width:var(--wrap);
+      margin:0 auto;
+      padding:clamp(16px,3vw,32px);
+    }
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:clamp(20px,3.5vw,36px);
+      box-shadow:0 8px 24px rgba(0,0,0,.05);
+    }
+    header{
+      display:flex;align-items:center;gap:14px;margin-bottom:10px;
+    }
+    .logo{
+      width:40px;height:40px;border-radius:12px;
+      background:#fff;border:1px solid var(--line);
+      display:grid;place-items:center;overflow:hidden;
+    }
+    .logo img{width:100%;height:100%;object-fit:cover}
+    h1{font-size:clamp(20px,3.6vw,28px);line-height:1.2;margin:0}
+    p.lead{color:var(--muted);margin:.35rem 0 1rem}
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+    }
+    @media (min-width:640px){
+      .grid{grid-template-columns:1fr 1fr}
+    }
+
+    .btn{
+      display:flex;align-items:center;justify-content:center;gap:10px;
+      width:100%;
+      padding:14px 16px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:#fff;
+      font-weight:600;
+      transition:transform .04s ease, box-shadow .2s ease, border-color .2s ease;
+      box-shadow:0 2px 8px rgba(0,0,0,.04);
+    }
+    .btn:hover{box-shadow:0 6px 16px rgba(0,0,0,.08)}
+    .btn:active{transform:translateY(1px)}
+    .btn.primary{
+      background:var(--brand);
+      border-color:transparent;
+      color:#00302b;
+    }
+    .hint{
+      margin-top:14px;
+      font-size:.95rem;
+      color:var(--muted);
+      text-align:center;
+    }
+    .qr{
+      margin-top:18px;
+      display:flex;justify-content:center;
+    }
+    .qr img{
+      width:min(220px,54vw);
+      height:auto;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#fff;
+    }
+    footer{
+      margin-top:18px;
+      font-size:.9rem;
+      color:var(--muted);
+      text-align:center;
+    }
+    .sep{height:1px;background:var(--line);margin:18px 0}
+    /* Fokus sichtbar für DSGVO/Barrierefreiheit */
+    .btn:focus{outline:3px solid rgba(20,184,166,.45);outline-offset:2px}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <h1>Weiterleitung zum Kontakt</h1>
-    <p>Du wirst zum Kontaktformular weitergeleitet.</p>
-    <p><a class="btn" href="/#kontakt">Zum Kontaktformular</a>
-       <a class="btn" href="https://wa.me/436765890068?text=Servus%20Jan,%20ich%20habe%20deine%20Visitenkarte%20gesehen.">WhatsApp öffnen</a>
-       <a class="btn" href="/assets/jan-feichtenschlager.vcf">Kontakt speichern (VCF)</a>
-    </p>
-  </div>
+  <main class="wrap">
+    <div class="card" role="region" aria-labelledby="headline">
+      <header>
+        <div class="logo" aria-hidden="true">
+          <img src="/assets/logo.png" alt="S’INN3D Logo">
+        </div>
+        <div>
+          <h1 id="headline">Kontakt</h1>
+          <p class="lead">Kontakt speichern oder direkt Nachricht senden.</p>
+        </div>
+      </header>
+
+      <div class="grid" aria-label="Kontaktoptionen">
+        <!-- Formular -->
+        <a class="btn primary" href="/#kontakt" aria-label="Zum Kontaktformular">
+          <!-- kleines Icon via Unicode, keine externen Libs -->
+          <span>📨</span> Zum Kontaktformular
+        </a>
+
+        <!-- WhatsApp -->
+        <a class="btn" href="https://wa.me/436765890068?text=Servus%20Jan,%20ich%20habe%20deine%20Visitenkarte%20gesehen."
+           rel="noopener" aria-label="WhatsApp öffnen">
+          <span>💬</span> WhatsApp-Nachricht senden
+        </a>
+
+        <!-- VCF (bitte Datei hochladen: /assets/jan-feichtenschlager.vcf) -->
+        <a class="btn" href="/assets/jan-feichtenschlager.vcf" download aria-label="Kontakt als VCF speichern">
+          <span>💾</span> Kontakt speichern (VCF)
+        </a>
+
+        <!-- Website/Portfolio optional -->
+        <a class="btn" href="/" aria-label="Zur Startseite">
+          <span>🏠</span> Zur Website
+        </a>
+      </div>
+
+      <div class="sep" role="presentation"></div>
+
+      <div class="hint">
+        Tipp: Nach dem Speichern des Kontakts öffnet dein Handy automatisch das Adressbuch.
+      </div>
+
+      <!-- Optional: QR Vorschau (kannst du auf der Seite ausblenden oder löschen) -->
+      <!--
+      <div class="qr" aria-hidden="true">
+        <img src="/assets/qr-sinn3d-kontakt.png" alt="">
+      </div>
+      -->
+
+      <footer>
+        S’INN3D – Jan Feichtenschlager · <a href="tel:+436765890068">+43&nbsp;676&nbsp;58&nbsp;90&nbsp;068</a> ·
+        <a href="mailto:office@sinn-3d.at">office@sinn-3d.at</a>
+      </footer>
+    </div>
+  </main>
+
+  <!-- Fallback-Weiterleitung, falls jemand /kontakt direkt aufruft und du später nur Anker nutzen willst -->
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=/#kontakt">
+  </noscript>
+  <script>
+    // Wenn du rein auf das Formular verlinken willst, kannst du hier auto-redirecten:
+    // location.replace('/#kontakt');
+  </script>
 </body>
 </html>
