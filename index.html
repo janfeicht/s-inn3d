@@ -355,6 +355,40 @@
     font-size:20px;
   }
 }
+
+    header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #111827; /* Anthrazit */
+  border-bottom: 1px solid #000;
+  backdrop-filter: none !important;
+}
+
+header .btn-ghost {
+  background: transparent;
+  color: #f3f4f6;
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+header .btn-ghost:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+header .btn-primary {
+  background: var(--brand2);
+  border-color: var(--brand2);
+  color: white;
+}
+
+.nav {
+  gap: 10px;
+}
+
+.logo img {
+  filter: brightness(1.02); /* damit dein Logo auf dunklem Hintergrund leuchtet */
+}
+}
   </style>
 
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
