@@ -171,6 +171,110 @@
       max-width:1100px;margin:0 auto;padding:16px 20px;
       display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px
     }
+    /* --- Hero-Feintuning --- */
+.hero-inner{
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-kicker{
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brand);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: 10px;
+}
+
+.hero h1{
+  font-size: clamp(26px, 4.8vw, 40px);
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+
+.hero-lead{
+  max-width: 760px;
+  margin: 0 auto 14px;
+  color: var(--muted);
+  font-size: 15.5px;
+}
+
+.hero-block{
+  max-width: 780px;
+  margin: 10px auto 0;
+}
+
+.hero-block p{
+  margin: 4px 0;
+  color: var(--muted);
+  font-size: 15.5px;
+}
+
+.hero-sub{
+  font-size: 16px;
+  margin: 10px 0 4px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* --- CTA im Hero --- */
+.cta-main{
+  margin-top: 22px;
+  gap: 10px;
+}
+
+/* WhatsApp-Button im Hero etwas runder wirken lassen */
+.cta-main .btn svg{
+  display: block;
+}
+
+/* --- Promo-Box (kein Inline-Style mehr nötig) --- */
+.promo-box{
+  background:#eafff1;
+  border:1px solid #c9f5d9;
+  padding:16px 18px;
+  border-radius:12px;
+  margin:20px auto 28px;
+  max-width:640px;
+  text-align:center;
+  font-size:18px;
+  box-shadow:0 8px 18px rgba(0,0,0,.04);
+}
+
+.promo-box b{
+  display:block;
+  margin-bottom:4px;
+}
+
+/* --- Mobile-Optimierung --- */
+@media (max-width: 700px){
+  .hero{
+    padding: 18px 0 24px;
+  }
+
+  .hero-lead,
+  .hero-block p{
+    font-size: 15px;
+  }
+
+  .cta-main{
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta-main .btn{
+    width: 100%;
+    justify-content: center;
+  }
+
+  .promo-box{
+    font-size: 16px;
+    padding: 14px 14px;
+    margin-top: 16px;
+  }
+}
+
   </style>
 
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
@@ -198,10 +302,10 @@
 <main>
 
 <section class="hero">
-  <div class="wrap">
+  <div class="wrap hero-inner">
 
-    <p style="font-size:14px;font-weight:600;color:#16a34a;text-transform:uppercase;letter-spacing:.4px;">
-      Präzises 3D-Design • CAD-Modellierung • NFC-Lösungen aus dem Innviertel (OÖ)
+    <p class="hero-kicker">
+      PRÄZISES 3D-DESIGN · CAD-MODELLIERUNG · NFC-LÖSUNGEN AUS DEM INNVIERTEL (OÖ)
     </p>
 
     <h1>
@@ -209,30 +313,53 @@
       Druckfertig. Wiederholbar. Einsatzbereit.
     </h1>
 
-    <p>
+    <p class="hero-lead">
       Viele Betriebe wollen 3D-Druck einsetzen, scheitern aber an der Konstruktion:
       verzugsanfällige Bauteile, fehlerhafte Stützstrukturen oder Modelle, die sich
       nicht zuverlässig drucken lassen. Dadurch steigen Kosten, Zeitaufwand und Frust.
     </p>
 
-    <p>
-      Ich entwickle funktionale, technisch saubere 3D-Modelle für Firmen und Privatkunden –
-      klar aufgebaut, kollisionsfrei und speziell für FDM-Druck optimiert.  
-      Keine unnötigen Geometrien, keine Überraschungen – druckfertig ab der ersten Sekunde.
-      <br><br>
-      Zusätzlich biete ich personalisierte NFC-Produkte an:  
-      Schlüsselanhänger, Visitenkarten und Tischaufsteller mit integrierter NFC / QR-Funktion.
-      Ideal für Studios, Gastronomie, Betriebe und Selbstständige, die digitale Prozesse
-      professionell verknüpfen möchten.
-      <br><br>
-      Die physische Fertigung erfolgt – wenn erforderlich – über einen regionalen Partnerbetrieb.
-      Design, Personalisierung und die komplette NFC-Integration übernehme ich.
-      <br><br>
-      Auf Wunsch unterstütze ich auch bei Materialwahl, Slicer-Einstellungen und
-      Druckvorbereitung, damit Bauteile auf jedem FDM-Drucker zuverlässig produziert
-      werden können.
-    </p>
+    <div class="hero-block">
+      <h2 class="hero-sub">Meine Lösung</h2>
+      <p>
+        Ich entwickle funktionale, technisch saubere 3D-Modelle für Firmen und
+        Privatkunden – klar aufgebaut, kollisionsfrei und speziell für FDM-Druck optimiert.
+        Keine unnötigen Geometrien, keine Überraschungen – druckfertig ab der ersten Sekunde.
+      </p>
+    </div>
 
+    <div class="hero-block">
+      <h2 class="hero-sub">NFC-Produkte & digitale Schnittstellen</h2>
+      <p>
+        Zusätzlich biete ich personalisierte NFC-Produkte an: Schlüsselanhänger, Visitenkarten
+        und Tischaufsteller mit integrierter NFC- oder QR-Funktion. Ideal für Studios,
+        Gastronomie, Betriebe und Selbstständige, die digitale Prozesse professionell verknüpfen möchten.
+      </p>
+      <p>
+        Die physische Fertigung erfolgt – wenn erforderlich – über einen regionalen Partnerbetrieb.
+        Design, Personalisierung und die komplette NFC-Integration übernehme ich.
+      </p>
+    </div>
+
+    <div class="hero-block">
+      <h2 class="hero-sub">Unterstützung beim Druck</h2>
+      <p>
+        Auf Wunsch unterstütze ich auch bei Materialwahl, Slicer-Einstellungen und
+        Druckvorbereitung, damit Bauteile auf verschiedenen FDM-Druckern zuverlässig
+        produziert werden können.
+      </p>
+    </div>
+
+    <div class="cta cta-main">
+      <a class="btn btn-primary" href="#kontakt">Kontakt aufnehmen</a>
+      <a class="btn btn-ghost" href="https://wa.me/436765890068" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg style="width:22px;height:22px" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="#25D366" d="M12.04 2C6.55 2 2.04 6.51 2.04 12c0 2.1.55 4.02 1.52 5.77L2 22l4.36-1.52A9.87 9.87 0 0012.04 22c5.49 0 10-4.51 10-10S17.53 2 12.04 2z"/>
+          <path fill="#fff" d="M17 14.77c-.21-.11-1.28-.63-1.48-.71-.2-.07-.34-.11-.48.11-.14.21-.55.71-.68.86-.12.14-.25.16-.46.05-.21-.11-.89-.33-1.7-1.05-.63-.56-1.06-1.25-1.19-1.46-.12-.21-.01-.33.1-.44.1-.1.21-.25.32-.38.1-.12.14-.21.21-.36.07-.14.04-.27-.03-.38-.07-.11-.48-1.15-.66-1.58-.17-.41-.34-.35-.46-.36l-.39-.01c-.14 0-.36.05-.54.25-.19.2-.71.69-.71 1.69 0 1 .74 1.96.84 2.1.1.14 1.46 2.23 3.54 3.12.49.21.88.34 1.18.43.49.15.94.13 1.29.08.39-.06 1.21-.5 1.38-.98.17-.48.17-.9.12-.99-.05-.08-.19-.14-.41-.25z"/>
+        </svg>
+      </a>
+    </div>
+    
     <div class="cta">
 
         <a class="btn btn-primary" href="#kontakt">Kontakt aufnehmen</a>
