@@ -4,13 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>3D-Design, CAD-Konstruktion & NFC-Schlüsselanhänger – Innviertel Oberösterreich | S’INN3D</title>
-<meta name="description" content="3D-Design, CAD-Modellierung, individuelle Schlüsselanhänger mit NFC & Kleinserien aus dem Innviertel. Sauberes, druckfertiges Design für Firmen & Privatkunden – regional, schnell, präzise.">
+  <meta name="description" content="3D-Design, CAD-Modellierung, individuelle Schlüsselanhänger mit NFC & Kleinserien aus dem Innviertel. Sauberes, druckfertiges Design für Firmen & Privatkunden – regional, schnell, präzise.">
   <link rel="icon" href="assets/logo.png" type="image/png">
+
   <style>
     /* Smooth Scroll + Offset wird dynamisch gesetzt */
-    html { 
-      scroll-behavior: smooth; 
-      scroll-padding-top: var(--headerH, 0px); 
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--headerH, 0px);
     }
 
     :root{
@@ -19,29 +20,29 @@
       --headerH: 0px;
     }
     *{box-sizing:border-box;margin:0;padding:0}
-    
-body{
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,'Helvetica Neue',Arial,sans-serif;
 
-  /* zarter Verlauf + weich überblendetes polygon-Bild */
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.88) 0%, rgba(210,240,230,0.88) 100%),
-    url("assets/polygon_bg.svg");
+    body{
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,'Helvetica Neue',Arial,sans-serif;
 
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
+      /* zarter Verlauf + weich überblendetes polygon-Bild */
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.88) 0%, rgba(210,240,230,0.88) 100%),
+        url("assets/polygon_bg.svg");
 
-  /* zart – nicht dunkel, nicht überlagert */
-  background-blend-mode: lighten;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
 
-  color:var(--text);
-  line-height:1.6;
-}
+      /* zart – nicht dunkel, nicht überlagert */
+      background-blend-mode: lighten;
 
+      color:var(--text);
+      line-height:1.6;
+    }
 
-    img{max-width:100%;display:block} a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
 
     .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
 
@@ -58,92 +59,179 @@ body{
     .logo{display:flex;justify-content:center;align-items:center;height:clamp(180px,22vw,260px);padding:0}
     .logo img{height:100%;width:auto;object-fit:contain}
 
-    .btn{display:inline-block;padding:10px 16px;border-radius:999px;font-weight:600;transition:filter .15s ease,transform .05s ease;border:1px solid transparent;cursor:pointer;white-space:nowrap}
-    .btn-primary{background:var(--brand2);color:#fff;border-color:var(--brand2)} .btn-primary:hover{filter:brightness(.95)}
-    .btn-ghost{background:#fff;color:var(--text);border:1px solid var(--line)} .btn-ghost:hover{filter:brightness(.95)}
+    .btn{
+      display:inline-block;
+      padding:10px 16px;
+      border-radius:999px;
+      font-weight:600;
+      transition:filter .15s ease,transform .05s ease;
+      border:1px solid transparent;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .btn-primary{background:var(--brand2);color:#fff;border-color:var(--brand2)}
+    .btn-primary:hover{filter:brightness(.95)}
+    .btn-ghost{background:#fff;color:var(--text);border:1px solid var(--line)}
+    .btn-ghost:hover{filter:brightness(.95)}
     .cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center}
 
     .hero{text-align:center;padding:8px 0 16px}
     .hero h1{font-size:clamp(28px,5.5vw,42px);line-height:1.1;margin:0 0 10px}
     .hero p{max-width:680px;margin:0 auto 16px;color:var(--muted);font-size:15.5px}
 
-    .promo{border:1px solid #ffe066;background:#fffdf2;padding:14px 18px;border-radius:12px;margin:12px auto 18px;text-align:center}
+    .promo{
+      border:1px solid #ffe066;
+      background:#fffdf2;
+      padding:14px 18px;
+      border-radius:12px;
+      margin:12px auto 18px;
+      text-align:center;
+    }
 
     section{padding:40px 0}
 
     .grid{display:grid;gap:22px}
     .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
     .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-    @media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+    @media(max-width:900px){
+      .grid-2,.grid-3{grid-template-columns:1fr}
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:20px;
+      box-shadow:0 2px 10px rgba(0,0,0,.04);
+    }
 
     .muted{color:var(--muted)}
 
     /* Galerie / Video */
-    .gallery .card{padding:0;border:none;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.04)}
-    .ref-img{width:100%;height:200px;object-fit:cover}
+    .gallery .card{
+      padding:0;
+      border:none;
+      overflow:hidden;
+      box-shadow:0 2px 10px rgba(0,0,0,.04)
+    }
 
     .video-card{border-radius:12px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.06);background:var(--card);}
     .video-frame{position:relative;width:100%;padding-bottom:56.25%}
-    .video-frame video,.video-frame .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-    .video-overlay{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(0deg,rgba(0,0,0,.28),rgba(0,0,0,.12));transition:opacity .25s ease}
+    .video-frame video,.video-frame .poster{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block
+    }
+    .video-overlay{
+      position:absolute;
+      inset:0;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(0deg,rgba(0,0,0,.28),rgba(0,0,0,.12));
+      transition:opacity .25s ease
+    }
     .video-overlay.is-hidden{opacity:0;pointer-events:none}
-    .play-btn{height:64px;width:64px;background:#ffffffcc;border-radius:999px;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.25);transition:transform .12s ease,filter .12s ease;border:none;cursor:pointer}
+    .play-btn{
+      height:64px;width:64px;
+      background:#ffffffcc;
+      border-radius:999px;
+      display:grid;
+      place-items:center;
+      box-shadow:0 6px 18px rgba(0,0,0,.25);
+      transition:transform .12s ease,filter .12s ease;
+      border:none;
+      cursor:pointer
+    }
     .play-btn svg{width:28px;height:28px;fill:#111827;transform:translateX(1px)}
-    .play-btn:hover{transform:scale(1.03);filter:brightness(.96)} .play-btn:active{transform:scale(.97)}
+    .play-btn:hover{transform:scale(1.03);filter:brightness(.96)}
+    .play-btn:active{transform:scale(.97)}
 
     /* Kontakt */
     .kontakt-form{display:grid;grid-template-columns:1fr;gap:16px}
-    .kontakt-form input,.kontakt-form textarea{width:100%;padding:14px;border:1px solid #d1d5db;border-radius:12px;background:#fff}
+    .kontakt-form input,.kontakt-form textarea{
+      width:100%;
+      padding:14px;
+      border:1px solid #d1d5db;
+      border-radius:12px;
+      background:#fff
+    }
     .kontakt-form textarea{min-height:150px;resize:vertical}
     .checkbox-container{display:flex;align-items:flex-start;gap:10px}
-    @media(min-width:900px){.kontakt-form{grid-template-columns:1fr 1fr;column-gap:24px}
-      .kontakt-form textarea,.kontakt-form .checkbox-container,.kontakt-form .btn{grid-column:1/-1}}
+    @media(min-width:900px){
+      .kontakt-form{grid-template-columns:1fr 1fr;column-gap:24px}
+      .kontakt-form textarea,
+      .kontakt-form .checkbox-container,
+      .kontakt-form .btn{grid-column:1/-1}
+    }
 
     /* Direkt mittig */
     .direkt-center{text-align:center}
     .direkt-center p{margin:0 auto;text-align:center}
 
     /* Social Icons */
-    .social-icons{display:flex;justify-content:center;gap:12px;margin-top:14px}
-    .social-icons a{height:44px;width:44px;display:flex;justify-content:center;align-items:center;border-radius:50%;transition:filter .15s ease,transform .05s ease;color:#fff}
+    .social-icons{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      margin-top:14px
+    }
+    .social-icons a{
+      height:44px;width:44px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      border-radius:50%;
+      transition:filter .15s ease,transform .05s ease;
+      color:#fff
+    }
     .social-icons a:active{transform:translateY(1px)}
     .fb{background:#1877f2}
-    .ig{background:linear-gradient(45deg,#fd1d1d,#f56040,#f77737,#fcaf45,#ffdc80,#833ab4,#c13584,#e1306c,#fd1d1d)}
+    .ig{
+      background:linear-gradient(45deg,#fd1d1d,#f56040,#f77737,#fcaf45,#ffdc80,#833ab4,#c13584,#e1306c,#fd1d1d)
+    }
 
-    footer{padding:28px 0;background:#fff;border-top:1px solid var(--line)}
-    footer .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+    footer{
+      padding:28px 0;
+      background:#fff;
+      border-top:1px solid var(--line)
+    }
+    footer .foot{
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:8px
+    }
 
     /* Einheitliches, responsives Grid für Projekte */
-.grid.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-  gap:18px;
-  align-items:start;
-}
+    .grid.gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+      gap:18px;
+      align-items:start;
+    }
 
-/* Einheitliche Medienbox, verhindert „schwarze Blöcke“ */
-.media{
-  width:100%;
-  aspect-ratio:16 / 9;
-  object-fit:cover;
-  display:block;
-  border-radius:12px;
-  background:#f3f4f6;
-}
+    /* Einheitliche Medienbox */
+    .media{
+      width:100%;
+      aspect-ratio:16 / 9;
+      object-fit:cover;
+      display:block;
+      border-radius:12px;
+      background:#f3f4f6;
+    }
 
-/* Falls alte ref-img Regeln stören: */
-.ref-img{ all:unset; }
+    /* Falls alte ref-img Regeln stören: */
+    .ref-img{ all:unset; }
+  </style>
 
-</style>
-
-<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-<link rel="manifest" href="assets/site.webmanifest">
-<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-<meta property="og:image" content="https://sinn-3d.at/assets/logo.png">
-  
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="manifest" href="assets/site.webmanifest">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <meta property="og:image" content="https://sinn-3d.at/assets/logo.png">
 </head>
 <body>
 
@@ -151,9 +239,9 @@ body{
   <div class="wrap nav">
     <div class="logo"><img src="assets/logo.png" alt="S’INN3D Logo"></div>
     <nav class="cta">
-  <a class="btn btn-ghost" href="#leistungen">Leistungen</a>
-  <a class="btn btn-ghost" href="#projekte">Projekte</a>
-  <a class="btn btn-ghost" href="/ueber-mich.html">Über mich</a>
+      <a class="btn btn-ghost" href="#leistungen">Leistungen</a>
+      <a class="btn btn-ghost" href="#projekte">Projekte</a>
+      <a class="btn btn-ghost" href="/ueber-mich.html">Über mich</a>
     </nav>
   </div>
 </header>
@@ -163,24 +251,24 @@ body{
   <section class="hero">
     <div class="wrap">
       <p style="font-size:14px;font-weight:600;color:#16a34a;text-transform:uppercase;letter-spacing:.4px;">
-Sauber konstruiertes 3D-Design.<br>
-Wiederholbar und druckfertig.<br>
-Auf Wunsch: Materialwahl & Druckvorbereitung.
+        Sauber konstruiertes 3D-Design.<br>
+        Wiederholbar und druckfertig.<br>
+        Auf Wunsch: Materialwahl & Druckvorbereitung.
       </p>
       <h1>
-  Funktionales Design.<br>
-  Druckfertig.<br>
-  Einsatzbereit.
+        Funktionales Design.<br>
+        Druckfertig.<br>
+        Einsatzbereit.
       </h1>
       <p>Viele Betriebe wissen, dass 3D-Druck Geld spart – aber keiner weiß, wie man richtig startet. Oft steht der Drucker ungenutzt herum oder Projekte kosten mehr als nötig, weil das Know-how fehlt.</p>
       <p>
-Ich entwickle funktionale 3D-Designs für Firmen und Privatkunden – sauber konstruiert, druckfertig und wiederholbar.
-Die Modelle werden so aufgebaut, dass sie sich problemlos erzeugen lassen – ohne Stützfehler, unnötige Elemente oder Kollisionen.
-<br><br>
-Auf Wunsch können Musterstücke, personalisierte Produkte oder Schlüsselanhänger mit NFC-Funktion hergestellt werden.
-Die Fertigung erfolgt gemeinsam mit einem regionalen Partner, während ich das Design, die Personalisierung und die Bereitstellung der Chips übernehme.
-<br><br>
-Zusätzlich unterstütze ich bei Materialwahl, Druckvorbereitung und Slicer-Einstellungen, damit Bauteile auf verschiedenen Druckern zuverlässig produziert werden können.
+        Ich entwickle funktionale 3D-Designs für Firmen und Privatkunden – sauber konstruiert, druckfertig und wiederholbar.
+        Die Modelle werden so aufgebaut, dass sie sich problemlos erzeugen lassen – ohne Stützfehler, unnötige Elemente oder Kollisionen.
+        <br><br>
+        Auf Wunsch können Musterstücke, personalisierte Produkte oder Schlüsselanhänger mit NFC-Funktion hergestellt werden.
+        Die Fertigung erfolgt gemeinsam mit einem regionalen Partner, während ich das Design, die Personalisierung und die Bereitstellung der Chips übernehme.
+        <br><br>
+        Zusätzlich unterstütze ich bei Materialwahl, Druckvorbereitung und Slicer-Einstellungen, damit Bauteile auf verschiedenen Druckern zuverlässig produziert werden können.
       </p>
       <div class="cta">
         <a class="btn btn-primary" href="#kontakt">Kontakt aufnehmen</a>
@@ -195,128 +283,128 @@ Zusätzlich unterstütze ich bei Materialwahl, Druckvorbereitung und Slicer-Eins
   </section>
 
   <section class="promo">
-  <div style="
-    background:#eafff1;
-    border:1px solid #c9f5d9;
-    padding:16px;
-    border-radius:12px;
-    margin:20px auto;
-    max-width:600px;
-    text-align:center;
-    font-size:18px;
-  ">
-    <b>20 % Rabatt auf den ersten Auftrag</b><br>
-    Für die ersten 5 Kunden – gültig bis 14. November 2025.
-  </div>
+    <div style="
+      background:#eafff1;
+      border:1px solid #c9f5d9;
+      padding:16px;
+      border-radius:12px;
+      margin:20px auto;
+      max-width:600px;
+      text-align:center;
+      font-size:18px;
+    ">
+      <b>20 % Rabatt auf den ersten Auftrag</b><br>
+      Für die ersten 5 Neukunden – Aktion gültig, solange Kontingent verfügbar.
+    </div>
   </section>
 
-<section id="leistungen">
-  <div class="wrap">
-    <h2>Leistungen</h2>
-    <p class="muted">
-      Wähle, was du brauchst – vom druckfertigen Modell bis zur praxisnahen Einschulung.
-    </p>
+  <section id="leistungen">
+    <div class="wrap">
+      <h2>Leistungen</h2>
+      <p class="muted">
+        Wähle, was du brauchst – vom druckfertigen Modell bis zur praxisnahen Einschulung.
+      </p>
 
-    <div class="cta" style="margin-top:12px">
-      <a class="btn btn-primary" href="/leistungen.html">Mehr zu den Leistungen</a>
-    </div>
-
-    <div class="grid grid-3" style="margin-top:18px">
-      <div class="card">
-        <h3>3D-Design & CAD-Modellierung</h3>
-        <p class="muted">
-          Sauber konstruierte, druckfertige 3D-Modelle für Bauteile, Logos und Produktideen.
-          Logisch aufgebaut, kollisionsfrei und wiederholbar – ideal für FDM- und Resin-Druck.
-        </p>
-        <img
-          src="assets/slicer.png"
-          alt="3D-Design & CAD-Modellierung"
-          loading="lazy"
-          width="800" height="450"
-          style="margin-top:10px; border-radius:10px; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover;">
+      <div class="cta" style="margin-top:12px">
+        <a class="btn btn-primary" href="/leistungen.html">Mehr zu den Leistungen</a>
       </div>
 
-      <div class="card">
-        <h3>CAD-Einschulung & Projektbegleitung</h3>
-        <p class="muted">
-          Praxistaugliche Einführung ins CAD-Modellieren und in die additive Fertigung – für Einsteiger,
-          Teams und Betriebe. Begleitung von der Idee bis zum druckfertigen Modell inkl. Tipps zu
-          Materialwahl und Slicer-Einstellungen.        </p>
-        <img
-          src="assets/cad.jpg"
-          alt="CAD-Einschulung – Fusion 360 Design"
-          loading="lazy"
-          width="800" height="450"
-          style="margin-top:10px; border-radius:10px; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover;">
-      </div>
+      <div class="grid grid-3" style="margin-top:18px">
+        <div class="card">
+          <h3>3D-Design & CAD-Modellierung</h3>
+          <p class="muted">
+            Sauber konstruierte, druckfertige 3D-Modelle für Bauteile, Logos und Produktideen.
+            Logisch aufgebaut, kollisionsfrei und wiederholbar – ideal für FDM- und Resin-Druck.
+          </p>
+          <img
+            src="assets/slicer.png"
+            alt="3D-Design & CAD-Modellierung"
+            loading="lazy"
+            width="800" height="450"
+            style="margin-top:10px; border-radius:10px; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover;">
+        </div>
 
-      <div class="card">
-        <h3>Personalisierte Produkte & Kleinserien (über Partner)</h3>
-        <p class="muted">
+        <div class="card">
+          <h3>CAD-Einschulung & Projektbegleitung</h3>
+          <p class="muted">
+            Praxistaugliche Einführung ins CAD-Modellieren und in die additive Fertigung – für Einsteiger,
+            Teams und Betriebe. Begleitung von der Idee bis zum druckfertigen Modell inkl. Tipps zu
+            Materialwahl und Slicer-Einstellungen.
+          </p>
+          <img
+            src="assets/cad.jpg"
+            alt="CAD-Einschulung – Fusion 360 Design"
+            loading="lazy"
+            width="800" height="450"
+            style="margin-top:10px; border-radius:10px; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover;">
+        </div>
+
+        <div class="card">
+          <h3>Personalisierte Produkte & Kleinserien (über Partner)</h3>
+          <p class="muted">
             Individuelle Artikel wie Schlüsselanhänger mit NFC sowie kleine Stückzahlen.
-    Zusätzlich biete ich Plexiglas-Aufsteller mit QR-Codes und optionaler NFC-Integration an –
-    ideal für Firmen, Läden, Messen und Veranstaltungen.
-    Die physische Fertigung erfolgt bei Bedarf über regionale Partnerbetriebe.
-        </p>
-        <img
-          src="assets/nfc_kopf.jpg"
-          alt="NFC-Schlüsselanhänger – individuelle Fertigung"
-          loading="lazy"
-          width="800" height="450"
-          style="margin-top:10px; border-radius:10px; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover;">
+            Zusätzlich biete ich Plexiglas-Aufsteller mit QR-Codes und optionaler NFC-Integration an –
+            ideal für Firmen, Läden, Messen und Veranstaltungen.
+            Die physische Fertigung erfolgt bei Bedarf über regionale Partnerbetriebe.
+          </p>
+          <img
+            src="assets/nfc_kopf.jpg"
+            alt="NFC-Schlüsselanhänger – individuelle Fertigung"
+            loading="lazy"
+            width="800" height="450"
+            style="margin-top:10px; border-radius:10px; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover;">
+        </div>
+      </div> <!-- /grid -->
+    </div> <!-- /wrap -->
+  </section> <!-- /leistungen -->
+
+  <section id="projekte">
+    <div class="wrap">
+      <h2>Aktuelle Projekte</h2>
+      <p class="muted">Einblick in aktuelle Designs & Aufträge:</p>
+
+      <!-- Neuer Button -->
+      <div class="cta" style="margin:12px 0 28px 0;">
+        <a class="btn btn-primary" href="/projekte.html">Mehr zu den Projekten</a>
       </div>
-    </div> <!-- /grid -->
-  </div> <!-- /wrap -->
-</section> <!-- /leistungen -->
 
-<section id="projekte">
-  <div class="wrap">
-    <h2>Aktuelle Projekte</h2>
-    <p class="muted">Einblick in aktuelle Designs & Aufträge:</p>
-    
- <!-- ✅ Neuer Button -->
-    <div class="cta" style="margin:12px 0 28px 0;">
-  <a class="btn btn-primary" href="/projekte.html">Mehr zu den Projekten</a>
-</div>
-    
-    <div class="grid gallery">
-      <article class="card">
-        <img src="assets/designberatung.jpg" alt="3D Design-Beratung" class="media">
-        <div style="padding:12px 16px">
-          <h3>3D Design-Beratung</h3>
-          <p class="muted">Praxisnahe Einschulung im Designen von 3D-Objekten mit CAD-Programmen für effizientes Arbeiten.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="assets/logo_nfc.jpg" alt="Design mit NFC" class="media">
-        <div style="padding:12px 16px">
-          <h3>Design mit NFC</h3>
-          <p class="muted">Gestaltung eines Schlüsselanhängers mit individuellem Design und NFC-Funktion.</p>
-        </div>
-      </article>
-
-      <article class="card video-card">
-        <div class="video-frame" data-video-container>
-          <img class="poster" src="assets/kleinserie_poster.png" alt="Kleinserien-Fertigung Vorschaubild" loading="lazy">
-          <video preload="metadata" playsinline muted poster="assets/kleinserie_poster.png" tabindex="0" aria-label="Kleinserien-Fertigung Video">
-            <source src="assets/kleinserie.mp4" type="video/mp4">
-          </video>
-          <div class="video-overlay" data-video-overlay>
-            <button class="play-btn" type="button" aria-label="Play" data-video-play>
-              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            </button>
+      <div class="grid gallery">
+        <article class="card">
+          <img src="assets/designberatung.jpg" alt="3D Design-Beratung" class="media">
+          <div style="padding:12px 16px">
+            <h3>3D Design-Beratung</h3>
+            <p class="muted">Praxisnahe Einschulung im Designen von 3D-Objekten mit CAD-Programmen für effizientes Arbeiten.</p>
           </div>
-        </div>
-        <div style="padding:16px 16px 20px">
-          <h3>Kleinserien-Fertigung</h3>
-          <p class="muted">3D-gedruckte Designs als effiziente Lösung für regionale Betriebe.</p>
-        </div>
-      </article>
-    </div> <!-- /grid gallery -->
-  </div>   <!-- /wrap -->
-</section> <!-- /projekte -->
+        </article>
 
+        <article class="card">
+          <img src="assets/logo_nfc.jpg" alt="Design mit NFC" class="media">
+          <div style="padding:12px 16px">
+            <h3>Design mit NFC</h3>
+            <p class="muted">Gestaltung eines Schlüsselanhängers mit individuellem Design und NFC-Funktion.</p>
+          </div>
+        </article>
+
+        <article class="card video-card">
+          <div class="video-frame" data-video-container>
+            <img class="poster" src="assets/kleinserie_poster.png" alt="Kleinserien-Fertigung Vorschaubild" loading="lazy">
+            <video preload="metadata" playsinline muted poster="assets/kleinserie_poster.png" tabindex="0" aria-label="Kleinserien-Fertigung Video">
+              <source src="assets/kleinserie.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay" data-video-overlay>
+              <button class="play-btn" type="button" aria-label="Play" data-video-play>
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+            </div>
+          </div>
+          <div style="padding:16px 16px 20px">
+            <h3>Kleinserien-Fertigung</h3>
+            <p class="muted">3D-gedruckte Designs als effiziente Lösung für regionale Betriebe.</p>
+          </div>
+        </article>
+      </div> <!-- /grid gallery -->
+    </div>   <!-- /wrap -->
+  </section> <!-- /projekte -->
 
   <section id="kontakt">
     <div class="wrap grid grid-2">
@@ -333,28 +421,26 @@ Zusätzlich unterstütze ich bei Materialwahl, Druckvorbereitung und Slicer-Eins
 
           <input type="text" name="website" id="trap" style="display:none">
 
-          <label>Name*</label>
-<input type="text" name="Name" required>
+          <label for="name">Name*</label>
+          <input type="text" id="name" name="Name" required>
 
-<label>E-Mail*</label>
-<input type="email" name="Email" required>
+          <label for="email">E-Mail*</label>
+          <input type="email" id="email" name="Email" required>
 
-<label>Betreff</label>
-<input type="text" name="Betreff">
+          <label for="subject">Betreff</label>
+          <input type="text" id="subject" name="Betreff">
 
-<label>Nachricht*</label>
-<textarea name="Nachricht" required></textarea>
+          <label for="message">Nachricht*</label>
+          <textarea id="message" name="Nachricht" required></textarea>
 
-<label for="filelink">Dateilink (optional)</label>
-<input id="filelink" type="url" name="Dateilink" placeholder="https://…">
+          <label for="filelink">Dateilink (optional)</label>
+          <input id="filelink" type="url" name="Dateilink" placeholder="https://…">
+          <small class="muted">Bitte Datei (z. B. STL/STEP/ZIP) bei WeTransfer, Google Drive oder Dropbox hochladen und den Freigabelink hier einfügen.</small>
 
-<small class="muted">Bitte Datei ...</small>
-
-<div class="checkbox-container">
-  <input type="checkbox" name="Einwilligung" required>
-  <label>Ich stimme zu, dass meine Angaben zur Kontaktaufnahme gespeichert werden.</label>
-</div>
-
+          <div class="checkbox-container">
+            <input type="checkbox" id="consent" name="Einwilligung" required>
+            <label for="consent">Ich stimme zu, dass meine Angaben zur Kontaktaufnahme gespeichert werden.</label>
+          </div>
 
           <div id="formStatus" class="form-status" aria-live="polite"></div>
           <button type="submit" class="btn btn-primary">Nachricht senden</button>
@@ -368,6 +454,7 @@ Zusätzlich unterstütze ich bei Materialwahl, Druckvorbereitung und Slicer-Eins
           <b>Handynummer:</b> <a href="https://wa.me/436765890068" target="_blank" rel="noopener">+43 676 5890068</a><br>
           <b>Standort:</b> Innviertel, OÖ
         </p>
+
         <div class="social-icons">
           <a class="fb" href="https://www.facebook.com/share/1Zb4kS49oo/" target="_blank" aria-label="Facebook">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
@@ -380,44 +467,39 @@ Zusätzlich unterstütze ich bei Materialwahl, Druckvorbereitung und Slicer-Eins
             </svg>
           </a>
         </div>
-<div style="text-align:center; margin-top:24px;">
-  <img src="assets/qr-code.png"
-       alt="WhatsApp QR-Code"
-       style="width:200px; max-width:70%; border-radius:12px; display:block; margin:0 auto;">
-  <p class="muted" style="margin-top:8px; font-size:15px;">
-    Direkt per WhatsApp anfragen
-  </p>
-</div>
 
-     
+        <div style="text-align:center; margin-top:24px;">
+          <img src="assets/qr-code.png"
+               alt="WhatsApp QR-Code"
+               style="width:200px; max-width:70%; border-radius:12px; display:block; margin:0 auto;">
+          <p class="muted" style="margin-top:8px; font-size:15px;">
+            Direkt per WhatsApp anfragen
+          </p>
+        </div>
+      </div> <!-- /card direkt-center -->
+
+    </div> <!-- /wrap grid -->
   </section>
 
 </main>
 
 <footer>
   <div class="inner" style="max-width:1100px;margin:0 auto;padding:16px 20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;">
-      
-      <div>
-        © <span id="y"></span> S’INN3D – 3D-Design, CAD-Modellierung & Projektbegleitung<br>
-        Fertigung erfolgt bei Bedarf über regionale Partnerbetriebe.
-      </div>
+    <div>
+      © <span id="y"></span> S’INN3D – 3D-Design, CAD-Modellierung & Projektbegleitung<br>
+      Fertigung erfolgt bei Bedarf über regionale Partnerbetriebe.
+    </div>
 
-      <div>
-        <a href="/ueber-mich.html">Über mich</a> ·
-        <a href="/impressum.html">Impressum</a> ·
-        <a href="/datenschutz.html">Datenschutz</a>
-      </div>
-
+    <div>
+      <a href="/ueber-mich.html">Über mich</a> ·
+      <a href="/impressum.html">Impressum</a> ·
+      <a href="/datenschutz.html">Datenschutz</a>
+    </div>
   </div>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
 </footer>
 
-
 <script>
-  // Jahr im Footer
+  // Jahr im Footer setzen
   document.getElementById('y').textContent = new Date().getFullYear();
 
   // Header-Höhe dynamisch an <html> scroll-padding-top binden
@@ -448,6 +530,7 @@ Zusätzlich unterstütze ich bei Materialwahl, Druckvorbereitung und Slicer-Eins
 </script>
 
 <script>
+  // Kontaktformular per fetch an Formspree senden + eigene Danke-Seite
   (function () {
     const form = document.getElementById('kontaktForm');
     if (!form) return;
@@ -480,3 +563,4 @@ Zusätzlich unterstütze ich bei Materialwahl, Druckvorbereitung und Slicer-Eins
 
 </body>
 </html>
+
