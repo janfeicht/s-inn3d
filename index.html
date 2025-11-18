@@ -275,7 +275,7 @@
   }
 }
 
-    /* --- Slider --- */
+/* --- Slider --- */
 .slider{
   position:relative;
   width:100%;
@@ -349,7 +349,7 @@
     padding:6px 10px;
     font-size:20px;
   }
-  
+}
   </style>
 
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
@@ -359,43 +359,6 @@
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
   <meta property="og:image" content="https://sinn-3d.at/assets/logo.png">
 </head>
-
-  <script>
-document.querySelectorAll(".slider").forEach(slider => {
-  const slides = slider.querySelector(".slides");
-  const slideCount = slider.querySelectorAll(".slide").length;
-  const dotsContainer = slider.querySelector(".slider-dots");
-
-  let index = 0;
-
-  // Create dots
-  for(let i=0; i<slideCount; i++){
-    const dot = document.createElement("button");
-    if(i === 0) dot.classList.add("active");
-    dot.addEventListener("click", () => goTo(i));
-    dotsContainer.appendChild(dot);
-  }
-
-  const dots = dotsContainer.querySelectorAll("button");
-
-  function goTo(i){
-    index = i;
-    slides.style.transform = `translateX(${-index * 100}%)`;
-    dots.forEach(dot => dot.classList.remove("active"));
-    dots[index].classList.add("active");
-  }
-
-  slider.querySelector(".next").addEventListener("click", () => {
-    index = (index + 1) % slideCount;
-    goTo(index);
-  });
-
-  slider.querySelector(".prev").addEventListener("click", () => {
-    index = (index - 1 + slideCount) % slideCount;
-    goTo(index);
-  });
-});
-</script>
 
 <body>
 
@@ -574,6 +537,8 @@ document.querySelectorAll(".slider").forEach(slider => {
   </div>
 </div>
 
+    </div> <!-- grid grid-3 -->
+  </div> <!-- wrap -->
 </section>
 
 
@@ -774,6 +739,44 @@ document.querySelectorAll(".slider").forEach(slider => {
       } catch (err) {
         alert('Netzwerkfehler. Prüfe die Verbindung oder schreibe an office@sinn-3d.at.');
       }
+    });
+  })();
+
+  // NFC-Slider
+  (function(){
+    document.querySelectorAll(".slider").forEach(slider => {
+      const slides = slider.querySelector(".slides");
+      const slideCount = slider.querySelectorAll(".slide").length;
+      const dotsContainer = slider.querySelector(".slider-dots");
+
+      let index = 0;
+
+      // Dots anlegen
+      for(let i = 0; i < slideCount; i++){
+        const dot = document.createElement("button");
+        if(i === 0) dot.classList.add("active");
+        dot.addEventListener("click", () => goTo(i));
+        dotsContainer.appendChild(dot);
+      }
+
+      const dots = dotsContainer.querySelectorAll("button");
+
+      function goTo(i){
+        index = i;
+        slides.style.transform = `translateX(${-index * 100}%)`;
+        dots.forEach(dot => dot.classList.remove("active"));
+        dots[index].classList.add("active");
+      }
+
+      slider.querySelector(".next").addEventListener("click", () => {
+        index = (index + 1) % slideCount;
+        goTo(index);
+      });
+
+      slider.querySelector(".prev").addEventListener("click", () => {
+        index = (index - 1 + slideCount) % slideCount;
+        goTo(index);
+      });
     });
   })();
 </script>
