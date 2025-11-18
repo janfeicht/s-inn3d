@@ -275,6 +275,81 @@
   }
 }
 
+    /* --- Slider --- */
+.slider{
+  position:relative;
+  width:100%;
+  max-width:800px;
+  margin:20px auto;
+  overflow:hidden;
+  border-radius:12px;
+}
+
+.slides{
+  display:flex;
+  transition:transform .4s ease;
+}
+
+.slide{
+  min-width:100%;
+  box-sizing:border-box;
+}
+
+.slide img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+/* Navigation buttons */
+.slider-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,0.45);
+  color:white;
+  border:none;
+  padding:10px 16px;
+  font-size:26px;
+  border-radius:50%;
+  cursor:pointer;
+  z-index:10;
+  backdrop-filter:blur(4px);
+}
+
+.slider-btn.prev{ left:10px; }
+.slider-btn.next{ right:10px; }
+
+/* Dots */
+.slider-dots{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin-top:10px;
+}
+
+.slider-dots button{
+  width:10px;
+  height:10px;
+  background:#ccc;
+  border-radius:50%;
+  border:none;
+  cursor:pointer;
+  transition:background .2s;
+}
+
+.slider-dots button.active{
+  background:#16a34a; /* deine Markenfarbe */
+}
+
+@media(max-width:700px){
+  .slider-btn{
+    padding:6px 10px;
+    font-size:20px;
+  }
+  
   </style>
 
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
@@ -284,6 +359,44 @@
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
   <meta property="og:image" content="https://sinn-3d.at/assets/logo.png">
 </head>
+
+  <script>
+document.querySelectorAll(".slider").forEach(slider => {
+  const slides = slider.querySelector(".slides");
+  const slideCount = slider.querySelectorAll(".slide").length;
+  const dotsContainer = slider.querySelector(".slider-dots");
+
+  let index = 0;
+
+  // Create dots
+  for(let i=0; i<slideCount; i++){
+    const dot = document.createElement("button");
+    if(i === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => goTo(i));
+    dotsContainer.appendChild(dot);
+  }
+
+  const dots = dotsContainer.querySelectorAll("button");
+
+  function goTo(i){
+    index = i;
+    slides.style.transform = `translateX(${-index * 100}%)`;
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[index].classList.add("active");
+  }
+
+  slider.querySelector(".next").addEventListener("click", () => {
+    index = (index + 1) % slideCount;
+    goTo(index);
+  });
+
+  slider.querySelector(".prev").addEventListener("click", () => {
+    index = (index - 1 + slideCount) % slideCount;
+    goTo(index);
+  });
+});
+</script>
+
 <body>
 
 <header>
@@ -427,24 +540,40 @@
 
       <!-- Karte 3: NFC & Kleinserien -->
       <div class="card">
-        <h3>NFC-Produkte &amp; personalisierte Kleinserien</h3>
-        <p class="muted">
-          Individuelle Artikel wie Schlüsselanhänger mit NFC sowie kleine Stückzahlen für Aktionen oder Kundenprojekte.  
-          Zusätzlich biete ich Tischaufsteller mit QR-Codes und optionaler NFC-Integration an –
-          ideal für Studios, Läden, Messen und Veranstaltungen.  
-          Die physische Fertigung erfolgt bei Bedarf über regionale Partnerbetriebe,
-          während Design, und NFC-Integration von mir übernommen werden.
-        </p>
-        <img
-          src="assets/nfc_kopf.jpg"
-          alt="NFC-Schlüsselanhänger – individuelle Fertigung"
-          loading="lazy"
-          width="800" height="450"
-          style="margin-top:10px;border-radius:10px;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover">
+  <h3>NFC-Produkte & kleine Serien (über Partner)</h3>
+  <p class="muted">
+    Individuelle NFC-Schlüsselanhänger, Visitenkarten und Tischaufsteller – ideal für Studios, Gastronomie und Betriebe, 
+    die digitale Prozesse professionell verknüpfen möchten.  
+    Die physische Fertigung erfolgt bei Bedarf über einen regionalen Partnerbetrieb, während Design & NFC-Integration von mir kommen.
+  </p>
+
+  <!-- Slider -->
+  <div class="slider">
+    <div class="slides">
+
+      <div class="slide">
+        <img src="assets/nfc_01.jpg" alt="NFC Schlüsselanhänger – Design & Fertigung" loading="lazy">
       </div>
 
-    </div> <!-- /grid -->
-  </div> <!-- /wrap -->
+      <div class="slide">
+        <img src="assets/nfc_02.jpg" alt="NFC Tischaufsteller – QR / NFC Kombi" loading="lazy">
+      </div>
+
+      <div class="slide">
+        <img src="assets/nfc_03.jpg" alt="Individuelle NFC Mini-Serien aus dem Innviertel" loading="lazy">
+      </div>
+
+    </div>
+
+    <!-- Navigation -->
+    <button class="slider-btn prev">‹</button>
+    <button class="slider-btn next">›</button>
+
+    <!-- Dots -->
+    <div class="slider-dots"></div>
+  </div>
+</div>
+
 </section>
 
 
