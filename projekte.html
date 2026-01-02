@@ -3,64 +3,118 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Projekte – 3D-Design, CAD & NFC-Lösungen | S’INN3D</title>
   <meta name="description" content="Ausgewählte Projekte von S’INN3D aus dem Innviertel: 3D-Design, CAD-Modellierung, NFC-Schlüsselanhänger, NFC-Tischaufsteller, 3D-Logo-Objekte und Kleinserien – teils in Zusammenarbeit mit STG79 PrintWear.">
-  <link rel="icon" href="assets/logo.png" type="image/png">
+
+  <link rel="canonical" href="https://sinn-3d.at/projekte.html">
+
+  <!-- Favicon / App Icons -->
+  <link rel="icon" href="/assets/logo.png" type="image/png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <link rel="manifest" href="/assets/site.webmanifest">
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Projekte – S’INN3D | Design & CAD">
+  <meta property="og:description" content="Einblick in ausgewählte Arbeiten: CAD, 3D-Design, NFC-Lösungen & Kleinserien (über Partner).">
+  <meta property="og:image" content="https://sinn-3d.at/assets/logo.png">
+  <meta property="og:url" content="https://sinn-3d.at/projekte.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_AT">
 
   <style>
-    html{scroll-behavior:smooth;scroll-padding-top:var(--headerH,0px)}
+    html{
+      scroll-behavior:smooth;
+      scroll-padding-top:var(--headerH,0px);
+    }
 
     :root{
-      --bg:#f7faf9; --card:#ffffff; --text:#111827; --muted:#6b7280;
-      --brand:#16a34a; --brand2:#14b8a6; --line:#e5e7eb; --wrap:1100px;
+      --bg:#f7faf9;
+      --card:#ffffff;
+      --text:#0b1220;
+      --muted:#475569;
+      --brand:#16a34a;
+      --brand2:#14b8a6;
+      --accent:#facc15;
+      --line:#e5e7eb;
+      --wrap:1100px;
       --headerH:0px;
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
 
     body{
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,"Helvetica Neue",Arial,sans-serif;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.88) 0%, rgba(210,240,230,0.88) 100%),
-        url("assets/polygon_bg.svg");
-      background-size:cover;
-      background-repeat:no-repeat;
-      background-position:center;
-      background-attachment:fixed;
-      color:var(--text);
+      background: var(--bg);
+      color: var(--text);
       line-height:1.6;
+      min-height:100vh;
+      position:relative;
     }
 
-    img{max-width:100%;display:block}
-    a{text-decoration:none;color:inherit}
+    /* identischer Hintergrund wie Startseite/Leistungen/Über mich */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-1;
+      background:
+        radial-gradient(1200px 700px at 50% 25%,
+          rgba(20,184,166,.22) 0%,
+          rgba(22,163,74,.14) 35%,
+          rgba(255,255,255,0) 72%),
+        linear-gradient(180deg,
+          rgba(255,255,255,.92) 0%,
+          rgba(210,240,230,.92) 100%),
+        url("/assets/polygon_bg.svg");
+      background-size:cover,cover,cover;
+      background-repeat:no-repeat,no-repeat,no-repeat;
+      background-position:center,center,center;
+    }
 
-    .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
-
-    /* HEADER – wie Startseite */
+    /* Header – schwarz wie bei den anderen */
     header{
-      position:sticky;top:0;z-index:100;
-      background:rgba(255,255,255,.95);
-      backdrop-filter:blur(8px);
-      border-bottom:1px solid var(--line);
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:#000;
+      border-bottom:1px solid #000;
     }
+
     .nav{
       display:flex;
       flex-direction:column;
       align-items:center;
-      gap:8px;
-      padding:6px 0;
+      gap:10px;
+      padding:8px 0;
     }
+
     .logo{
       display:flex;
       justify-content:center;
       align-items:center;
-      height:clamp(100px,14vw,160px);
+      height:clamp(170px,22vw,250px);
+      padding:0;
     }
     .logo img{
       height:100%;
       width:auto;
       object-fit:contain;
-      max-height:160px;
+      filter:brightness(1.02);
+    }
+
+    .cta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+      align-items:center;
     }
 
     .btn{
@@ -68,41 +122,78 @@
       padding:10px 16px;
       border-radius:999px;
       font-weight:600;
-      border:1px solid var(--line);
+      transition:filter .15s ease,transform .05s ease;
+      border:1px solid transparent;
       cursor:pointer;
       white-space:nowrap;
-      transition:filter .15s ease, transform .05s ease;
-      background:#fff;
-      color:var(--text);
+      text-align:center;
+      min-height:44px;
     }
-    .btn:hover{filter:brightness(.96);transform:translateY(1px)}
+
     .btn-primary{
       background:var(--brand2);
       color:#fff;
       border-color:var(--brand2);
     }
-    .btn-ghost{background:#fff;color:var(--text)}
+    .btn-primary:hover{filter:brightness(.95)}
+    .btn-primary:active{transform:translateY(1px)}
+
+    .btn-ghost{
+      background:transparent;
+      color:#f3f4f6;
+      border:1px solid rgba(255,255,255,0.25);
+    }
+    .btn-ghost:hover{background:rgba(255,255,255,0.08)}
+    .btn-ghost:active{transform:translateY(1px)}
+
+    .btn-whatsapp{
+      background:#fff;
+      color:#0b1220;
+      border:2px solid #14b8a6;
+      font-weight:800;
+    }
+    .btn-whatsapp:hover{
+      background:#14b8a6;
+      color:#fff;
+      border-color:#14b8a6;
+    }
+
+    main{padding:18px 0 0}
+    section{padding:22px 0}
 
     h1{
+      font-size:clamp(26px,4.8vw,40px);
+      line-height:1.1;
+      margin-bottom:10px;
       text-align:center;
-      font-size:clamp(26px,5vw,38px);
-      margin:20px 0 6px;
     }
 
-    .muted{color:var(--muted);}
-    .muted-center{text-align:center;color:var(--muted);}
+    .muted{color:var(--muted)}
+    .muted-center{text-align:center;color:var(--muted)}
 
-    main section{padding:24px 0 40px;}
+    /* Hero */
+    .hero{padding:10px 0 18px}
+    .hero-inner{max-width:920px;margin:0 auto;text-align:center}
 
-    .grid{
-      display:grid;
-      gap:22px;
-      margin-top:26px;
+    .hero-kicker{
+      font-size:13px;
+      font-weight:800;
+      color:var(--brand);
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:10px;
     }
-    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr));}
-    @media(max-width:900px){
-      .grid-3{grid-template-columns:1fr;}
+    .hero-lead{
+      max-width:860px;
+      margin:0 auto;
+      color:var(--muted);
+      font-size:15.5px;
     }
+
+    /* Grid & Cards */
+    .grid{display:grid;gap:22px;margin-top:22px}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media(max-width:900px){.grid-3{grid-template-columns:1fr}}
 
     .card{
       background:var(--card);
@@ -120,6 +211,7 @@
       aspect-ratio:16/9;
       object-fit:cover;
       display:block;
+      background:#f3f4f6;
     }
 
     .box{
@@ -130,27 +222,34 @@
       flex:1;
     }
 
-    .box h3{
-      font-size:18px;
-      margin:0;
+    .box h3{font-size:18px;margin:0}
+    .box p{font-size:15px}
+
+    /* STG79 Logo */
+    .partner{
+      display:flex;
+      justify-content:flex-end;
+      align-items:center;
+      margin-top:10px;
+    }
+    .partner img{
+      height:26px;
+      width:auto;
+      opacity:.9;
+      transition:opacity .2s ease;
+    }
+    .partner img:hover{opacity:1}
+
+    footer{padding:28px 0;background:#fff;border-top:1px solid var(--line)}
+    footer .inner{
+      max-width:1100px;margin:0 auto;padding:16px 20px;
+      display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px
     }
 
-    .box p{
-      font-size:15px;
+    @media (max-width:700px){
+      .hero-lead{font-size:15px}
+      .cta{gap:8px}
     }
-
-    footer{
-      padding:28px 0;
-      background:#fff;
-      border-top:1px solid var(--line);
-      margin-top:30px;
-      text-align:center;
-      font-size:14px;
-    }
-    .card img[alt="STG79 PrintWear Logo"]:hover {
-  opacity: 1;
-  transition: opacity .2s ease;
-}
   </style>
 </head>
 
@@ -158,129 +257,161 @@
 
 <header>
   <div class="wrap nav">
-    <div class="logo">
-      <img src="assets/logo.png" alt="S’INN3D Logo">
-    </div>
-    <nav class="cta" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
-      <a class="btn btn-ghost" href="/index.html">Start</a>
-      <a class="btn btn-ghost" href="/leistungen.html">Leistungen</a>
-      <a class="btn btn-primary" href="/projekte.html" aria-current="page">Projekte</a>
-      <a class="btn btn-ghost" href="/ueber-mich.html">Über mich</a>
+    <a class="logo" href="/index.html" aria-label="Zur Startseite">
+      <img src="/assets/logo.png" alt="S’INN3D Logo">
+    </a>
+
+    <nav class="cta" aria-label="Hauptnavigation">
+      <a class="btn btn-ghost" href="/index.html" title="Zur Startseite">Start</a>
+      <a class="btn btn-ghost" href="/leistungen.html" title="Leistungen ansehen">Leistungen</a>
+      <a class="btn btn-ghost" href="/projekte.html" aria-current="page" title="Projekte ansehen">Projekte</a>
+      <a class="btn btn-ghost" href="/ueber-mich.html" title="Über mich">Über mich</a>
+      <a class="btn btn-primary" href="/index.html#kontakt" title="Kontakt">Kontakt</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <section class="wrap">
-    <h1>Aktuelle Projekte</h1>
-    <p class="muted-center">
-      Einblick in ausgewählte Arbeiten aus dem S’INN3D-Alltag – von druckfertigem CAD-Design
-      bis zu NFC-Schlüsselanhängern und Tischaufstellern in Zusammenarbeit mit regionalen Partnerbetrieben.
-    </p>
 
-    <div class="grid grid-3">
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <p class="hero-kicker">Design · CAD · NFC · Kleinserien</p>
+      <h1>Aktuelle Projekte</h1>
 
-      <!-- 1: Designberatung -->
-      <article class="card">
-        <img class="media" src="assets/designberatung.jpg" alt="3D Design-Beratung">
-        <div class="box">
-          <h3>3D Design-Beratung</h3>
-          <p class="muted">
-            Einschulung in Fusion 360 &amp; Co., saubere Konstruktionslogik und
-            Praxisbeispiele, damit deine Bauteile ab dem ersten Druck funktionieren.
-          </p>
-        </div>
-      </article>
+      <p class="hero-lead">
+        Einblick in ausgewählte Arbeiten aus dem S’INN3D-Alltag – von druckfertigem CAD-Design
+        bis zu NFC-Schlüsselanhängern und Tischaufstellern in Zusammenarbeit mit regionalen Partnerbetrieben.
+      </p>
 
-      <!-- 2: CAD-Design -->
-      <article class="card">
-        <img class="media" src="assets/slicer.png" alt="Druckfertiges CAD-Design im Slicer">
-        <div class="box">
-          <h3>Druckfertiges CAD-Design</h3>
-          <p class="muted">
-            Funktionale Bauteile, Halterungen oder Logos – kollisionsfrei,
-            wiederholbar und sauber exportiert als STEP- &amp; STL-Datei
-            für deinen FDM- oder Resin-Drucker.
-          </p>
-        </div>
-      </article>
-
-      <!-- 3: NFC-Schlüsselanhänger -->
-      <article class="card">
-        <img class="media" src="assets/nfc_kopf.jpg" alt="NFC-Schlüsselanhänger mit individuellem Design">
-        <div class="box">
-          <h3>NFC-Schlüsselanhänger</h3>
-          <p class="muted">
-            Personalisierte NFC-Keys mit Logo, Claim oder Kontaktinfos.
-            Design, Chip-Setup und Datenstruktur kommen von mir – die physische
-            Fertigung erfolgt bei Bedarf gemeinsam mit STG79 PrintWear als Partnerbetrieb.
-          </p>
-          <div style="display:flex;justify-content:flex-end;align-items:center;margin-top:10px;">
-  <img src="/assets/stg79_logo.jpg" alt="STG79 PrintWear Logo" style="height:26px;width:auto;opacity:0.85;">
-</div>
-        </div>
-      </article>
-
-      <!-- 4: NFC-Tischaufsteller (NEUER BLOCK) -->
-      <article class="card">
-        <img class="media" src="assets/nfc_4.jpg" alt="NFC-Tischaufsteller für Studio und Gastro">
-        <div class="box">
-          <h3>NFC-Tischaufsteller</h3>
-          <p class="muted">
-            Tischaufsteller mit NFC- und optionaler QR-Funktion – ideal für Studios,
-            Gastronomie oder Shops. Ein Scan öffnet Bewertungen,
-            Terminbuchungen oder Social-Media-Profile. Gestaltung &amp; 
-            , Produktion in enger Abstimmung mit STG79 PrintWear.
-          </p>
-          <div style="display:flex;justify-content:flex-end;align-items:center;margin-top:10px;">
-  <img src="/assets/stg79_logo.jpg" alt="STG79 PrintWear Logo" style="height:26px;width:auto;opacity:0.85;">
-</div>
-        </div>
-      </article>
-
-      <!-- 5: 3D-Logo-Objekte -->
-      <article class="card">
-        <img class="media" src="assets/designberatung.jpg" alt="3D-Logo als physisches Objekt">
-        <div class="box">
-          <h3>3D-Logo-Objekte</h3>
-          <p class="muted">
-            Logos als greifbare 3D-Objekte für Wand, Tresen oder Showroom.
-            Konstruktion auf deinen Einsatzzweck optimiert – auf Wunsch mit
-            Einschub für LED, NFC oder spezielle Befestigungslösungen.
-          </p>
-        </div>
-      </article>
-
-      <!-- 6: Kleinserien-Video -->
-      <article class="card">
-        <video class="media" controls preload="metadata" poster="assets/kleinserie_poster.png">
-          <source src="assets/kleinserie.mp4" type="video/mp4">
-          Dein Browser unterstützt das Video-Format nicht.
-        </video>
-        <div class="box">
-          <h3>Kleinserien (über Partnerbetrieb)</h3>
-          <p class="muted">
-            3D-gedruckte Teile in Stückzahlen – dokumentierte Einstellungen,
-            stabile Bauteilorientierung und Fertigung gemeinsam mit einem
-            regionalen 3D-Druck-Partnerbetrieb.
-          </p>
-        </div>
-      </article>
-
-    </div>
-
-    <div style="text-align:center;margin:28px 0 0;">
-      <a class="btn btn-primary" href="/index.html">Zurück zur Startseite</a>
+      <div class="cta" style="margin-top:12px">
+        <a class="btn btn-primary" href="/index.html#kontakt">Projekt anfragen</a>
+        <a class="btn btn-whatsapp" href="https://wa.me/436765890068" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
     </div>
   </section>
+
+  <section>
+    <div class="wrap">
+
+      <div class="grid grid-3">
+
+        <!-- 1: Designberatung -->
+        <article class="card">
+          <img class="media" src="/assets/designberatung.jpg" alt="3D Design-Beratung" loading="lazy">
+          <div class="box">
+            <h3>3D Design-Beratung</h3>
+            <p class="muted">
+              Einschulung in Fusion 360 &amp; Co., saubere Konstruktionslogik und Praxisbeispiele,
+              damit deine Bauteile ab dem ersten Druck funktionieren.
+            </p>
+          </div>
+        </article>
+
+        <!-- 2: CAD-Design -->
+        <article class="card">
+          <img class="media" src="/assets/slicer.png" alt="Druckfertiges CAD-Design im Slicer" loading="lazy">
+          <div class="box">
+            <h3>Druckfertiges CAD-Design</h3>
+            <p class="muted">
+              Funktionale Bauteile, Halterungen oder Logos – kollisionsfrei, wiederholbar und sauber exportiert
+              als STEP- &amp; STL-Datei für deinen FDM- oder Resin-Drucker.
+            </p>
+          </div>
+        </article>
+
+        <!-- 3: NFC-Schlüsselanhänger -->
+        <article class="card">
+          <img class="media" src="/assets/nfc_kopf.jpg" alt="NFC-Schlüsselanhänger mit individuellem Design" loading="lazy">
+          <div class="box">
+            <h3>NFC-Schlüsselanhänger</h3>
+            <p class="muted">
+              Personalisierte NFC-Keys mit Logo, Claim oder Kontaktinfos. Design, Chip-Setup und Datenstruktur
+              kommen von mir – die physische Fertigung erfolgt bei Bedarf gemeinsam mit STG79 PrintWear.
+            </p>
+            <div class="partner">
+              <img src="/assets/stg79_logo.jpg" alt="STG79 PrintWear Logo">
+            </div>
+          </div>
+        </article>
+
+        <!-- 4: NFC-Tischaufsteller -->
+        <article class="card">
+          <img class="media" src="/assets/nfc_4.jpg" alt="NFC-Tischaufsteller für Studio und Gastro" loading="lazy">
+          <div class="box">
+            <h3>NFC-Tischaufsteller</h3>
+            <p class="muted">
+              Tischaufsteller mit NFC- und optionaler QR-Funktion – ideal für Studios, Gastronomie oder Shops.
+              Ein Scan öffnet Bewertungen, Terminbuchungen oder Social-Media-Profile. Gestaltung &amp; Setup bei mir,
+              Produktion in enger Abstimmung mit STG79 PrintWear.
+            </p>
+            <div class="partner">
+              <img src="/assets/stg79_logo.jpg" alt="STG79 PrintWear Logo">
+            </div>
+          </div>
+        </article>
+
+        <!-- 5: 3D-Logo-Objekte -->
+        <article class="card">
+          <img class="media" src="/assets/designberatung.jpg" alt="3D-Logo als physisches Objekt" loading="lazy">
+          <div class="box">
+            <h3>3D-Logo-Objekte</h3>
+            <p class="muted">
+              Logos als greifbare 3D-Objekte für Wand, Tresen oder Showroom. Konstruktion auf deinen Einsatzzweck
+              optimiert – auf Wunsch mit Einschub für LED, NFC oder spezielle Befestigungslösungen.
+            </p>
+          </div>
+        </article>
+
+        <!-- 6: Kleinserien-Video -->
+        <article class="card">
+          <video class="media" controls preload="metadata" poster="/assets/kleinserie_poster.png" aria-label="Kleinserien-Fertigung Video">
+            <source src="/assets/kleinserie.mp4" type="video/mp4">
+            Dein Browser unterstützt das Video-Format nicht.
+          </video>
+          <div class="box">
+            <h3>Kleinserien (über Partnerbetrieb)</h3>
+            <p class="muted">
+              3D-gedruckte Teile in Stückzahlen – dokumentierte Einstellungen, stabile Bauteilorientierung und Fertigung
+              gemeinsam mit einem regionalen Partnerbetrieb.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="cta" style="margin-top:18px">
+        <a class="btn btn-primary" href="/index.html">Zurück zur Startseite</a>
+      </div>
+
+    </div>
+  </section>
+
 </main>
 
 <footer>
-  © <span id="y"></span> S’INN3D – 3D-Design, CAD-Modellierung &amp; Projektbegleitung
+  <div class="inner">
+    <div>
+      © <span id="y"></span> S’INN3D – Design &amp; CAD<br>
+      Modelle &amp; Prototypen dienen der Gestaltung und Anschauung – keine geprüften oder serienfreigegebenen Bauteile.<br>
+      Fertigung erfolgt bei Bedarf über regionale Partnerbetriebe.
+    </div>
+    <div>
+      <a href="/ueber-mich.html">Über mich</a> ·
+      <a href="/impressum.html">Impressum</a> ·
+      <a href="/datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
 </footer>
 
 <script>
   document.getElementById('y').textContent = new Date().getFullYear();
+
+  function setHeaderHeightVar(){
+    const h = document.querySelector('header')?.offsetHeight || 0;
+    document.documentElement.style.setProperty('--headerH', h + 'px');
+  }
+  window.addEventListener('load', setHeaderHeightVar);
+  window.addEventListener('resize', setHeaderHeightVar);
 </script>
 
 </body>
