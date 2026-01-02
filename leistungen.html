@@ -3,132 +3,336 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>S’INN3D – Leistungen: 3D-Design, CAD-Einschulung & Kleinserien</title>
-  <meta name="description" content="S’INN3D Leistungen: 3D-Design & CAD-Modellierung, CAD-Einschulung & Projektbegleitung, personalisierte Produkte & Kleinserien (über Partner). Druckfertig, wiederholbar, praxisnah.">
+
+  <title>Leistungen – 3D-Design & CAD im Innviertel (OÖ)</title>
+  <meta name="description" content="Leistungen: designnahe CAD-Modelle, CAD-Einschulung & Begleitung sowie personalisierte Produkte & Kleinserien (über Partner). Klar, wiederholbar, praxisnah.">
+
+  <link rel="canonical" href="https://sinn-3d.at/leistungen.html">
+
+  <!-- Favicon / App Icons -->
   <link rel="icon" href="/assets/logo.png" type="image/png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <link rel="manifest" href="/assets/site.webmanifest">
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Leistungen – 3D-Design &amp; CAD im Innviertel (OÖ) | S’INN3D">
+  <meta property="og:description" content="Designnahe CAD-Modelle, CAD-Einschulung & Begleitung sowie personalisierte Produkte & Kleinserien (über Partner). Klar, wiederholbar, praxisnah.">
+  <meta property="og:image" content="https://sinn-3d.at/assets/logo.png">
+  <meta property="og:url" content="https://sinn-3d.at/leistungen.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_AT">
+
   <style>
-    /* ---------- Variablen & Basics ---------- */
+    /* Smooth Scroll + Offset wird dynamisch gesetzt */
+    html{
+      scroll-behavior:smooth;
+      scroll-padding-top:var(--headerH,0px);
+    }
+
     :root{
-      --bg:#f7faf9; --card:#ffffff; --text:#111827; --muted:#6b7280;
-      --brand:#16a34a; --brand2:#14b8a6; --accent:#facc15; --line:#e5e7eb;
-      --wrap:1100px; --headerH:0px;
+      --bg:#f7faf9;
+      --card:#ffffff;
+      --text:#0b1220;      /* dunkler als zuvor */
+      --muted:#475569;     /* dunkler/lesbarer als #6b7280 */
+      --brand:#16a34a;
+      --brand2:#14b8a6;
+      --accent:#facc15;
+      --line:#e5e7eb;
+      --wrap:1100px;
+      --headerH:0px;
     }
-    html{scroll-behavior:smooth; scroll-padding-top:var(--headerH)}
+
     *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,'Helvetica Neue',Arial,sans-serif;
-      color:var(--text); line-height:1.6;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(210,240,230,0.9) 100%),
-        url("/assets/polygon_bg.svg");
-      background-size:cover; background-repeat:no-repeat; background-position:center;
-      /* Mobile: kein fixed, vermeidet Ruckeln */
-      background-attachment:scroll;
-    }
-    @media (min-width:768px){
-      body{ background-attachment:fixed; }
-    }
     img{max-width:100%;display:block}
     a{text-decoration:none;color:inherit}
-    .wrap{max-width:var(--wrap);margin:0 auto;padding:0 16px}
+    .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
 
-    /* ---------- Header (mobil-sicher) ---------- */
+    body{
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+      color:var(--text);
+      line-height:1.6;
+      min-height:100vh;
+      position:relative;
+      background:transparent;
+    }
+
+    /* stabiler, identischer Hintergrund auf allen Geräten */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-1;
+      background:
+        url("/assets/polygon_bg.svg"),
+        linear-gradient(180deg, rgba(255,255,255,.90), rgba(210,240,230,.90));
+      background-size:cover,cover;
+      background-repeat:no-repeat,no-repeat;
+      background-position:center,center;
+    }
+
+    /* Header – wie Startseite (schwarz) */
     header{
-      position:sticky; top:0; z-index:100;
-      background:rgba(255,255,255,.96);
-      backdrop-filter:blur(8px);
-      border-bottom:1px solid var(--line);
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:#000;
+      border-bottom:1px solid #000;
     }
-    .nav{display:flex;flex-direction:column;align-items:center;gap:8px;padding:8px 0}
-    .logo{display:flex;justify-content:center;align-items:center;height:clamp(80px,14vw,130px)}
-    .logo img{height:100%;width:auto;object-fit:contain}
 
-    .cta{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center}
+    .nav{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:10px;
+      padding:8px 0;
+    }
+
+    .logo{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:clamp(170px,22vw,250px);
+      padding:0;
+    }
+    .logo img{
+      height:100%;
+      width:auto;
+      object-fit:contain;
+      filter:brightness(1.02);
+    }
+
+    .cta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+      align-items:center;
+    }
+
     .btn{
-      display:inline-block;border-radius:999px;border:1px solid transparent;cursor:pointer;
-      padding:10px 14px;font-weight:600;white-space:nowrap; font-size:14.5px;
-      transition:filter .15s ease, transform .05s ease;
-      min-height:44px; /* Tap-Target */
+      display:inline-block;
+      padding:10px 16px;
+      border-radius:999px;
+      font-weight:600;
+      transition:filter .15s ease,transform .05s ease;
+      border:1px solid transparent;
+      cursor:pointer;
+      white-space:nowrap;
+      text-align:center;
+      min-height:44px;
     }
-    .btn-ghost{background:#fff;color:var(--text);border:1px solid var(--line)}
-    .btn-primary{background:var(--brand2);color:#fff;border-color:var(--brand2)}
-    .btn:active{transform:translateY(1px)}
 
-    /* ---------- Typo & Layout ---------- */
-    section{padding:28px 0}
-    h1{font-size:clamp(26px,6vw,36px);line-height:1.15}
-    h2{font-size:clamp(20px,4.5vw,26px);margin-bottom:6px}
-    h3{font-size:clamp(17px,3.8vw,20px);margin-bottom:6px}
+    .btn-primary{
+      background:var(--brand2);
+      color:#fff;
+      border-color:var(--brand2);
+    }
+    .btn-primary:hover{filter:brightness(.95)}
+    .btn-primary:active{transform:translateY(1px)}
+
+    /* Ghost-Buttons im Header – transparent */
+    .btn-ghost{
+      background:transparent;
+      color:#f3f4f6;
+      border:1px solid rgba(255,255,255,0.25);
+      backdrop-filter:none;
+    }
+    .btn-ghost:hover{background:rgba(255,255,255,0.08)}
+    .btn-ghost:active{transform:translateY(1px)}
+
+    /* Allgemeines Layout */
+    main{padding:18px 0 0}
+    section{padding:22px 0}
+
+    h1{
+      font-size:clamp(26px,4.8vw,40px);
+      line-height:1.1;
+      margin-bottom:10px;
+      text-align:center;
+    }
+    h2{
+      font-size:clamp(20px,3.6vw,28px);
+      margin-bottom:8px;
+    }
+    h3{
+      font-size:18px;
+      margin-bottom:6px;
+    }
+
     .muted{color:var(--muted)}
-    .eyebrow{font-size:13px;font-weight:700;color:#16a34a;letter-spacing:.3px;text-transform:uppercase}
 
-    /* ---------- Cards & Media ---------- */
-    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
-    .media{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;background:#f3f4f6;margin-top:10px}
+    /* Hero – im Stil der Startseite */
+    .hero{padding:10px 0 18px}
+    .hero-inner{max-width:820px;margin:0 auto;text-align:center}
 
-    /* ---------- Grid: mobile-first ---------- */
-    .grid{display:grid;gap:18px}
-    .grid-2{grid-template-columns:1fr}
-    .grid-3{grid-template-columns:1fr}
-    @media (min-width:900px){ .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))} }
-    @media (min-width:900px){ .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))} }
+    .hero-kicker{
+      font-size:13px;
+      font-weight:700;
+      color:var(--brand);
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:10px;
+    }
 
-    /* ---------- Listen & Badges ---------- */
-    ul.clean{margin:8px 0 0 18px}
-    ul.clean li{margin:4px 0}
-    .kpis{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-    .pill{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 10px;font-size:13px}
+    .hero-claim{
+      font-size:16px;
+      font-weight:700;
+      color:var(--text);
+      margin:0 auto 12px;
+      max-width:760px;
+    }
 
-    /* ---------- Prozess ---------- */
+    .hero-lead{
+      max-width:760px;
+      margin:0 auto 14px;
+      color:var(--muted);
+      font-size:15.5px;
+    }
+
+    /* Promo-Box wie Startseite */
+    .promo{padding:18px 0 0}
+    .promo-box{
+      background:#eafff1;
+      border:1px solid #c9f5d9;
+      padding:16px 18px;
+      border-radius:12px;
+      margin:0 auto 20px;
+      max-width:760px;
+      text-align:center;
+      font-size:16.5px;
+      box-shadow:0 8px 18px rgba(0,0,0,.04);
+    }
+    .promo-box b{display:block;margin-bottom:4px}
+
+    /* Grid & Cards */
+    .grid{display:grid;gap:22px}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}}
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:20px;
+      box-shadow:0 2px 10px rgba(0,0,0,.04);
+    }
+
+    .media{
+      width:100%;
+      aspect-ratio:16/9;
+      object-fit:cover;
+      border-radius:12px;
+      background:#f3f4f6;
+      margin-top:10px;
+    }
+
+    ul.clean{margin:10px 0 0 18px}
+    ul.clean li{margin:6px 0}
+
+    .kpis{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+    .pill{
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:999px;
+      padding:6px 10px;
+      font-size:13px;
+      color:#0b1220;
+    }
+
+    /* Prozess Steps */
     .steps{counter-reset:stp}
     .step{position:relative;padding-left:42px}
     .step:not(:first-child){margin-top:12px}
     .step:before{
       counter-increment:stp; content:counter(stp);
       position:absolute;left:0;top:2px;height:28px;width:28px;border-radius:50%;
-      background:var(--brand2);color:#fff;display:grid;place-items:center;font-weight:700;
-      box-shadow:0 2px 8px rgba(0,0,0,.12)
+      background:var(--brand2);color:#fff;display:grid;place-items:center;font-weight:800;
+      box-shadow:0 2px 8px rgba(0,0,0,.12);
     }
 
-    /* ---------- Video-Karte (hell) ---------- */
-    .video-card{border-radius:12px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.06);background:var(--card)}
+    /* Video */
+    .video-card{border-radius:12px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.06);background:var(--card);}
     .video-frame{position:relative;width:100%;padding-bottom:56.25%}
-    .video-frame video,.video-frame .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-    .video-overlay{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(0deg,rgba(0,0,0,.28),rgba(0,0,0,.12));transition:opacity .25s ease}
+    .video-frame video,.video-frame .poster{
+      position:absolute;inset:0;width:100%;height:100%;
+      object-fit:cover;display:block;
+    }
+    .video-overlay{
+      position:absolute;inset:0;display:grid;place-items:center;
+      background:linear-gradient(0deg,rgba(0,0,0,.28),rgba(0,0,0,.12));
+      transition:opacity .25s ease;
+    }
     .video-overlay.is-hidden{opacity:0;pointer-events:none}
-    .play-btn{height:60px;width:60px;background:#ffffffcc;border-radius:999px;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.25);border:none;cursor:pointer}
-    .play-btn svg{width:26px;height:26px;fill:#111827;transform:translateX(1px)}
+    .play-btn{
+      height:64px;width:64px;background:#ffffffcc;border-radius:999px;
+      display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.25);
+      transition:transform .12s ease,filter .12s ease;border:none;cursor:pointer;
+    }
+    .play-btn svg{width:28px;height:28px;fill:#111827;transform:translateX(1px)}
+    .play-btn:hover{transform:scale(1.03);filter:brightness(.96)}
+    .play-btn:active{transform:scale(.97)}
 
-    /* ---------- Footer ---------- */
-    footer{padding:24px 0;background:#fff;border-top:1px solid var(--line)}
-    footer .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+    /* Footer wie Startseite (hell) */
+    footer{padding:28px 0;background:#fff;border-top:1px solid var(--line)}
+    footer .inner{
+      max-width:1100px;margin:0 auto;padding:16px 20px;
+      display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px
+    }
+
+    /* Mobile Feinschliff */
+    @media (max-width:700px){
+      .hero{padding:18px 0 18px}
+      .hero-lead{font-size:15px}
+      .promo-box{font-size:15.5px;padding:14px 14px}
+      .cta{gap:8px}
+      .btn{width:auto}
+    }
   </style>
 </head>
+
 <body>
 
 <header>
   <div class="wrap nav">
-    <a class="logo" href="/"><img src="/assets/logo.png" alt="S’INN3D Logo"></a>
-    <nav class="cta">
-      <a class="btn btn-ghost" href="/index.html">Start</a>
-      <a class="btn btn-ghost" href="/leistungen.html" aria-current="page">Leistungen</a>
-      <a class="btn btn-ghost" href="/projekte.html">Projekte</a>
-      <a class="btn btn-ghost" href="/ueber-mich.html">Über mich</a>
-      <a class="btn btn-primary" href="/index.html#kontakt">Kontakt</a>
+    <a class="logo" href="/" aria-label="Zur Startseite">
+      <img src="/assets/logo.png" alt="S’INN3D Logo">
+    </a>
+
+    <nav class="cta" aria-label="Hauptnavigation">
+      <a class="btn btn-ghost" href="/index.html" title="Zur Startseite">Start</a>
+      <a class="btn btn-ghost" href="/leistungen.html" aria-current="page" title="Leistungen ansehen">Leistungen</a>
+      <a class="btn btn-ghost" href="/projekte.html" title="Projektbeispiele ansehen">Projekte</a>
+      <a class="btn btn-ghost" href="/ueber-mich.html" title="Mehr über mich">Über mich</a>
+      <a class="btn btn-primary" href="/index.html#kontakt" title="Kontakt">Kontakt</a>
     </nav>
   </div>
 </header>
 
 <main>
+
   <!-- HERO -->
-  <section>
-    <div class="wrap" style="text-align:center;max-width:900px">
-      <p class="eyebrow">Sauber konstruiert · Druckfertig · Wiederholbar</p>
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <p class="hero-kicker">Sauber konstruiert · Druckbereit · Wiederholbar</p>
+
       <h1>Leistungen</h1>
-      <p class="muted" style="margin-top:6px">
-        Von präziser CAD-Modellierung bis zur Kleinserien-Fertigung (über Partner): klar aufgebaut,
-        effizient produziert, praxisnah erklärt.
+
+      <p class="hero-claim">Klar gedacht. Sauber umgesetzt. Ohne Chaos in der Fertigung.</p>
+
+      <p class="hero-lead">
+        Von designnahen CAD-Modellen bis zur Kleinserie (über Partner): strukturiert, nachvollziehbar und so übergeben,
+        dass man’s danach wirklich weiterverwenden kann.
       </p>
+
       <div class="cta" style="margin-top:12px">
         <a class="btn btn-primary" href="/index.html#kontakt">Kontakt aufnehmen</a>
         <a class="btn btn-ghost" href="https://wa.me/436765890068" target="_blank" rel="noopener">WhatsApp</a>
@@ -136,64 +340,90 @@
     </div>
   </section>
 
+  <!-- PROMO -->
+  <section class="promo">
+    <div class="wrap">
+      <div class="promo-box">
+        <b>Kurzer Design-Check (kostenlos) – begrenzte Slots</b>
+        Kurze Einschätzung zu Richtung, Aufwand und nächstem Schritt. Danach ist klar, wie’s sauber weitergeht.
+      </div>
+    </div>
+  </section>
+
   <!-- LEISTUNGEN-KARTEN -->
   <section>
-    <div class="wrap grid grid-3">
-      <article class="card">
-        <img src="/assets/slicer.png" alt="3D-Design & CAD-Modellierung" class="media">
-        <h2 style="margin-top:10px">3D-Design & CAD-Modellierung</h2>
-        <p class="muted">Druckfertige Modelle für Bauteile, Logos und Produktideen. Logisch aufgebaut, kollisionsfrei, wiederholbar.</p>
-        <ul class="clean">
-          <li>Bauteile, Vorrichtungen, Logos, Textprägungen</li>
-          <li>Stützfreundliche Geometrien für FDM & Resin</li>
-          <li>Wandstärken- und Kollisions-Checks</li>
-          <li>Lieferformate: STEP, STL, 3MF</li>
-        </ul>
-        <div class="kpis">
-          <span class="pill">typisch ≤ 7 Tage</span>
-          <span class="pill">0,2 mm Ziel-Layer</span>
-          <span class="pill">100 % druckgetestet</span>
-        </div>
-      </article>
+    <div class="wrap">
+      <div class="grid grid-3">
 
-      <article class="card">
-        <img src="/assets/cad.jpg" alt="CAD-Einschulung – Fusion 360" class="media">
-        <h2 style="margin-top:10px">CAD-Einschulung & Projektbegleitung</h2>
-        <p class="muted">Praxisnah an einem echten Teil. Wir setzen Konstruktion & Druck gemeinsam auf – Schritt für Schritt.</p>
-        <ul class="clean">
-          <li>Grundlagen & saubere Konstruktionslogik</li>
-          <li>Druckgerechtes Design (FDM/Resin, Stützstrategie)</li>
-          <li>Materialwahl & Slicer-Einstellungen (Nozzle, Temp, Infill)</li>
-          <li>Optional: Begleitung bis zur druckfertigen Serie</li>
-        </ul>
-        <div class="kpis">
-          <span class="pill">Einsteiger bis Pro</span>
-          <span class="pill">Fusion 360 Praxis</span>
-          <span class="pill">Vor-Ort/remote</span>
-        </div>
-      </article>
+        <article class="card">
+          <h2>3D-Design &amp; CAD-Modellierung</h2>
+          <p class="muted">
+            Druckbereite CAD-Modelle für Produktideen, Halterungen, Gehäuse, Logos und Anschauung – sauber aufgebaut und nachvollziehbar.
+          </p>
+          <img src="/assets/slicer.png" alt="3D-Design & CAD-Modellierung" class="media" loading="lazy">
 
-      <article class="card">
-        <img src="/assets/nfc_kopf.jpg" alt="NFC-Schlüsselanhänger – individuelle Fertigung" class="media">
-        <h2 style="margin-top:10px">Personalisierte Produkte & Kleinserien</h2>
-        <p class="muted">Individuelle Artikel wie Schlüsselanhänger mit NFC sowie kleine Stückzahlen – Fertigung über Partner.</p>
-        <ul class="clean">
-          <li>NFC (NTAG215/216), inkl. Bespielung</li>
-          <li>Plexiglas gelasert, UV-Sticker, 3D-Druck-Inlays</li>
-          <li>Design & Personalisierung bei uns, Fertigung regional</li>
-          <li>Musterstücke & Testchargen möglich</li>
-        </ul>
-        <div class="kpis">
-          <span class="pill">Kleine Serien</span>
-          <span class="pill">Regionaler Partner</span>
-          <span class="pill">Fix & wiederholbar</span>
-        </div>
-          <div style="display:flex;align-items:center;gap:10px;margin-top:10px;">
-    <img src="/assets/stg79_logo.jpg" alt="STG79 Partnerlogo" style="height:40px;width:auto;">
-    <p class="muted" style="font-size:14px;">In Kooperation mit STG79 PrintWear</p>
-  </div>
+          <ul class="clean">
+            <li>Design & Formgebung, Parameter-Logik, Varianten</li>
+            <li>Druckgerechte Geometrien (FDM/Resin, stützarm)</li>
+            <li>Check von Wandstärken / Passungen (praxisnah, nicht normiert)</li>
+            <li>Lieferformate: STEP, STL, 3MF</li>
+          </ul>
 
-      </article>
+          <div class="kpis">
+            <span class="pill">typisch ≤ 7 Tage</span>
+            <span class="pill">druckbereit nach Abstimmung</span>
+            <span class="pill">klare Übergabe</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>CAD-Einschulung &amp; Begleitung</h2>
+          <p class="muted">
+            Praxisnah an einem echten Teil. Wir setzen Konstruktion & Druck gemeinsam auf – Schritt für Schritt, ohne Fachchinesisch.
+          </p>
+          <img src="/assets/cad.jpg" alt="CAD-Einschulung – Beispiel" class="media" loading="lazy">
+
+          <ul class="clean">
+            <li>Grundlagen & sauberer Workflow</li>
+            <li>Druckgerechtes Design (FDM/Resin, Stützstrategie)</li>
+            <li>Materialwahl & Slicer-Setup (Nozzle, Temp, Infill)</li>
+            <li>Optional: Begleitung bis zur druckbereiten Serie</li>
+          </ul>
+
+          <div class="kpis">
+            <span class="pill">Einsteiger bis Pro</span>
+            <span class="pill">Fusion 360 Praxis</span>
+            <span class="pill">vor Ort / remote</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Personalisierte Produkte &amp; Kleinserien</h2>
+          <p class="muted">
+            Individuelle Artikel (z. B. NFC-Anhänger, Aufsteller) sowie kleine Stückzahlen – Design & Setup bei mir, Fertigung über Partner.
+          </p>
+          <img src="/assets/nfc_kopf.jpg" alt="NFC & Kleinserie" class="media" loading="lazy">
+
+          <ul class="clean">
+            <li>NFC (NTAG215/216) inkl. Setup/Bespielung</li>
+            <li>Plexiglas gelasert, UV-Sticker, 3D-Druck-Inlays</li>
+            <li>Design & Personalisierung aus einer Hand</li>
+            <li>Musterstücke & Testchargen möglich</li>
+          </ul>
+
+          <div class="kpis">
+            <span class="pill">kleine Serien</span>
+            <span class="pill">regionaler Partner</span>
+            <span class="pill">wiederholbar</span>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:10px;margin-top:12px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:#fff;width:max-content;">
+            <span style="font-size:13px;color:#0b1220;font-weight:800;">Fertigungspartner:</span>
+            <img src="/assets/stg79_logo.jpg" alt="STG79 PrintWear" style="height:36px;width:auto;object-fit:contain;display:block;">
+          </div>
+        </article>
+
+      </div>
     </div>
   </section>
 
@@ -203,19 +433,20 @@
       <article class="card">
         <h2>Was du bekommst</h2>
         <ul class="clean">
-          <li>Sauber dokumentierte CAD-Dateien (benannte Features, klare Parameter)</li>
-          <li>Druckfertige Exportdaten (STL/3MF) inkl. Profil-Empfehlungen</li>
-          <li>Kurzes Übergabe-Video oder Checkliste zur Wiederholbarkeit</li>
-          <li>Auf Wunsch: Drucktest & Feinschliff an der finalen Maschine</li>
+          <li>Sauber dokumentierte Dateien (strukturierte Modelle, klare Benennung)</li>
+          <li>Druck-Exports (STL/3MF) inkl. kurzer Empfehlung fürs Slicer-Setup</li>
+          <li>Kurze Checkliste/Notizen für Wiederholbarkeit</li>
+          <li>Auf Wunsch: Muster-Test & Feinschliff an der finalen Maschine</li>
         </ul>
       </article>
+
       <article class="card">
-        <h2>Was ich nicht mache</h2>
+        <h2>Wichtig (klar & fair)</h2>
         <ul class="clean">
-          <li>Marketing-Bling ohne Funktion</li>
-          <li>Unrealistische Toleranz-Versprechen</li>
-          <li>Unklare Zuständigkeiten in der Fertigung</li>
-          <li>„Husch-husch“ ohne saubere Übergabe</li>
+          <li>Modelle/Prototypen dienen Gestaltung & Anschauung</li>
+          <li>Keine normierten, geprüften oder serienfreigegebenen Bauteile</li>
+          <li>Keine „Wunder-Toleranzen“ ohne Testdruck</li>
+          <li>Saubere Übergabe statt „Husch-husch“</li>
         </ul>
       </article>
     </div>
@@ -225,19 +456,21 @@
   <section>
     <div class="wrap">
       <h2>So läuft’s ab</h2>
-      <div class="grid grid-3" style="margin-top:8px">
+
+      <div class="grid grid-3" style="margin-top:12px">
+
         <div class="card steps">
           <div class="step">
             <h3>Kurz-Briefing</h3>
-            <p class="muted">Ziel, Maße, Einsatz, Druckumgebung. 10–15 Min. reichen.</p>
+            <p class="muted">Ziel, Maße, Einsatz, Druckumgebung. 10–15 Minuten reichen.</p>
           </div>
           <div class="step">
             <h3>Entwurf</h3>
-            <p class="muted">Druckgerechter Modell-Vorschlag inkl. Material- und Slicer-Empfehlung.</p>
+            <p class="muted">Modell-Vorschlag + Empfehlung zu Material & Druckstrategie.</p>
           </div>
           <div class="step">
-            <h3>Feinschliff</h3>
-            <p class="muted">Kleine Iterationen, klare Übergabe als STEP + STL/3MF.</p>
+            <h3>Übergabe</h3>
+            <p class="muted">Kleine Iterationen, danach klare Daten: STEP + STL/3MF.</p>
           </div>
         </div>
 
@@ -245,20 +478,21 @@
           <h3>Technische Eckdaten</h3>
           <ul class="clean">
             <li>FDM: 0,4 mm Nozzle, 0,2 mm Layer (Standard) · Resin auf Anfrage</li>
-            <li>Kunststoffe: PLA/PETG/ASA – Spezialmaterial nach Rücksprache</li>
-            <li>Resistente Geometrien (Wandstärken-Checks, stützarm)</li>
-            <li>Lieferformate: STEP, STL, 3MF · Zeichnung auf Wunsch</li>
+            <li>Material: PLA / PETG / ASA (Spezialmaterial nach Rücksprache)</li>
+            <li>Druckgerechte Geometrien (stützarm, robuste Wandstärken)</li>
+            <li>Lieferformate: STEP, STL, 3MF</li>
           </ul>
         </div>
 
         <div class="card">
           <h3>Fragen & Angebot</h3>
-          <p class="muted">Schnelle Einschätzung per Mail oder WhatsApp – transparent & verbindlich.</p>
+          <p class="muted">Schnelle Einschätzung per Mail oder WhatsApp – transparent und ohne Blabla.</p>
           <div class="cta" style="margin-top:10px">
             <a class="btn btn-primary" href="/index.html#kontakt">Anfrage starten</a>
             <a class="btn btn-ghost" href="mailto:office@sinn-3d.at">office@sinn-3d.at</a>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -273,35 +507,42 @@
             <source src="/assets/kleinserie.mp4" type="video/mp4">
           </video>
           <div class="video-overlay" data-video-overlay>
-            <button class="play-btn" type="button" aria-label="Play" data-video-play>
+            <button class="play-btn" type="button" aria-label="Video abspielen" data-video-play>
               <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
             </button>
           </div>
         </div>
         <div style="padding:16px 16px 18px">
           <h3>Kleinserien-Fertigung (über Partner)</h3>
-          <p class="muted">Schneller Prototyp → stabile Serie. Regional produziert, von uns konstruiert & dokumentiert.</p>
+          <p class="muted">Vom Muster zur wiederholbaren Serie – regional gefertigt, sauber vorbereitet & dokumentiert.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Abschluss -->
-  <section>
-    <div class="wrap" style="text-align:center">
-      <h2>Lass uns starten</h2>
-      <p class="muted">Ein kurzes Briefing genügt. Den Rest strukturieren wir sauber & wiederholbar.</p>
-      <div class="cta" style="margin-top:10px">
+  <!-- Abschluss CTA -->
+  <section style="padding-bottom:34px">
+    <div class="wrap hero-inner">
+      <h2 style="text-align:center;margin-bottom:6px">Lass uns starten</h2>
+      <p class="muted" style="text-align:center">
+        Ein kurzes Briefing genügt. Den Rest strukturieren wir sauber – damit’s nachher wirklich läuft.
+      </p>
+      <div class="cta" style="margin-top:12px">
         <a class="btn btn-primary" href="/index.html#kontakt">Kontaktformular</a>
         <a class="btn btn-ghost" href="https://wa.me/436765890068" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </section>
+
 </main>
 
 <footer>
-  <div class="wrap foot">
-    <div>© <span id="y"></span> S’INN3D – 3D-Design, CAD-Modellierung & Projektbegleitung</div>
+  <div class="inner">
+    <div>
+      © <span id="y"></span> S’INN3D – Design &amp; CAD<br>
+      Modelle &amp; Prototypen dienen der Gestaltung und Anschauung – keine geprüften oder serienfreigegebenen Bauteile.<br>
+      Fertigung erfolgt bei Bedarf über regionale Partnerbetriebe.
+    </div>
     <div>
       <a href="/ueber-mich.html">Über mich</a> ·
       <a href="/impressum.html">Impressum</a> ·
@@ -311,29 +552,33 @@
 </footer>
 
 <script>
-  // Scroll-Offset für Anker
-  function setHeaderHeightVar(){
-    const h=document.querySelector('header')?.offsetHeight||0;
-    document.documentElement.style.setProperty('--headerH',h+'px');
-  }
-  addEventListener('load',setHeaderHeightVar);
-  addEventListener('resize',setHeaderHeightVar);
+  // Jahr im Footer
+  document.getElementById('y').textContent = new Date().getFullYear();
 
-  // Video-Overlay Play
+  // Header-Höhe dynamisch an <html> scroll-padding-top binden
+  function setHeaderHeightVar(){
+    const h = document.querySelector('header')?.offsetHeight || 0;
+    document.documentElement.style.setProperty('--headerH', h + 'px');
+  }
+  window.addEventListener('load', setHeaderHeightVar);
+  window.addEventListener('resize', setHeaderHeightVar);
+
+  // Video Overlay Play
   (function(){
     document.querySelectorAll('[data-video-container]').forEach(c=>{
       const v=c.querySelector('video');
       const o=c.querySelector('[data-video-overlay]');
       const b=c.querySelector('[data-video-play]');
       if(!v||!o||!b) return;
-      function play(){o.classList.add('is-hidden'); v.setAttribute('controls','controls'); v.play().catch(()=>{});}
-      b.addEventListener('click',play);
-      o.addEventListener('click',e=>{ if(e.target===o) play(); });
+      function play(){
+        o.classList.add('is-hidden');
+        v.setAttribute('controls','controls');
+        v.play().catch(()=>{});
+      }
+      b.addEventListener('click', play);
+      o.addEventListener('click', e=>{ if(e.target===o) play(); });
     });
   })();
-
-  // Jahr im Footer
-  document.getElementById('y').textContent=new Date().getFullYear();
 </script>
 
 </body>
