@@ -60,18 +60,28 @@
     }
 
     /* identischer Hintergrund wie Startseite/Leistungen */
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      z-index:-1;
-      background:
-        url("/assets/polygon_bg.svg"),
-        linear-gradient(180deg, rgba(255,255,255,.88), rgba(210,240,230,.88));
-      background-size:cover,cover;
-      background-repeat:no-repeat,no-repeat;
-      background-position:center,center;
-    }
+   body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background:
+    /* 1) Grüner Brand-Tint (macht den Stich sichtbar) */
+    radial-gradient(1200px 700px at 50% 25%,
+      rgba(20,184,166,.22) 0%,
+      rgba(22,163,74,.14) 35%,
+      rgba(255,255,255,0) 70%),
+    /* 2) Dein Hauptverlauf (etwas stärker) */
+    linear-gradient(180deg,
+      rgba(255,255,255,.92) 0%,
+      rgba(210,240,230,.92) 100%),
+    /* 3) Polygon SVG */
+    url("/assets/polygon_bg.svg");
+  background-size:cover,cover,cover;
+  background-repeat:no-repeat,no-repeat,no-repeat;
+  background-position:center,center,center;
+}
+
 
     /* Header – schwarz wie Startseite */
     header{
