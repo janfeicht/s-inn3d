@@ -35,36 +35,62 @@
       scroll-padding-top:var(--headerH,0px);
     }
 
-    :root{
-      --bg:#f7faf9; --card:#ffffff; --text:#111827; --muted:#6b7280;
-      --brand:#16a34a; --brand2:#14b8a6; --accent:#facc15; --line:#e5e7eb; --wrap:1100px;
-      --headerH:0px;
-    }
+    /* Smooth Scroll + Offset wird dynamisch gesetzt */
+  html{
+    scroll-behavior:smooth;
+    scroll-padding-top:var(--headerH,0px);
+  }
 
-    *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#f7faf9;
+    --card:#ffffff;
 
- body{
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,"Helvetica Neue",Arial,sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height:1.6;
-  min-height:100vh;
-  position:relative;
-}
-    /* stabiler, identischer Hintergrund auf allen Geräten */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  z-index:-1;
-  background:
-    url("assets/polygon_bg.svg"),
-    linear-gradient(180deg, rgba(255,255,255,.88), rgba(210,240,230,.88));
-  background-size:cover,cover;
-  background-repeat:no-repeat,no-repeat;
-  background-position:center,center;
-}
+    /* TEXT dunkler */
+    --text:#0b1220;
+    --muted:#374151;
 
+    --brand:#16a34a;
+    --brand2:#14b8a6;
+    --accent:#facc15;
+    --line:#e5e7eb;
+    --wrap:1100px;
+    --headerH:0px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+
+  body{
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+    color: var(--text);
+    line-height:1.6;
+    min-height:100vh;
+    position:relative;
+
+    /* wichtig: body selbst ohne Hintergrund, damit ::before IMMER gewinnt */
+    background: transparent;
+  }
+
+  /* stabiler, identischer Hintergrund auf allen Geräten */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+
+    /* Reihenfolge: Gradient oben, Polygon darunter (weicher, heller, wie am PC) */
+    background:
+      linear-gradient(180deg, rgba(255,255,255,.88), rgba(210,240,230,.88)),
+      url("assets/polygon_bg.svg");
+
+    background-size:cover,cover;
+    background-repeat:no-repeat,no-repeat;
+    background-position:center,center;
+  }
+
+  /* Mobile: verhindert seltenes „fixed flackern“ bei manchen Androids */
+  @media (max-width: 900px){
+    body::before{ position:fixed; }
+  }
 @media (max-width: 900px){
   body::before{ position:absolute; }
 }
