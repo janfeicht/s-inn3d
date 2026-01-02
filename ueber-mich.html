@@ -3,90 +3,381 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Über mich – S’INN3D</title>
-  <meta name="description" content="Jan Feichtenschlager – 3D-Design, CAD-Konstruktion & NFC-Lösungen aus OÖ Funktionale Modelle, klare Kommunikation und druckfertige Ergebnisse.">
-  <link rel="icon" href="assets/logo.png" type="image/png">
+
+  <title>Über mich – S’INN3D | Design & CAD im Innviertel (OÖ)</title>
+  <meta name="description" content="Über mich: Jan Feichtenschlager – S’INN3D. Designnahe CAD-Modelle, Anschauungsmodelle und saubere, wiederholbare Übergabe. Regional im Innviertel (OÖ).">
+
+  <link rel="canonical" href="https://sinn-3d.at/ueber-mich.html">
+
+  <!-- Favicon / App Icons -->
+  <link rel="icon" href="/assets/logo.png" type="image/png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <link rel="manifest" href="/assets/site.webmanifest">
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Über mich | S’INN3D – Design & CAD">
+  <meta property="og:description" content="Jan Feichtenschlager – S’INN3D. Klar gedacht, sauber umgesetzt. Designnahe CAD-Modelle & Anschauungsmodelle aus dem Innviertel (OÖ).">
+  <meta property="og:image" content="https://sinn-3d.at/assets/logo.png">
+  <meta property="og:url" content="https://sinn-3d.at/ueber-mich.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_AT">
 
   <style>
+    /* Smooth Scroll + Offset */
+    html{
+      scroll-behavior:smooth;
+      scroll-padding-top:var(--headerH,0px);
+    }
+
     :root{
-      --bg:#f7faf9; --card:#ffffff; --text:#111827; --muted:#6b7280;
-      --brand:#16a34a; --brand2:#14b8a6; --line:#e5e7eb; --wrap:900px;
+      --bg:#f7faf9;
+      --card:#ffffff;
+      --text:#0b1220;
+      --muted:#475569;
+      --brand:#16a34a;
+      --brand2:#14b8a6;
+      --accent:#facc15;
+      --line:#e5e7eb;
+      --wrap:1100px;
+      --headerH:0px;
     }
+
     *{box-sizing:border-box;margin:0;padding:0}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+
     body{
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,'Helvetica Neue',Arial,sans-serif;
-      background:var(--bg);color:var(--text);line-height:1.6;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height:1.6;
+      min-height:100vh;
+      position:relative;
     }
 
-    .wrap{max-width:var(--wrap);margin:0 auto;padding:30px 20px}
-
-    header{background:#fff;border-bottom:1px solid var(--line)}
-    .brand{
-      max-width:1100px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;gap:12px;
+    /* identischer Hintergrund wie Startseite/Leistungen */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-1;
+      background:
+        url("/assets/polygon_bg.svg"),
+        linear-gradient(180deg, rgba(255,255,255,.88), rgba(210,240,230,.88));
+      background-size:cover,cover;
+      background-repeat:no-repeat,no-repeat;
+      background-position:center,center;
     }
-    .brand img{height:42px;width:auto}
-    .brand a{text-decoration:none;color:var(--text);font-weight:700;font-size:18px}
 
-    h1{margin:24px 0}
-    p{margin:0 0 14px;font-size:17px}
+    /* Header – schwarz wie Startseite */
+    header{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:#000;
+      border-bottom:1px solid #000;
+    }
+    .nav{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:10px;
+      padding:8px 0;
+    }
+    .logo{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:clamp(170px,22vw,250px);
+      padding:0;
+    }
+    .logo img{
+      height:100%;
+      width:auto;
+      object-fit:contain;
+      filter:brightness(1.02);
+    }
 
-    .portrait{
-      width:140px;height:140px;border-radius:50%;object-fit:cover;margin:10px 0 20px;
-      box-shadow:0 3px 14px rgba(0,0,0,.08);
+    .cta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+      align-items:center;
     }
 
     .btn{
-      display:inline-block;background:var(--brand2);color:#fff;font-weight:600;
-      padding:11px 18px;border-radius:999px;margin-top:16px;text-decoration:none;
-      transition:filter .15s ease;
+      display:inline-block;
+      padding:10px 16px;
+      border-radius:999px;
+      font-weight:600;
+      transition:filter .15s ease,transform .05s ease;
+      border:1px solid transparent;
+      cursor:pointer;
+      white-space:nowrap;
+      text-align:center;
+      min-height:44px;
     }
-    .btn:hover{filter:brightness(.92)}
 
-    footer{background:#fff;border-top:1px solid var(--line);margin-top:40px}
-    footer .inner{
-      max-width:1100px;margin:0 auto;padding:16px 20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    .btn-primary{
+      background:var(--brand2);
+      color:#fff;
+      border-color:var(--brand2);
     }
-    footer a{text-decoration:none;color:var(--text)}
+    .btn-primary:hover{filter:brightness(.95)}
+    .btn-primary:active{transform:translateY(1px)}
+
+    /* Ghost-Buttons im Header */
+    .btn-ghost{
+      background:transparent;
+      color:#f3f4f6;
+      border:1px solid rgba(255,255,255,0.25);
+      backdrop-filter:none;
+    }
+    .btn-ghost:hover{background:rgba(255,255,255,0.08)}
+    .btn-ghost:active{transform:translateY(1px)}
+
+    /* WhatsApp Button – lesbar (falls du ihn hier auch nutzt) */
+    .btn-whatsapp{
+      background:#ffffff;
+      color:#0b1220;
+      border:2px solid #14b8a6;
+      font-weight:700;
+    }
+    .btn-whatsapp:hover{
+      background:#14b8a6;
+      color:#ffffff;
+      border-color:#14b8a6;
+    }
+
+    main{padding:18px 0 0}
+    section{padding:22px 0}
+
+    h1{
+      font-size:clamp(26px,4.8vw,40px);
+      line-height:1.1;
+      margin-bottom:10px;
+      text-align:center;
+    }
+    h2{
+      font-size:clamp(20px,3.6vw,28px);
+      margin-bottom:8px;
+    }
+    .muted{color:var(--muted)}
+
+    .hero{padding:10px 0 18px}
+    .hero-inner{max-width:920px;margin:0 auto;text-align:center}
+
+    .hero-kicker{
+      font-size:13px;
+      font-weight:800;
+      color:var(--brand);
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:10px;
+    }
+    .hero-claim{
+      font-size:16px;
+      font-weight:800;
+      color:var(--text);
+      margin:0 auto 12px;
+      max-width:800px;
+    }
+    .hero-lead{
+      max-width:820px;
+      margin:0 auto 0;
+      color:var(--muted);
+      font-size:15.5px;
+    }
+
+    .grid{display:grid;gap:22px}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    @media(max-width:900px){.grid-2{grid-template-columns:1fr}}
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:20px;
+      box-shadow:0 2px 10px rgba(0,0,0,.04);
+    }
+
+    .profile{
+      display:flex;
+      gap:18px;
+      align-items:flex-start;
+    }
+    @media(max-width:900px){
+      .profile{flex-direction:column;align-items:center;text-align:left}
+    }
+
+    .avatar{
+      width:150px;
+      height:150px;
+      border-radius:999px;
+      object-fit:cover;
+      border:1px solid var(--line);
+      box-shadow:0 10px 22px rgba(0,0,0,.10);
+      background:#f3f4f6;
+      flex:0 0 auto;
+    }
+
+    .facts{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+    .pill{
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:999px;
+      padding:6px 10px;
+      font-size:13px;
+      color:#0b1220;
+      font-weight:700;
+    }
+
+    .stack p{margin:10px 0;color:var(--muted);font-size:15.5px}
+    .stack p strong{color:var(--text)}
+
+    .callout{
+      background:#eafff1;
+      border:1px solid #c9f5d9;
+      border-radius:12px;
+      padding:16px 18px;
+      box-shadow:0 8px 18px rgba(0,0,0,.04);
+    }
+    .callout b{display:block;margin-bottom:6px}
+
+    footer{padding:28px 0;background:#fff;border-top:1px solid var(--line)}
+    footer .inner{
+      max-width:1100px;margin:0 auto;padding:16px 20px;
+      display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px
+    }
+
+    @media (max-width:700px){
+      .hero{padding:18px 0 18px}
+      .hero-lead{font-size:15px}
+      .cta{gap:8px}
+    }
   </style>
 </head>
 
 <body>
 
 <header>
-  <div class="brand">
-    <a href="/"><img src="assets/logo.png" alt="S’INN3D Logo"></a>
-    <a href="/">Zurück zur Startseite</a>
+  <div class="wrap nav">
+    <a class="logo" href="/index.html" aria-label="Zur Startseite">
+      <img src="/assets/logo.png" alt="S’INN3D Logo">
+    </a>
+
+    <nav class="cta" aria-label="Hauptnavigation">
+      <a class="btn btn-ghost" href="/index.html" title="Zur Startseite">Start</a>
+      <a class="btn btn-ghost" href="/leistungen.html" title="Leistungen ansehen">Leistungen</a>
+      <a class="btn btn-ghost" href="/projekte.html" title="Projektbeispiele ansehen">Projekte</a>
+      <a class="btn btn-ghost" href="/ueber-mich.html" aria-current="page" title="Über mich">Über mich</a>
+      <a class="btn btn-primary" href="/index.html#kontakt" title="Kontakt">Kontakt</a>
+    </nav>
   </div>
 </header>
 
-<main class="wrap">
+<main>
 
-  <h1>Über mich</h1>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <p class="hero-kicker">Design mit Haltung · Klar gedacht · Sauber umgesetzt</p>
+      <h1>Über mich</h1>
+      <p class="hero-claim">Ich arbeite direkt, sauber und ohne Ausreden – damit aus einer Idee etwas wird, das man wirklich bauen kann.</p>
+      <p class="hero-lead">Kurz gesagt: Ich übersetze Skizzen und Anforderungen in klare Formen, CAD-Modelle und Anschauung – nachvollziehbar und wiederholbar.</p>
+      <div class="cta" style="margin-top:12px">
+        <a class="btn btn-primary" href="/index.html#kontakt">Kontakt aufnehmen</a>
+        <a class="btn btn-whatsapp" href="https://wa.me/436765890068" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </section>
 
-  <img src="assets/portrait.jpg" alt="Jan Feichtenschlager" class="portrait">
+  <!-- CONTENT -->
+  <section>
+    <div class="wrap grid grid-2">
 
-  <p><strong>Ich bin Jan Feichtenschlager</strong> – gelernter Metallbearbeiter, bautechnischer Zeichner und zertifizierter 3D-Konstrukteur. Ich entwickle funktionale 3D-Modelle, die nicht nur gut aussehen, sondern vor allem eines tun: zuverlässig funktionieren.</p>
+      <!-- Profil -->
+      <article class="card">
+        <div class="profile">
+          <!-- WICHTIG: passe den Dateinamen an, falls dein Portrait anders heißt -->
+          <img class="avatar" src="/assets/portrait.jpg" alt="Jan Feichtenschlager">
+          <div class="stack">
+            <h2 style="margin-bottom:4px">Jan Feichtenschlager</h2>
+            <p class="muted" style="margin:0">
+              S’INN3D – Design & CAD aus dem Innviertel (OÖ)
+            </p>
 
-  <p>Viele Betriebe kommen zu mir, weil ihre bisherigen Modelle verzogen, gebrochen oder schlicht falsch konstruiert waren. Mein Ansatz ist das Gegenteil davon: klare Konstruktion, technische Logik und druckfertige Ergebnisse, die auf FDM-Druckern wiederholbar und effizient produziert werden können.</p>
+            <div class="facts">
+              <span class="pill">Industrial Design</span>
+              <span class="pill">3D-CAD</span>
+              <span class="pill">Anschauungsmodelle</span>
+              <span class="pill">NFC/QR Add-on</span>
+            </div>
 
-  <p>Ich arbeite so, wie man im Innviertel arbeitet: direkt, sauber und ohne Austauben. Wenn etwas technisch keinen Sinn ergibt, sag ich das. Und wenn es eine bessere Lösung gibt, konstruiere ich sie.</p>
+            <p>
+              Ich bringe Ideen in Form: von der ersten Skizze bis zum sauberen CAD-Modell, das man versteht, prüfen kann und sauber weitergibt.
+              Nicht „irgendwie passend“, sondern logisch aufgebaut.
+            </p>
 
-  <p>Mit S’INN3D verbinde ich 3D-Design, CAD-Modellierung, technische Konstruktion und individuelle NFC-Produkte. Egal ob Firmenlogo, Bauteil, Schlüsselanhänger oder digitaler Tischaufsteller – jedes Modell entsteht nachvollziehbar, strukturiert und stabil.</p>
+            <p>
+              Wenn etwas technisch keinen Sinn ergibt, sag ich’s. Und wenn’s eine bessere Lösung gibt, baue ich sie – mit Fokus auf
+              Wiederholbarkeit (Workflow, Daten, Übergabe).
+            </p>
+          </div>
+        </div>
+      </article>
 
-  <p><strong>Wenn physische Teile oder Kleinserien notwendig sind, arbeite ich mit regionalen Partnerbetrieben zusammen – professionell, rechtlich korrekt und zuverlässig produziert.</strong></p>
+      <!-- Klartext / Positionierung -->
+      <article class="card">
+        <h2>Wofür ich stehe</h2>
 
-  <p><strong>Wenn du ein Modell brauchst, das funktioniert und nicht nur „irgendwie passt“, dann bist du bei mir richtig.</strong></p>
+        <p class="muted">
+          Viele kommen zu mir, weil bestehende Modelle verzogen, gebrochen oder einfach „wild“ konstruiert sind.
+          Meine Antwort ist immer dieselbe: Klarheit reinbringen – dann läuft’s.
+        </p>
 
-  <a class="btn" href="/#kontakt">Kontakt aufnehmen</a>
+        <div class="callout" style="margin-top:14px">
+          <b>Was du von mir bekommst</b>
+          Struktur statt Chaos: nachvollziehbare Modelle, saubere Übergabe, klare nächste Schritte.
+        </div>
+
+        <div class="callout" style="margin-top:12px">
+          <b>Wichtig (rechtlich & ehrlich)</b>
+          Modelle und Prototypen dienen Gestaltung & Anschauung – keine normierten, geprüften oder serienfreigegebenen Bauteile.
+          Wenn physische Teile oder Kleinserien nötig sind, arbeite ich über regionale Partnerbetriebe.
+        </div>
+
+        <div class="cta" style="margin-top:14px">
+          <a class="btn btn-primary" href="/index.html#kontakt">Projekt anfragen</a>
+          <a class="btn btn-ghost" href="mailto:office@sinn-3d.at" style="border-color:rgba(0,0,0,.2);color:#0b1220;background:#fff">office@sinn-3d.at</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
 
 </main>
 
 <footer>
   <div class="inner">
-    <div>© <span id="y"></span> S’INN3D – Beratung & 3D-Design</div>
     <div>
-      <a href="/ueber-mich.html">Über mich</a> · 
-      <a href="/impressum.html">Impressum</a> · 
+      © <span id="y"></span> S’INN3D – Design &amp; CAD<br>
+      Modelle &amp; Prototypen dienen der Gestaltung und Anschauung – keine geprüften oder serienfreigegebenen Bauteile.<br>
+      Fertigung erfolgt bei Bedarf über regionale Partnerbetriebe.
+    </div>
+    <div>
+      <a href="/ueber-mich.html">Über mich</a> ·
+      <a href="/impressum.html">Impressum</a> ·
       <a href="/datenschutz.html">Datenschutz</a>
     </div>
   </div>
@@ -94,8 +385,14 @@
 
 <script>
   document.getElementById('y').textContent = new Date().getFullYear();
+
+  function setHeaderHeightVar(){
+    const h = document.querySelector('header')?.offsetHeight || 0;
+    document.documentElement.style.setProperty('--headerH', h + 'px');
+  }
+  window.addEventListener('load', setHeaderHeightVar);
+  window.addEventListener('resize', setHeaderHeightVar);
 </script>
 
 </body>
 </html>
-
