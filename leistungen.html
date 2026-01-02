@@ -59,45 +59,44 @@
       position:relative;
     }
 
- body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  z-index:-1;
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-1;
 
-  /* 1) grüner Brand-Tint oben drauf */
-  background:
-    radial-gradient(1200px 700px at 50% 25%,
-      rgba(20,184,166,.22) 0%,
-      rgba(22,163,74,.14) 35%,
-      rgba(255,255,255,0) 72%),
+      /* 1) grüner Brand-Tint oben drauf */
+      background:
+        radial-gradient(1200px 700px at 50% 25%,
+          rgba(20,184,166,.22) 0%,
+          rgba(22,163,74,.14) 35%,
+          rgba(255,255,255,0) 72%),
 
-    /* 2) heller Grundverlauf (macht’s “clean”) */
-    linear-gradient(180deg,
-      rgba(255,255,255,.92) 0%,
-      rgba(210,240,230,.92) 100%),
+        /* 2) heller Grundverlauf (macht’s “clean”) */
+        linear-gradient(180deg,
+          rgba(255,255,255,.92) 0%,
+          rgba(210,240,230,.92) 100%),
 
-    /* 3) Polygon */
-    url("/assets/polygon_bg.svg");
+        /* 3) Polygon */
+        url("/assets/polygon_bg.svg");
 
-  background-size:cover,cover,cover;
-  background-repeat:no-repeat,no-repeat,no-repeat;
-  background-position:center,center,center;
-}
+      background-size:cover,cover,cover;
+      background-repeat:no-repeat,no-repeat,no-repeat;
+      background-position:center,center,center;
+
+      /* ✅ FIX: gehört HIER rein */
+      background-blend-mode:multiply;
+    }
 
     .btn-whatsapp{
-  background:#fff;
-  color:#0b1220;
-  border:2px solid #14b8a6;
-  font-weight:800;
-}
-.btn-whatsapp:hover{
-  background:#14b8a6;
-  color:#fff;
-}
-
-      /* sorgt für den grünlichen „Tint“ wie auf der Startseite */
-      background-blend-mode:multiply;
+      background:#fff;
+      color:#0b1220;
+      border:2px solid #14b8a6;
+      font-weight:800;
+    }
+    .btn-whatsapp:hover{
+      background:#14b8a6;
+      color:#fff;
     }
 
     /* Header – wie Startseite (schwarz) */
