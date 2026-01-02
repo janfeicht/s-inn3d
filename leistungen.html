@@ -50,28 +50,29 @@
     a{text-decoration:none;color:inherit}
     .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
 
-    body{
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,"Helvetica Neue",Arial,sans-serif;
-      color:var(--text);
-      line-height:1.6;
-      min-height:100vh;
-      position:relative;
-      background:transparent;
-    }
+   body{
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height:1.6;
+  min-height:100vh;
+  position:relative;
+}
 
-    /* stabiler, identischer Hintergrund auf allen Geräten */
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      z-index:-1;
-      background:
-        url("/assets/polygon_bg.svg"),
-        linear-gradient(180deg, rgba(255,255,255,.90), rgba(210,240,230,.90));
-      background-size:cover,cover;
-      background-repeat:no-repeat,no-repeat;
-      background-position:center,center;
-    }
+/* stabiler, identischer Hintergrund auf allen Geräten */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background:
+    url("/assets/polygon_bg.svg"),
+    linear-gradient(180deg, rgba(255,255,255,.88), rgba(210,240,230,.88));
+  background-size:cover,cover;
+  background-repeat:no-repeat,no-repeat;
+  background-position:center,center;
+}
+
 
     /* Header – wie Startseite (schwarz) */
     header{
