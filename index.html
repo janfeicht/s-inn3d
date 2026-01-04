@@ -164,7 +164,8 @@
 
     .cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center}
 
-    .hero{text-align:center;padding:10px 0 18px}
+    /* HERO etwas kompakter, weil CTA-Buttons entfernt sind */
+    .hero{text-align:center;padding:10px 0 10px}
     .hero-inner{max-width:780px;margin:0 auto;text-align:center}
 
     .hero-kicker{
@@ -217,8 +218,6 @@
       font-size:15.5px;
       text-align:left;
     }
-
-    .cta-main{margin-top:18px;gap:10px}
 
     .seo-block{padding:10px 0 6px}
     .seo-card{
@@ -390,10 +389,8 @@
     .slider-dots button.active{background:#16a34a}
 
     @media (max-width: 700px){
-      .hero{padding:18px 0 24px}
+      .hero{padding:18px 0 14px}
       .hero-lead,.hero-block p,.seo-card p{font-size:15px}
-      .cta-main{flex-direction:column;align-items:stretch}
-      .cta-main .btn{width:100%}
       .promo-box{font-size:15.5px;padding:14px 14px;margin-top:16px}
       .slider-btn{padding:6px 10px;font-size:20px}
     }
@@ -460,28 +457,6 @@
       <h2 class="hero-sub">NFC/QR (optional)</h2>
       <p>Kontaktlose Touchpoints (z. B. Anhänger, Karten, Aufsteller) für Links, vCards, Bewertungen oder Reservierungen – als Ergänzung zu Designprojekten.</p>
       <p>Fertigung bei Bedarf über Partnerbetrieb, Design &amp; Setup durch S’INN3D.</p>
-    </div>
-
-    <div class="cta cta-main">
-      <a class="btn btn-primary" href="#kontakt" title="Kontaktformular öffnen">Kontakt aufnehmen</a>
-
-      <a class="btn btn-whatsapp"
-         href="https://wa.me/436765890068"
-         target="_blank"
-         rel="noopener"
-         aria-label="WhatsApp Chat starten"
-         title="Per WhatsApp Kontakt aufnehmen">
-        WhatsApp
-      </a>
-
-      <a class="btn btn-ghost"
-         href="https://payhip.com/sinn3d"
-         target="_blank"
-         rel="noopener"
-         referrerpolicy="strict-origin-when-cross-origin"
-         aria-label="STL-Shop auf Payhip öffnen">
-        STL-Shop
-      </a>
     </div>
 
   </div>
@@ -748,7 +723,6 @@
           </svg>
         </a>
 
-        <!-- FIX: sauberes IG-Icon (dein Path war kaputt) -->
         <a class="ig" href="https://www.instagram.com/s.inn3d" target="_blank" rel="noopener" aria-label="Instagram">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
             <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.9a1.1 1.1 0 100 2.2 1.1 1.1 0 000-2.2z"/>
