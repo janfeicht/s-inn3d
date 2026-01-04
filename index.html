@@ -6,10 +6,17 @@
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#000000">
 
-  <title>3D-Design &amp; CAD in Oberösterreich</title>
-  <meta name="description" content="3D-Design & CAD im Innviertel (Oberösterreich): Entwurf, Formgebung und Anschauungsmodelle für frühe Produktphasen. mit Haltung – klar gedacht, sauber umgesetzt. Optional NFC/QR-Anwendungen.">
+  <!-- SEO: Title/Description optimiert -->
+  <title>3D-Design &amp; CAD im Innviertel | Industrial Design Oberösterreich – S’INN3D</title>
+  <meta name="description" content="3D-Design, CAD & Industrial Design im Innviertel (OÖ). Entwurf, Formgebung & Anschauungsmodelle für frühe Produktphasen – klar gedacht, sauber umgesetzt. Optional NFC/QR.">
+
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="googlebot" content="index,follow,max-image-preview:large">
 
   <link rel="canonical" href="https://sinn-3d.at/">
+
+  <!-- Performance: Logo preload -->
+  <link rel="preload" as="image" href="assets/logo.png">
 
   <!-- Favicon / App Icons -->
   <link rel="icon" href="assets/logo.png" type="image/png">
@@ -20,12 +27,18 @@
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 
   <!-- Open Graph (Sharing) -->
-  <meta property="og:title" content="3D-Design &amp; CAD im Innviertel (Oberösterreich) | S’INN3D">
-  <meta property="og:description" content="mit Haltung. Klar gedacht, sauber umgesetzt. Entwurf, Formgebung und Anschauungsmodelle für frühe Produktphasen. Optional NFC/QR-Anwendungen.">
+  <meta property="og:title" content="3D-Design &amp; CAD im Innviertel (OÖ) | Industrial Design – S’INN3D">
+  <meta property="og:description" content="Entwurf, Formgebung & Anschauungsmodelle für frühe Produktphasen. Klar gedacht, sauber umgesetzt. Optional NFC/QR.">
   <meta property="og:image" content="https://sinn-3d.at/assets/logo.png">
   <meta property="og:url" content="https://sinn-3d.at/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_AT">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="3D-Design &amp; CAD im Innviertel | S’INN3D">
+  <meta name="twitter:description" content="Industrial Design & CAD für Entwurf, Formgebung & Anschauungsmodelle in Oberösterreich. Optional NFC/QR.">
+  <meta name="twitter:image" content="https://sinn-3d.at/assets/logo.png">
 
   <style>
     /* Smooth Scroll + Offset wird dynamisch gesetzt */
@@ -70,7 +83,7 @@
       inset:0;
       z-index:-1;
 
-      /* Reihenfolge: Gradient oben, Polygon darunter (weicher, heller, wie am PC) */
+      /* Reihenfolge: Gradient oben, Polygon darunter */
       background:
         linear-gradient(180deg, rgba(255,255,255,.88), rgba(210,240,230,.88)),
         url("assets/polygon_bg.svg");
@@ -158,7 +171,7 @@
       color:#fff;
     }
 
-    /* WhatsApp – immer lesbar (heller Hintergrund UND Header) */
+    /* WhatsApp – immer lesbar */
     .btn-whatsapp{
       background:#ffffff;
       color:#0b1220;
@@ -231,6 +244,21 @@
     }
 
     .cta-main{margin-top:18px;gap:10px}
+
+    /* --- SEO Text Block --- */
+    .seo-block{padding:10px 0 6px}
+    .seo-card{
+      max-width:780px;
+      margin:0 auto;
+      background:rgba(255,255,255,0.92);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:18px 18px;
+      box-shadow:0 2px 10px rgba(0,0,0,.04);
+      text-align:left;
+    }
+    .seo-card h2{font-size:18px;margin-bottom:8px}
+    .seo-card p{color:var(--muted);font-size:15.5px;margin:8px 0}
 
     /* --- Promo-Box --- */
     .promo{padding:26px 0 0}
@@ -388,7 +416,7 @@
 
     @media (max-width: 700px){
       .hero{padding:18px 0 24px}
-      .hero-lead,.hero-block p{font-size:15px}
+      .hero-lead,.hero-block p,.seo-card p{font-size:15px}
       .cta-main{flex-direction:column;align-items:stretch}
       .cta-main .btn{width:100%}
       .promo-box{font-size:15.5px;padding:14px 14px;margin-top:16px}
@@ -408,7 +436,7 @@
 <header>
   <div class="wrap nav">
     <div class="logo">
-      <img src="assets/logo.png" alt="S’INN3D Logo">
+      <img src="assets/logo.png" alt="S’INN3D – 3D-Design & CAD im Innviertel (Oberösterreich)">
     </div>
 
     <nav class="cta" aria-label="Hauptnavigation">
@@ -469,7 +497,6 @@
         WhatsApp
       </a>
 
-      <!-- NEU: STL-Shop auch im Hero (Conversion) -->
       <a class="btn btn-ghost"
          href="https://payhip.com/sinn3d"
          target="_blank"
@@ -480,6 +507,27 @@
       </a>
     </div>
 
+  </div>
+</section>
+
+<!-- SEO-Textblock: wichtigster Ranking-Hebel -->
+<section class="seo-block" aria-label="3D-Design und CAD in Oberösterreich">
+  <div class="wrap">
+    <div class="seo-card">
+      <h2>3D-Design &amp; CAD in Oberösterreich – Industrial Design für frühe Produktphasen</h2>
+      <p>
+        S’INN3D unterstützt Unternehmen, Selbstständige und Kreative im Innviertel und ganz Oberösterreich bei der frühen Phase von Produkt- und Designideen.
+        Der Schwerpunkt liegt auf <b>3D-Design</b>, <b>CAD-Modellen</b> und <b>Anschauungsobjekten</b>, die als Grundlage für Gestaltung, Präsentation und Entscheidungsfindung dienen.
+      </p>
+      <p>
+        Die erstellten Modelle sind <b>keine serienreifen Konstruktionen</b>, sondern visuelle und funktionale Entwurfsstände für weitere Entwicklungs- oder Fertigungsschritte.
+        Durch saubere CAD-Ausarbeitung entstehen verständliche Geometrien, klare Proportionen und eine belastbare Basis für Abstimmungen und Variantenentscheidungen.
+      </p>
+      <p>
+        Optional sind <b>NFC- und QR-Anwendungen</b> als Add-on möglich – etwa für Aufsteller, Karten oder Touchpoints für Links, vCards, Bewertungen oder Reservierungen.
+        Fertigung erfolgt bei Bedarf über regionale Partnerbetriebe, Design &amp; Setup durch S’INN3D.
+      </p>
+    </div>
   </div>
 </section>
 
@@ -514,7 +562,6 @@
           Zum STL-Shop
         </a>
 
-        <!-- FIX: war /kontakt.html (evtl. nicht vorhanden) -> springt zu #kontakt -->
         <a class="btn btn-ghost" href="#kontakt" title="Individuelle Datei anfragen">
           Individuell anfragen
         </a>
@@ -536,7 +583,6 @@
 
     <div class="grid grid-3" style="margin-top:18px">
 
-      <!-- Karte 1 -->
       <div class="card">
         <h3>Design &amp; CAD (frühe Produktphasen)</h3>
         <p class="muted">
@@ -544,19 +590,18 @@
         </p>
         <img
           src="assets/slicer.png"
-          alt="CAD- und Modellbeispiel"
+          alt="CAD-Entwurf und Variantenvergleich – 3D-Design im Innviertel (OÖ)"
           loading="lazy"
           width="800" height="450"
           style="margin-top:10px;border-radius:10px;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover">
         <img
           src="assets/cad_beispiel2.png"
-          alt="Weiteres CAD-Beispiel"
+          alt="CAD-Modell als Anschauungsmodell – Industrial Design Oberösterreich"
           loading="lazy"
           width="800" height="450"
           style="margin-top:10px;border-radius:10px;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover">
       </div>
 
-      <!-- Karte 2 -->
       <div class="card">
         <h3>CAD-Einschulung &amp; Begleitung</h3>
         <p class="muted">
@@ -565,13 +610,12 @@
         </p>
         <img
           src="assets/cad.jpg"
-          alt="CAD-Einschulung – Beispiel"
+          alt="CAD-Einschulung und Begleitung – Fusion 360 Workflow (Beispiel)"
           loading="lazy"
           width="800" height="450"
           style="margin-top:10px;border-radius:10px;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover">
       </div>
 
-      <!-- Karte 3 -->
       <div class="card">
         <h3>NFC/QR-Anwendungen (Add-on)</h3>
         <p class="muted">
@@ -591,14 +635,14 @@
           width:max-content;
         ">
           <span style="font-size:14px;color:#374151;font-weight:700;">Fertigungspartner:</span>
-          <img src="assets/stg79_logo.jpg" alt="STG79 PrintWear" style="height:42px;width:auto;object-fit:contain;display:block;">
+          <img src="assets/stg79_logo.jpg" alt="STG79 PrintWear – Fertigungspartner für NFC/QR Touchpoints" style="height:42px;width:auto;object-fit:contain;display:block;">
         </div>
 
         <div class="slider" aria-label="NFC/QR Beispiele">
           <div class="slides">
-            <div class="slide"><img src="assets/nfc_1.jpg" alt="NFC/QR Beispiel 1" loading="lazy"></div>
-            <div class="slide"><img src="assets/nfc_2.jpg" alt="NFC/QR Beispiel 2" loading="lazy"></div>
-            <div class="slide"><img src="assets/nfc_3.jpg" alt="NFC/QR Beispiel 3" loading="lazy"></div>
+            <div class="slide"><img src="assets/nfc_1.jpg" alt="NFC Aufsteller – QR &amp; NFC Touchpoint Beispiel 1" loading="lazy"></div>
+            <div class="slide"><img src="assets/nfc_2.jpg" alt="NFC Karte – QR &amp; NFC Touchpoint Beispiel 2" loading="lazy"></div>
+            <div class="slide"><img src="assets/nfc_3.jpg" alt="NFC Anhänger – QR &amp; NFC Touchpoint Beispiel 3" loading="lazy"></div>
           </div>
 
           <button class="slider-btn prev" type="button" aria-label="Vorheriges Bild">‹</button>
@@ -624,7 +668,7 @@
     <div class="grid gallery">
 
       <article class="card">
-        <img src="assets/designberatung.jpg" alt="CAD- und Design-Begleitung" class="media">
+        <img src="assets/designberatung.jpg" alt="Design &amp; CAD Begleitung – Varianten klären, Formgebung, Anschauung" class="media">
         <div style="padding:12px 16px">
           <h3>CAD- &amp; Design-Begleitung</h3>
           <p class="muted">Struktur in die Idee bringen, Varianten klären und sauber in CAD überführen – damit Entscheidungen möglich werden.</p>
@@ -632,7 +676,7 @@
       </article>
 
       <article class="card">
-        <img src="assets/logo_nfc.jpg" alt="NFC/QR Designprojekt" class="media">
+        <img src="assets/logo_nfc.jpg" alt="NFC/QR Touchpoint als Add-on – Design und Setup" class="media">
         <div style="padding:12px 16px">
           <h3>NFC/QR als Add-on</h3>
           <p class="muted">Personalisierte Touchpoints als Ergänzung zum Design – Setup und Gestaltung aus einer Hand.</p>
@@ -641,7 +685,7 @@
 
       <article class="card video-card">
         <div class="video-frame" data-video-container>
-          <img class="poster" src="assets/kleinserie_poster.png" alt="Design-Prototypen – Vorschaubild" loading="lazy">
+          <img class="poster" src="assets/kleinserie_poster.png" alt="Design-Prototypen und Muster – Vorschaubild" loading="lazy">
           <video preload="metadata" playsinline muted poster="assets/kleinserie_poster.png" tabindex="0" aria-label="Video: Design-Prototypen und Muster">
             <source src="assets/kleinserie.mp4" type="video/mp4">
           </video>
@@ -725,7 +769,7 @@
       </div>
 
       <div style="text-align:center;margin-top:24px;">
-        <img src="assets/qr-code.png" alt="WhatsApp QR-Code" style="width:200px;max-width:70%;border-radius:12px;display:block;margin:0 auto;">
+        <img src="assets/qr-code.png" alt="WhatsApp QR-Code – direkt anfragen" style="width:200px;max-width:70%;border-radius:12px;display:block;margin:0 auto;">
         <p class="muted" style="margin-top:8px;font-size:15px;">Direkt per WhatsApp anfragen</p>
       </div>
     </div>
@@ -879,29 +923,30 @@
   })();
 </script>
 
-<!-- Schema.org: lokal, aber ohne unnötig genaue Privatadresse -->
+<!-- Schema.org: Service (passt besser als LocalBusiness) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "ProfessionalService",
   "name": "S’INN3D – Design & CAD",
   "image": "https://sinn-3d.at/assets/logo.png",
   "url": "https://sinn-3d.at",
   "telephone": "+43 676 5890068",
-  "description": "Design & CAD aus dem Innviertel (OÖ): Entwurf, Formgebung und Anschauungsmodelle für frühe Produktphasen. Optional NFC/QR-Anwendungen.",
-  "areaServed": "AT",
+  "description": "3D-Design, CAD & Industrial Design im Innviertel (OÖ): Entwurf, Formgebung und Anschauungsmodelle für frühe Produktphasen. Optional NFC/QR-Anwendungen.",
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Oberösterreich" },
+    { "@type": "Country", "name": "Österreich" }
+  ],
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Innviertel",
     "addressRegion": "Oberösterreich",
     "addressCountry": "AT"
   },
-  "openingHoursSpecification": [{
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-    "opens": "09:00",
-    "closes": "18:00"
-  }],
+  "sameAs": [
+    "https://www.instagram.com/s.inn3d",
+    "https://www.facebook.com/share/1Zb4kS49oo/"
+  ],
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "customer support",
