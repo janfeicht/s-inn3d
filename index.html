@@ -4,8 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-<meta name="theme-color" content="#000000">
-
+  <meta name="theme-color" content="#000000">
 
   <title>3D-Design &amp; CAD in Oberösterreich</title>
   <meta name="description" content="3D-Design & CAD im Innviertel (Oberösterreich): Entwurf, Formgebung und Anschauungsmodelle für frühe Produktphasen. mit Haltung – klar gedacht, sauber umgesetzt. Optional NFC/QR-Anwendungen.">
@@ -35,68 +34,55 @@
       scroll-padding-top:var(--headerH,0px);
     }
 
-    /* Smooth Scroll + Offset wird dynamisch gesetzt */
-  html{
-    scroll-behavior:smooth;
-    scroll-padding-top:var(--headerH,0px);
-  }
+    :root{
+      --bg:#f7faf9;
+      --card:#ffffff;
 
-  :root{
-    --bg:#f7faf9;
-    --card:#ffffff;
+      /* TEXT dunkler */
+      --text:#0b1220;
+      --muted:#374151;
 
-    /* TEXT dunkler */
-    --text:#0b1220;
-    --muted:#374151;
+      --brand:#16a34a;
+      --brand2:#14b8a6;
+      --accent:#facc15;
+      --line:#e5e7eb;
+      --wrap:1100px;
+      --headerH:0px;
+    }
 
-    --brand:#16a34a;
-    --brand2:#14b8a6;
-    --accent:#facc15;
-    --line:#e5e7eb;
-    --wrap:1100px;
-    --headerH:0px;
-  }
+    *{box-sizing:border-box;margin:0;padding:0}
 
-  *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+      color: var(--text);
+      line-height:1.6;
+      min-height:100vh;
+      position:relative;
 
-  body{
-    font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,"Helvetica Neue",Arial,sans-serif;
-    color: var(--text);
-    line-height:1.6;
-    min-height:100vh;
-    position:relative;
+      /* wichtig: body selbst ohne Hintergrund, damit ::before IMMER gewinnt */
+      background: transparent;
+    }
 
-    /* wichtig: body selbst ohne Hintergrund, damit ::before IMMER gewinnt */
-    background: transparent;
-  }
+    /* stabiler, identischer Hintergrund auf allen Geräten */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-1;
 
-  /* stabiler, identischer Hintergrund auf allen Geräten */
-  body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    z-index:-1;
+      /* Reihenfolge: Gradient oben, Polygon darunter (weicher, heller, wie am PC) */
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.88), rgba(210,240,230,.88)),
+        url("assets/polygon_bg.svg");
 
-    /* Reihenfolge: Gradient oben, Polygon darunter (weicher, heller, wie am PC) */
-    background:
-      linear-gradient(180deg, rgba(255,255,255,.88), rgba(210,240,230,.88)),
-      url("assets/polygon_bg.svg");
+      background-size:cover,cover;
+      background-repeat:no-repeat,no-repeat;
+      background-position:center,center;
+    }
 
-    background-size:cover,cover;
-    background-repeat:no-repeat,no-repeat;
-    background-position:center,center;
-  }
-
-  /* Mobile: verhindert seltenes „fixed flackern“ bei manchen Androids */
-  @media (max-width: 900px){
-    body::before{ position:fixed; }
-  }
-@media (max-width: 900px){
-  body::before{ position:absolute; }
-}
-
-
-   @media (max-width: 900px){
+    /* Mobile: verhindert seltenes „fixed flackern“ bei manchen Androids */
+    @media (max-width: 900px){
+      body::before{ position:fixed; }
       body{ background-attachment:scroll; }
     }
 
@@ -171,22 +157,21 @@
       border-color:var(--brand2);
       color:#fff;
     }
-/* WhatsApp – immer lesbar (heller Hintergrund UND Header) */
-.btn-whatsapp{
-  background:#ffffff;
-  color:#0b1220;
-  border:2px solid var(--brand2);
-  font-weight:800;
-}
 
-.btn-whatsapp:hover{
-  background:var(--brand2);
-  color:#ffffff;
-}
-
-.btn-whatsapp:active{
-  transform:translateY(1px);
-}
+    /* WhatsApp – immer lesbar (heller Hintergrund UND Header) */
+    .btn-whatsapp{
+      background:#ffffff;
+      color:#0b1220;
+      border:2px solid var(--brand2);
+      font-weight:800;
+    }
+    .btn-whatsapp:hover{
+      background:var(--brand2);
+      color:#ffffff;
+    }
+    .btn-whatsapp:active{
+      transform:translateY(1px);
+    }
 
     .cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center}
 
@@ -261,23 +246,23 @@
       box-shadow:0 8px 18px rgba(0,0,0,.04);
     }
     .promo-box b{display:block;margin-bottom:4px}
-    
-/* --- Shop Teaser --- */
-.shop-teaser{ padding: 6px 0 26px; }
 
-.shop-card{
-  display:flex;
-  gap:18px;
-  align-items:center;
-  justify-content:space-between;
-}
+    /* --- Shop Teaser --- */
+    .shop-teaser{ padding: 6px 0 26px; }
 
-@media(max-width:900px){
-  .shop-card{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-}
+    .shop-card{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    @media(max-width:900px){
+      .shop-card{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
 
     /* --- Layout --- */
     .grid{display:grid;gap:22px}
@@ -427,10 +412,16 @@
     </div>
 
     <nav class="cta" aria-label="Hauptnavigation">
-     <a class="btn btn-ghost" href="/leistungen.html" title="Zu den Leistungen">Leistungen</a>
-     <a class="btn btn-ghost" href="/projekte.html" title="Projektbeispiele ansehen">Projekte</a>
+      <a class="btn btn-ghost" href="/leistungen.html" title="Zu den Leistungen">Leistungen</a>
+      <a class="btn btn-ghost" href="/projekte.html" title="Projektbeispiele ansehen">Projekte</a>
       <a class="btn btn-ghost" href="/ueber-mich.html" title="Mehr über S’INN3D">Über mich</a>
-      <a class="btn btn-ghost" href="https://payhip.com/sinn3d" target="_blank" rel="noopener" title="Zum STL-Shop">STL-Shop</a>
+      <a class="btn btn-ghost"
+         href="https://payhip.com/sinn3d"
+         target="_blank"
+         rel="noopener"
+         referrerpolicy="strict-origin-when-cross-origin"
+         title="Zum STL-Shop"
+         aria-label="STL-Shop auf Payhip öffnen">STL-Shop</a>
     </nav>
   </div>
 </header>
@@ -444,15 +435,14 @@
       DESIGN &amp; CAD · ENTWURF · FORM · ANSCHAUUNGSMODELLE
     </p>
 
-   <h1>3D-Design &amp; CAD im Innviertel (Oberösterreich)</h1>
-
+    <h1>3D-Design &amp; CAD im Innviertel (Oberösterreich)</h1>
 
     <p class="hero-claim">
       mit Haltung. Klar gedacht, sauber umgesetzt.
     </p>
 
     <p class="hero-lead">
-     Ich bringe Ideen und Skizzen in eine klare & visuelle Form – als CAD-Modelle und Anschauung für die weitere Umsetzung.
+      Ich bringe Ideen und Skizzen in eine klare &amp; visuelle Form – als CAD-Modelle und Anschauung für die weitere Umsetzung.
     </p>
 
     <div class="hero-block">
@@ -469,14 +459,25 @@
 
     <div class="cta cta-main">
       <a class="btn btn-primary" href="#kontakt" title="Kontaktformular öffnen">Kontakt aufnehmen</a>
-     <a class="btn btn-whatsapp"
-   href="https://wa.me/436765890068"
-   target="_blank"
-   rel="noopener"
-   aria-label="WhatsApp Chat starten"
-   title="Per WhatsApp Kontakt aufnehmen">
-  WhatsApp
-</a>
+
+      <a class="btn btn-whatsapp"
+         href="https://wa.me/436765890068"
+         target="_blank"
+         rel="noopener"
+         aria-label="WhatsApp Chat starten"
+         title="Per WhatsApp Kontakt aufnehmen">
+        WhatsApp
+      </a>
+
+      <!-- NEU: STL-Shop auch im Hero (Conversion) -->
+      <a class="btn btn-ghost"
+         href="https://payhip.com/sinn3d"
+         target="_blank"
+         rel="noopener"
+         referrerpolicy="strict-origin-when-cross-origin"
+         aria-label="STL-Shop auf Payhip öffnen">
+        STL-Shop
+      </a>
     </div>
 
   </div>
@@ -488,22 +489,33 @@
     Kurze Einschätzung zu Machbarkeit, Richtung und Aufwand. Danach weißt du klar, wie’s weitergeht.
   </div>
 </section>
-  
+
 <section class="shop-teaser" id="stl-shop">
   <div class="wrap">
     <div class="card shop-card">
       <div>
         <h2>Digitale STL-Dateien</h2>
         <p class="muted">
-          Ausgewählte, druckoptimierte Dateien: Organisation, praktische Helfer und Design-Objekte.
+          Supportfrei druckbar. Sauber konstruiert. Sofort-Download.
+          Organisation, modulare Helfer &amp; ausgewählte Design-Objekte.
+        </p>
+        <p class="muted" style="margin-top:6px;font-size:13px;">
+          Individuelle Anfragen: Antwort meist innerhalb 24–48 h · STL/STEP möglich
         </p>
       </div>
 
       <div class="cta" style="justify-content:flex-start;margin-top:10px;">
-        <a class="btn btn-primary" href="https://payhip.com/sinn3d" target="_blank" rel="noopener">
+        <a class="btn btn-primary"
+           href="https://payhip.com/sinn3d"
+           target="_blank"
+           rel="noopener"
+           referrerpolicy="strict-origin-when-cross-origin"
+           aria-label="STL-Shop auf Payhip öffnen">
           Zum STL-Shop
         </a>
-        <a class="btn btn-ghost" href="/kontakt.html" title="Individuelle Datei anfragen">
+
+        <!-- FIX: war /kontakt.html (evtl. nicht vorhanden) -> springt zu #kontakt -->
+        <a class="btn btn-ghost" href="#kontakt" title="Individuelle Datei anfragen">
           Individuell anfragen
         </a>
       </div>
@@ -707,7 +719,7 @@
         </a>
         <a class="ig" href="https://www.instagram.com/s.inn3d" target="_blank" rel="noopener" aria-label="Instagram">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
-            <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.9a1.1 1.1 0 100 2.2 1.1 1.1 0 000-2.2z"/>
+            <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-1.3-3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.9a1.1 1.1 0 100 2.2 1.1 1.1 0 000-2.2z"/>
           </svg>
         </a>
       </div>
@@ -722,13 +734,13 @@
 </section>
 
 </main>
-  
+
 <section style="padding:48px 0 56px;">
   <div class="wrap" style="text-align:center;max-width:720px;">
 
     <h2 style="margin-bottom:6px;">Was Kund:innen sagen</h2>
     <p class="muted" style="margin-bottom:18px;">
-      Echte Google-Bewertungen zu S’INN3D – direkt bei Google, transparent & ungefiltert.
+      Echte Google-Bewertungen zu S’INN3D – direkt bei Google, transparent &amp; ungefiltert.
     </p>
 
     <div class="cta" style="margin-top:16px;">
@@ -752,8 +764,6 @@
   </div>
 </section>
 
-
-  
 <footer>
   <div class="inner">
     <div>
