@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sinn-3d.at/sitemap.xml
